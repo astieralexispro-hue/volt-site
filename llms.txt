@@ -1,0 +1,43 @@
+# Volt — Réseau de stations de location de powerbanks
+
+Volt est une entreprise française (Sud de la France, Nîmes / Gard) qui installe des stations
+de location de batteries portables dans des établissements professionnels.
+
+## Services
+
+Volt installe gratuitement des stations de location de batteries portables (powerbanks)
+dans des bars, restaurants, hôtels, salles de sport, centres commerciaux et lieux événementiels.
+
+## Modèle économique
+
+- Installation gratuite pour l'établissement
+- Zéro engagement, retrait libre à tout moment
+- Tarification client : €1 / 30 minutes, €30 de pré-autorisation remboursée au retour
+- Maintenance assurée sous 72 heures ouvrées
+- L'établissement ne paie que l'électricité (~€5/mois)
+
+## Produit
+
+Station STW-8205EUPOS :
+- 6 slots de batteries portables
+- Câbles USB-C, Lightning et Micro-USB intégrés
+- Écran publicitaire 1280×800
+- Terminal de paiement Stripe (carte sans contact)
+- Format compact (taille imprimante de bureau)
+
+## Offre Fondateurs
+
+Les 10 premiers établissements partenaires bénéficient d'une station personnalisée
+aux couleurs de leur établissement (wrap vinyle).
+
+## Contact
+
+Email : contact@vooolt.fr
+Site : https://vooolt.fr
+Fondateur : Alexis Astier
+SIRET : 943 992 404 00013
+Adresse : 793 A Avenue des Fontaines, 30320 Poulx, France
+
+## Zone géographique
+
+Sud de la France — Nîmes, Gard (30), région Occitanie.

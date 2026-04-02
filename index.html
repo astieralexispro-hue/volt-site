@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Volt — La recharge mobile pour votre établissement</title>
+<meta name="description" content="Volt installe des stations de location de batteries portables dans votre établissement. Gratuit, sans engagement."/>
+<link rel="canonical" href="https://vooolt.fr/"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Alexis Astier"/>
+<meta name="geo.region" content="FR-30"/>
+<meta name="geo.placename" content="Nîmes, Gard, Occitanie"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z' fill='%23D0FF00'/></svg>"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://vooolt.fr/"/>
+<meta property="og:title" content="Volt — La recharge mobile pour votre établissement"/>
+<meta property="og:description" content="Volt installe des stations de location de batteries portables dans votre établissement. Gratuit, sans engagement."/>
+<meta property="og:site_name" content="Volt"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Volt — La recharge mobile pour votre établissement"/>
+<meta name="twitter:description" content="Volt installe des stations de location de batteries portables dans votre établissement. Gratuit, sans engagement."/>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  body { font-family: 'Inter', sans-serif; background-color: #fbf9f8; }
+  .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes pulse-lime {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(208, 255, 0, 0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(208, 255, 0, 0); }
+  }
+  .animate-fade-up { animation: fadeUp 0.7s ease forwards; }
+  .animate-fade-up-delay-1 { animation: fadeUp 0.7s ease 0.1s forwards; opacity: 0; }
+  .animate-fade-up-delay-2 { animation: fadeUp 0.7s ease 0.2s forwards; opacity: 0; }
+  .animate-fade-up-delay-3 { animation: fadeUp 0.7s ease 0.35s forwards; opacity: 0; }
+  .animate-fade-up-delay-4 { animation: fadeUp 0.7s ease 0.5s forwards; opacity: 0; }
+  .animate-fade-in { animation: fadeIn 1s ease 0.1s forwards; opacity: 0; }
+  .pulse-lime { animation: pulse-lime 2s infinite; }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* Hover card lift */
+  .card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+
+  /* Active nav */
+  .nav-active { color: #526600; border-bottom: 2px solid #D0FF00; padding-bottom: 2px; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Volt",
+  "description": "Réseau de stations de location de batteries portables pour établissements professionnels. Installation gratuite, zéro engagement.",
+  "url": "https://vooolt.fr",
+  "email": "contact@vooolt.fr",
+  "areaServed": { "@type": "GeoCircle", "name": "Sud de la France" },
+  "founder": { "@type": "Person", "name": "Alexis Astier" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "793 A Avenue des Fontaines",
+    "addressLocality": "Poulx",
+    "postalCode": "30320",
+    "addressCountry": "FR"
+  },
+  "priceRange": "€",
+  "knowsAbout": ["location powerbank", "recharge mobile", "station de recharge", "batteries portables"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment fonctionne la location de batterie Volt ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le client scanne le QR code sur la station, paie par carte bancaire (€1 / 30 minutes), et repart avec une batterie portable. €30 sont pré-autorisés en garantie et remboursés automatiquement au retour de la batterie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte l'installation d'une station Volt pour mon établissement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'installation est entièrement gratuite pour l'établissement. Volt installe, configure et maintient la station. Seule l'électricité est à votre charge (environ €5 par mois)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Y a-t-il un engagement ou un contrat à durée déterminée ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aucun engagement. La convention est à durée indéterminée et peut être résiliée à tout moment par simple email. Volt récupère le matériel dans les 14 jours suivant la demande."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qui s'occupe de la maintenance de la station ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Volt prend en charge toute la maintenance. En cas de panne signalée, une intervention est garantie sous 72 heures ouvrées. L'établissement n'a rien à gérer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que l'Offre Fondateurs Volt ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les 10 premiers établissements partenaires bénéficient d'une station personnalisée aux couleurs de leur établissement (wrap vinyle). Cette offre est limitée et réservée aux partenaires fondateurs."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container">
+
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 glass-nav bg-[#fbf9f8]/85 border-b border-black/5">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2.5">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 16C28 22.627 22.627 28 16 28C9.373 28 4 22.627 4 16C4 9.373 9.373 4 16 4" stroke="#D0FF00" stroke-width="3" stroke-linecap="round"/>
+        <path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#D0FF00"/>
+      </svg>
+      <span class="text-xl font-black tracking-tight text-on-surface">volt</span>
+    </a>
+    <!-- Nav links -->
+    <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-on-surface-variant">
+      <a href="index.html" class="nav-active hover:text-on-surface transition-colors">Solutions</a>
+      <a href="produits.html" class="hover:text-on-surface transition-colors">Produits</a>
+      <a href="#comment-ca-marche" class="hover:text-on-surface transition-colors">Comment ça marche</a>
+      <a href="partenaire.html" class="hover:text-on-surface transition-colors">Contact</a>
+    </nav>
+    <a href="partenaire.html" class="bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all pulse-lime">
+      Devenir Partenaire
+    </a>
+  </div>
+</header>
+
+<main class="pt-20">
+
+  <!-- HERO -->
+  <section class="relative max-w-7xl mx-auto px-6 pt-20 pb-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center overflow-hidden">
+    <div class="z-10">
+      <div class="animate-fade-up inline-flex items-center gap-2 bg-primary-container/20 text-on-primary-container px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+        <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+        Offre Fondateurs — 10 places
+      </div>
+      <h1 class="animate-fade-up-delay-1 text-6xl md:text-7xl font-black tracking-tighter text-on-surface leading-[0.95] mb-8">
+        Vos clients ne tomberont plus à court de <span class="text-primary-container bg-on-surface px-2 whitespace-nowrap">batterie.</span>
+      </h1>
+      <p class="animate-fade-up-delay-2 text-xl text-on-surface-variant leading-relaxed max-w-lg mb-10">
+        Volt installe des stations de location de batteries portables dans votre établissement — gratuitement, sans engagement, personnalisées à vos couleurs.
+      </p>
+      <div class="animate-fade-up-delay-3 flex flex-wrap gap-4">
+        <a href="partenaire.html" class="bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg hover:shadow-primary-container/30 transition-all active:scale-95">
+          Installer une station
+        </a>
+        <a href="#comment-ca-marche" class="border border-outline-variant text-on-surface px-8 py-4 rounded-full font-bold text-lg hover:bg-surface-container-low transition-all">
+          Comment ça marche
+        </a>
+      </div>
+    </div>
+    <div class="animate-fade-in relative flex justify-center items-center">
+      <div class="absolute inset-0 bg-primary-container/15 rounded-full blur-[80px]"></div>
+      <div class="relative w-full max-w-[440px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl rotate-2">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdtfpNUUjzanZCIEJj_l2dgYLwMZbfP2tZmmcTtlfO5LwGLiGTvyJA_IGiRPTeHt0mPHt8zkpjI-oYv-obmurQ-UETQAy5ITpM1J1KfnomQ_zC10Bf6zDAbmGxJBHC5IrfYMAGmyGDOAZVntGM_xTkOnr4HKlye7HVkxm6DgKTYx54Fi2PXLbO51qzn9R28_F8Obe6V_JRrfV70g_I8WrXcOAT88OjNuFBRsOKXAABQzuE1FtRzVBlNi2bI0SrhXSvjzKCQNM-Ha2" alt="Station Volt de location de batteries portables installée dans un bar" width="440" height="550" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"/>
+        <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-on-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+          </div>
+          <div>
+            <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Offre Fondateurs</div>
+            <div class="font-bold text-on-surface">Station personnalisée à vos couleurs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="bg-on-surface py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10">
+      <div class="reveal px-8 py-6 text-center md:text-left">
+        <div class="text-5xl font-black text-primary-container tracking-tighter mb-1">67%</div>
+        <div class="text-sm text-white/60">des clients ont quitté un lieu à cause d'une batterie morte</div>
+        <div class="text-xs text-white/30 mt-1">Source : Powermat Consumer Study</div>
+      </div>
+      <div class="reveal reveal-delay-1 px-8 py-6 text-center md:text-left">
+        <div class="text-5xl font-black text-primary-container tracking-tighter mb-1">+20 min</div>
+        <div class="text-sm text-white/60">de présence en moyenne quand le client peut recharger</div>
+      </div>
+      <div class="reveal reveal-delay-2 px-8 py-6 text-center md:text-left">
+        <div class="text-5xl font-black text-primary-container tracking-tighter mb-1">1/3</div>
+        <div class="text-sm text-white/60">des clients en bar ou restaurant demande un câble</div>
+        <div class="text-xs text-white/30 mt-1">Source : IFOP France</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT ÇA MARCHE -->
+  <section id="comment-ca-marche" class="py-32 max-w-7xl mx-auto px-6">
+    <div class="mb-16 reveal">
+      <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Simple & rapide</div>
+      <h2 class="text-5xl font-black tracking-tighter text-on-surface">Comment ça marche</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="reveal card-lift bg-surface-container-low p-10 rounded-3xl">
+        <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
+          <span class="font-black text-2xl text-on-primary-container">1</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Scan du QR code</h3>
+        <p class="text-on-surface-variant leading-relaxed">Le client scanne directement sur la station — aucune app à télécharger.</p>
+      </div>
+      <div class="reveal reveal-delay-1 card-lift bg-surface-container-low p-10 rounded-3xl">
+        <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
+          <span class="font-black text-2xl text-on-primary-container">2</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Location de la batterie</h3>
+        <p class="text-on-surface-variant leading-relaxed">Paiement Stripe par carte — <strong>€1 / 30 min</strong>. €30 bloqués en garantie, remboursés au retour.</p>
+      </div>
+      <div class="reveal reveal-delay-2 card-lift bg-surface-container-low p-10 rounded-3xl">
+        <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
+          <span class="font-black text-2xl text-on-primary-container">3</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Retour avant de partir</h3>
+        <p class="text-on-surface-variant leading-relaxed">La batterie est rendue dans la station. La garantie est libérée automatiquement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTEURS -->
+  <section class="py-32 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 reveal">
+        <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Partout où vos clients attendent</div>
+        <h2 class="text-5xl font-black tracking-tighter text-on-surface">Secteurs d'activité</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="reveal card-lift bg-surface-container-lowest p-10 rounded-3xl group">
+          <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">restaurant</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Bars & Restaurants</h3>
+          <p class="text-on-surface-variant leading-relaxed">Le client qui attend sa batterie rechargée consomme davantage. Résout le "vous avez un câble ?" définitivement.</p>
+        </div>
+        <div class="reveal reveal-delay-1 card-lift bg-surface-container-lowest p-10 rounded-3xl group">
+          <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">hotel</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Hôtels</h3>
+          <p class="text-on-surface-variant leading-relaxed">Service premium sans coût. Un client qui a rechargé son téléphone à l'hôtel met 5 étoiles.</p>
+        </div>
+        <div class="reveal reveal-delay-2 card-lift bg-surface-container-lowest p-10 rounded-3xl group">
+          <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">storefront</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Centres commerciaux</h3>
+          <p class="text-on-surface-variant leading-relaxed">Un client dont le téléphone est mort repart. Un client qui peut recharger reste et continue à consommer.</p>
+        </div>
+        <div class="reveal card-lift bg-surface-container-lowest p-10 rounded-3xl group">
+          <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">fitness_center</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Salles de sport</h3>
+          <p class="text-on-surface-variant leading-relaxed">Les membres viennent souvent avec une batterie faible (musique, tracking). Station en accueil ou vestiaires.</p>
+        </div>
+        <div class="reveal reveal-delay-1 card-lift bg-surface-container-lowest p-10 rounded-3xl group">
+          <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">event</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Événementiel</h3>
+          <p class="text-on-surface-variant leading-relaxed">Concerts, festivals, parcs de loisirs. Besoin fort et ponctuel — visibilité maximale pour la marque.</p>
+        </div>
+        <div class="reveal reveal-delay-2 card-lift bg-primary-container p-10 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 bg-on-surface rounded-2xl flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-on-surface">Votre établissement</h3>
+            <p class="text-on-primary-container leading-relaxed">Installation gratuite, zéro engagement, station personnalisée à vos couleurs.</p>
+          </div>
+          <a href="partenaire.html" class="mt-8 inline-flex items-center gap-2 font-bold text-on-surface hover:gap-4 transition-all">
+            Devenir partenaire
+            <span class="material-symbols-outlined text-xl">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVANTAGES -->
+  <section class="py-32 max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div class="reveal order-2 lg:order-1">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF9yO10_vXHdmntX4DoB7rs4XmEIizKq7BLSdTbZxOeMRJ38qaTTt3iU129jKdJN-DDYx3fE7__BS-Q-4qWT1bOza37aa-KEstYEv6xNL1mPTzKHbNfIElZgBE8fZUSZgxjLyLaPYwLSnjmQzf_rK4SL9bKwyc0oPtwiYsTPGHz07iplO536i7TnHrrindFAA6llqpkw9pzU8R0xaeMhbsJipq66DyTEIBdVPkCNKuJLuvI9D3smb8ix8y98LV46RcLp8z8aDZ_xHV" alt="Station de recharge Volt en situation dans un établissement professionnel" width="600" height="600" loading="lazy" class="rounded-[2.5rem] shadow-xl w-full object-cover"/>
+      </div>
+      <div class="reveal reveal-delay-1 order-1 lg:order-2">
+        <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Pour votre établissement</div>
+        <h2 class="text-5xl font-black tracking-tighter mb-12">Zéro risque.<br/>100% service.</h2>
+        <div class="space-y-8">
+          <div class="flex gap-5">
+            <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold mb-1">Installation gratuite</h4>
+              <p class="text-on-surface-variant">Aucun coût, aucun investissement. On s'occupe de tout.</p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold mb-1">Zéro engagement</h4>
+              <p class="text-on-surface-variant">Retrait sur simple demande. La station reste notre propriété.</p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold mb-1">Maintenance assurée</h4>
+              <p class="text-on-surface-variant">Intervention sous 72h en cas de panne. Vous n'avez rien à gérer.</p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold mb-1">Personnalisation Fondateurs</h4>
+              <p class="text-on-surface-variant">Station aux couleurs de votre établissement — réservé aux 10 premiers partenaires.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 pb-32">
+    <div class="max-w-7xl mx-auto bg-primary-container rounded-[3rem] p-16 md:p-24 text-center relative overflow-hidden reveal">
+      <div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
+        <svg width="320" height="320" viewBox="0 0 32 32" fill="none"><path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#000"/></svg>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-black tracking-tighter text-on-surface mb-6 relative z-10">Prêt à électriser<br/>votre établissement ?</h2>
+      <p class="text-on-primary-container text-xl mb-10 max-w-xl mx-auto relative z-10">Rejoignez les premiers partenaires Volt. 10 places, installation personnalisée, zéro engagement.</p>
+      <a href="partenaire.html" class="relative z-10 inline-flex items-center gap-3 bg-on-surface text-primary-container px-12 py-5 rounded-full font-black text-xl hover:scale-105 transition-transform active:scale-95">
+        Devenir partenaire
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest border-t border-black/5 py-16 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+    <div>
+      <a href="index.html" class="flex items-center gap-2.5 mb-4">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M28 16C28 22.627 22.627 28 16 28C9.373 28 4 22.627 4 16C4 9.373 9.373 4 16 4" stroke="#D0FF00" stroke-width="3" stroke-linecap="round"/><path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#D0FF00"/></svg>
+        <span class="text-lg font-black tracking-tight">volt</span>
+      </a>
+      <p class="text-sm text-on-surface-variant max-w-xs">La batterie de vos clients, c'est notre affaire.</p>
+      <p class="text-xs text-on-surface-variant/50 mt-2">Nîmes — Gard — Sud de la France</p>
+      <p class="text-xs text-on-surface-variant/50 mt-2">© 2026 Volt — Alexis Astier</p>
+    </div>
+    <div class="flex flex-wrap gap-x-12 gap-y-4 text-sm font-medium text-on-surface-variant">
+      <a href="index.html" class="hover:text-on-surface transition-colors">Solutions</a>
+      <a href="produits.html" class="hover:text-on-surface transition-colors">Produits</a>
+      <a href="partenaire.html" class="hover:text-on-surface transition-colors">Devenir partenaire</a>
+      <a href="mailto:contact@vooolt.fr" class="hover:text-on-surface transition-colors">contact@vooolt.fr</a>
+      <a href="mentions-legales.html" class="hover:text-on-surface transition-colors">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
