@@ -77,15 +77,11 @@
       <a href="index.html#comment-ca-marche" class="hover:text-on-surface transition-colors">Comment ça marche</a>
     </nav>
     <div class="flex items-center gap-3">
-      <!-- Language switcher -->
-      <div class="flex items-center gap-1 bg-surface-container-low rounded-full px-1 py-1">
-        <button data-lang="fr" class="lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all hover:bg-surface-container text-on-surface">
-          <span>🇫🇷</span> FR
-        </button>
-        <button data-lang="en" class="lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-all hover:bg-surface-container text-on-surface-variant">
-          <span>🇬🇧</span> EN
-        </button>
-      </div>
+      <!-- Language button -->
+      <button id="lang-btn" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-low text-xs font-bold text-on-surface hover:bg-surface-container transition-colors">
+        <span id="lang-flag">🇫🇷</span><span id="lang-label" class="ml-1">FR</span>
+        <span class="material-symbols-outlined text-on-surface-variant" style="font-size:13px;line-height:1;margin-left:2px;">expand_more</span>
+      </button>
       <!-- CTA desktop -->
       <a href="partenaire.html" class="hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all">
         Devenir Partenaire

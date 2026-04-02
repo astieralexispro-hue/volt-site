@@ -148,15 +148,11 @@
       <a href="#comment-ca-marche" class="hover:text-on-surface transition-colors" data-i18n="nav.comment">Comment ça marche</a>
     </nav>
     <div class="flex items-center gap-3">
-      <!-- Language switcher -->
-      <div class="flex items-center gap-1 bg-surface-container-low rounded-full px-1 py-1">
-        <button data-lang="fr" class="lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all hover:bg-surface-container text-on-surface">
-          <span>🇫🇷</span> FR
-        </button>
-        <button data-lang="en" class="lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-all hover:bg-surface-container text-on-surface-variant">
-          <span>🇬🇧</span> EN
-        </button>
-      </div>
+      <!-- Language button -->
+      <button id="lang-btn" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-low text-xs font-bold text-on-surface hover:bg-surface-container transition-colors">
+        <span id="lang-flag">🇫🇷</span><span id="lang-label" class="ml-1">FR</span>
+        <span class="material-symbols-outlined text-on-surface-variant" style="font-size:13px;line-height:1;margin-left:2px;">expand_more</span>
+      </button>
       <!-- CTA desktop -->
       <a href="partenaire.html" data-i18n="nav.cta" class="hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all pulse-lime">
         Devenir Partenaire
@@ -201,7 +197,7 @@
     </div>
     <div class="animate-fade-in relative flex justify-center items-center">
       <div class="absolute inset-0 bg-primary-container/15 rounded-full blur-[80px]"></div>
-      <div class="relative w-full max-w-[440px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl rotate-2">
+      <div class="relative w-full max-w-[440px] aspect-[4/5] max-h-72 sm:max-h-none rounded-3xl overflow-hidden shadow-2xl rotate-2">
         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdtfpNUUjzanZCIEJj_l2dgYLwMZbfP2tZmmcTtlfO5LwGLiGTvyJA_IGiRPTeHt0mPHt8zkpjI-oYv-obmurQ-UETQAy5ITpM1J1KfnomQ_zC10Bf6zDAbmGxJBHC5IrfYMAGmyGDOAZVntGM_xTkOnr4HKlye7HVkxm6DgKTYx54Fi2PXLbO51qzn9R28_F8Obe6V_JRrfV70g_I8WrXcOAT88OjNuFBRsOKXAABQzuE1FtRzVBlNi2bI0SrhXSvjzKCQNM-Ha2" alt="Station Volt de location de batteries portables installée dans un bar" width="440" height="550" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"/>
         <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-5 flex items-center gap-4">
           <div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
@@ -379,12 +375,12 @@
   </section>
 
   <!-- CTA -->
-  <section class="px-6 py-16 md:py-32">
-    <div class="max-w-7xl mx-auto bg-primary-container rounded-[3rem] p-16 md:p-24 text-center relative overflow-hidden reveal">
+  <section class="px-6 pb-16 md:pb-32">
+    <div class="max-w-7xl mx-auto bg-primary-container rounded-[3rem] p-8 md:p-16 lg:p-24 text-center relative overflow-hidden reveal">
       <div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
         <svg width="320" height="320" viewBox="0 0 32 32" fill="none"><path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#000"/></svg>
       </div>
-      <h2 class="text-5xl md:text-6xl font-black tracking-tighter text-on-surface mb-6 relative z-10" data-i18n="cta.h2">Prêt à électriser<br/>votre établissement ?</h2>
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter text-on-surface mb-6 relative z-10" data-i18n="cta.h2">Prêt à électriser<br/>votre établissement ?</h2>
       <p class="text-on-primary-container text-xl mb-10 max-w-xl mx-auto relative z-10" data-i18n="cta.p">Installation gratuite, station personnalisée à vos couleurs, zéro engagement.</p>
       <a href="partenaire.html" class="relative z-10 inline-flex items-center gap-3 bg-on-surface text-primary-container px-12 py-5 rounded-full font-black text-xl hover:scale-105 transition-transform active:scale-95" data-i18n="cta.btn">
         Devenir partenaire
