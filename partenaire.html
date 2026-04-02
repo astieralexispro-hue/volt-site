@@ -24,6 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="lang.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -69,19 +70,45 @@
       <a href="produits.html" class="hover:text-on-surface transition-colors">Produits</a>
       <a href="index.html#comment-ca-marche" class="hover:text-on-surface transition-colors">Comment ça marche</a>
     </nav>
-    <a href="partenaire.html" class="bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all">
-      Devenir Partenaire
-    </a>
+    <div class="flex items-center gap-3">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-1 bg-surface-container-low rounded-full px-1 py-1">
+        <button data-lang="fr" class="lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all hover:bg-surface-container text-on-surface">
+          <span>🇫🇷</span> FR
+        </button>
+        <button data-lang="en" class="lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-all hover:bg-surface-container text-on-surface-variant">
+          <span>🇬🇧</span> EN
+        </button>
+      </div>
+      <!-- CTA desktop -->
+      <a href="partenaire.html" class="hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all">
+        Devenir Partenaire
+      </a>
+      <!-- Hamburger mobile -->
+      <button id="menu-toggle" class="md:hidden p-2 rounded-xl hover:bg-surface-container-low transition-colors" aria-label="Menu">
+        <span class="material-symbols-outlined text-on-surface" id="menu-icon">menu</span>
+      </button>
+    </div>
   </div>
 </header>
 
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden fixed top-[73px] left-0 right-0 z-40 bg-[#fbf9f8]/97 backdrop-blur-xl border-b border-black/5 px-6 py-6 space-y-4 md:hidden">
+  <a href="index.html" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Solutions</a>
+  <a href="produits.html" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Produits</a>
+  <a href="index.html#comment-ca-marche" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Comment ça marche</a>
+  <a href="partenaire.html" class="block w-full bg-primary-container text-on-primary-container px-5 py-3 rounded-full font-bold text-sm text-center mt-4">
+    Devenir Partenaire
+  </a>
+</div>
+
 <main class="pt-20 pb-20 px-6">
-  <div class="max-w-7xl mx-auto pt-16 grid lg:grid-cols-2 gap-20 items-start">
+  <div class="max-w-7xl mx-auto pt-10 md:pt-16 grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
 
     <!-- FORM -->
     <section>
       <div class="animate-fade-up text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Devenir partenaire</div>
-      <h1 class="animate-fade-up-delay-1 text-5xl md:text-6xl font-black text-on-surface tracking-tighter leading-tight mb-6">
+      <h1 class="animate-fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl font-black text-on-surface tracking-tighter leading-tight mb-6">
         Devenez partenaire <span class="text-primary-container bg-on-surface px-2">Volt.</span>
       </h1>
       <p class="animate-fade-up-delay-2 text-xl text-on-surface-variant max-w-lg leading-relaxed mb-12">
@@ -208,6 +235,18 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+  }
+</script>
 
 </body>
 </html>

@@ -24,6 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="lang.js" defer></script>
 <style>
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   body { font-family: 'Inter', sans-serif; background-color: #fbf9f8; }
@@ -142,32 +143,58 @@
     </a>
     <!-- Nav links -->
     <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-on-surface-variant">
-      <a href="index.html" class="nav-active hover:text-on-surface transition-colors">Solutions</a>
-      <a href="produits.html" class="hover:text-on-surface transition-colors">Produits</a>
-      <a href="#comment-ca-marche" class="hover:text-on-surface transition-colors">Comment ça marche</a>
+      <a href="index.html" class="nav-active hover:text-on-surface transition-colors" data-i18n="nav.solutions">Solutions</a>
+      <a href="produits.html" class="hover:text-on-surface transition-colors" data-i18n="nav.produits">Produits</a>
+      <a href="#comment-ca-marche" class="hover:text-on-surface transition-colors" data-i18n="nav.comment">Comment ça marche</a>
     </nav>
-    <a href="partenaire.html" class="bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all pulse-lime">
-      Devenir Partenaire
-    </a>
+    <div class="flex items-center gap-3">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-1 bg-surface-container-low rounded-full px-1 py-1">
+        <button data-lang="fr" class="lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all hover:bg-surface-container text-on-surface">
+          <span>🇫🇷</span> FR
+        </button>
+        <button data-lang="en" class="lang-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-all hover:bg-surface-container text-on-surface-variant">
+          <span>🇬🇧</span> EN
+        </button>
+      </div>
+      <!-- CTA desktop -->
+      <a href="partenaire.html" data-i18n="nav.cta" class="hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all pulse-lime">
+        Devenir Partenaire
+      </a>
+      <!-- Hamburger mobile -->
+      <button id="menu-toggle" class="md:hidden p-2 rounded-xl hover:bg-surface-container-low transition-colors" aria-label="Menu">
+        <span class="material-symbols-outlined text-on-surface" id="menu-icon">menu</span>
+      </button>
+    </div>
   </div>
 </header>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden fixed top-[73px] left-0 right-0 z-40 bg-[#fbf9f8]/97 backdrop-blur-xl border-b border-black/5 px-6 py-6 space-y-4 md:hidden">
+  <a href="index.html" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Solutions</a>
+  <a href="produits.html" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Produits</a>
+  <a href="#comment-ca-marche" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Comment ça marche</a>
+  <a href="partenaire.html" class="block w-full bg-primary-container text-on-primary-container px-5 py-3 rounded-full font-bold text-sm text-center mt-4">
+    Devenir Partenaire
+  </a>
+</div>
 
 <main class="pt-20">
 
   <!-- HERO -->
-  <section class="relative max-w-7xl mx-auto px-6 pt-20 pb-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center overflow-hidden">
+  <section class="relative max-w-7xl mx-auto px-6 pt-10 pb-16 md:pt-20 md:pb-32 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center overflow-hidden">
     <div class="z-10">
-      <h1 class="animate-fade-up-delay-1 text-6xl md:text-7xl font-black tracking-tighter text-on-surface leading-[0.95] mb-8">
+      <h1 class="animate-fade-up-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-on-surface leading-[0.95] mb-8" data-i18n="hero.h1">
         Vos clients ne tomberont plus à court de <span class="text-primary-container bg-on-surface px-2 whitespace-nowrap">batterie.</span>
       </h1>
-      <p class="animate-fade-up-delay-2 text-xl text-on-surface-variant leading-relaxed max-w-lg mb-10">
+      <p class="animate-fade-up-delay-2 text-xl text-on-surface-variant leading-relaxed max-w-lg mb-10" data-i18n="hero.p">
         Volt installe des stations de location de batteries portables dans votre établissement — gratuitement, sans engagement, personnalisées à vos couleurs.
       </p>
       <div class="animate-fade-up-delay-3 flex flex-wrap gap-4">
-        <a href="partenaire.html" class="bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-bold text-lg hover:scale-105 hover:shadow-lg hover:shadow-primary-container/40 transition-all active:scale-95">
+        <a href="partenaire.html" class="bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-bold text-lg hover:scale-105 hover:shadow-lg hover:shadow-primary-container/40 transition-all active:scale-95" data-i18n="hero.cta1">
           Installer une station
         </a>
-        <a href="#comment-ca-marche" class="border border-outline-variant text-on-surface px-8 py-4 rounded-full font-bold text-lg hover:scale-105 hover:bg-surface-container-low transition-all">
+        <a href="#comment-ca-marche" class="border border-outline-variant text-on-surface px-8 py-4 rounded-full font-bold text-lg hover:scale-105 hover:bg-surface-container-low transition-all" data-i18n="hero.cta2">
           Comment ça marche
         </a>
       </div>
@@ -181,8 +208,8 @@
             <span class="material-symbols-outlined text-on-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
           </div>
           <div>
-            <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Installation gratuite</div>
-            <div class="font-bold text-on-surface">Station personnalisée à vos couleurs</div>
+            <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" data-i18n="hero.badge.label">Installation gratuite</div>
+            <div class="font-bold text-on-surface" data-i18n="hero.badge.text">Station personnalisée à vos couleurs</div>
           </div>
         </div>
       </div>
@@ -210,88 +237,88 @@
   </section>
 
   <!-- COMMENT ÇA MARCHE -->
-  <section id="comment-ca-marche" class="py-32 max-w-7xl mx-auto px-6">
+  <section id="comment-ca-marche" class="py-16 md:py-32 max-w-7xl mx-auto px-6">
     <div class="mb-16 reveal">
       <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Simple & rapide</div>
-      <h2 class="text-5xl font-black tracking-tighter text-on-surface">Comment ça marche</h2>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface" data-i18n="how.h2">Comment ça marche</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="reveal card-lift bg-surface-container-low p-10 rounded-3xl">
+      <div class="reveal card-lift bg-surface-container-low p-7 md:p-10 rounded-3xl">
         <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
           <span class="font-black text-2xl text-on-primary-container">1</span>
         </div>
-        <h3 class="text-xl font-bold mb-3">Scan du QR code</h3>
-        <p class="text-on-surface-variant leading-relaxed">Le client scanne directement sur la station — aucune app à télécharger.</p>
+        <h3 class="text-xl font-bold mb-3" data-i18n="how.step1.title">Scan du QR code</h3>
+        <p class="text-on-surface-variant leading-relaxed" data-i18n="how.step1.text">Le client scanne directement sur la station — aucune app à télécharger.</p>
       </div>
-      <div class="reveal reveal-delay-1 card-lift bg-surface-container-low p-10 rounded-3xl">
+      <div class="reveal reveal-delay-1 card-lift bg-surface-container-low p-7 md:p-10 rounded-3xl">
         <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
           <span class="font-black text-2xl text-on-primary-container">2</span>
         </div>
-        <h3 class="text-xl font-bold mb-3">Location de la batterie</h3>
-        <p class="text-on-surface-variant leading-relaxed">Paiement Stripe par carte — <strong>€1 / 30 min</strong>. €30 bloqués en garantie, remboursés au retour.</p>
+        <h3 class="text-xl font-bold mb-3" data-i18n="how.step2.title">Location de la batterie</h3>
+        <p class="text-on-surface-variant leading-relaxed" data-i18n="how.step2.text">Paiement Stripe par carte — <strong>€1 / 30 min</strong>. €30 bloqués en garantie, remboursés au retour.</p>
       </div>
-      <div class="reveal reveal-delay-2 card-lift bg-surface-container-low p-10 rounded-3xl">
+      <div class="reveal reveal-delay-2 card-lift bg-surface-container-low p-7 md:p-10 rounded-3xl">
         <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
           <span class="font-black text-2xl text-on-primary-container">3</span>
         </div>
-        <h3 class="text-xl font-bold mb-3">Retour avant de partir</h3>
-        <p class="text-on-surface-variant leading-relaxed">La batterie est rendue dans la station. La garantie est libérée automatiquement.</p>
+        <h3 class="text-xl font-bold mb-3" data-i18n="how.step3.title">Retour avant de partir</h3>
+        <p class="text-on-surface-variant leading-relaxed" data-i18n="how.step3.text">La batterie est rendue dans la station. La garantie est libérée automatiquement.</p>
       </div>
     </div>
   </section>
 
   <!-- SECTEURS -->
-  <section class="py-32 bg-surface-container-low">
+  <section class="py-16 md:py-32 bg-surface-container-low">
     <div class="max-w-7xl mx-auto px-6">
       <div class="mb-16 reveal">
         <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Partout où vos clients attendent</div>
-        <h2 class="text-5xl font-black tracking-tighter text-on-surface">Secteurs d'activité</h2>
+        <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface" data-i18n="sectors.h2">Secteurs d'activité</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="reveal card-lift bg-surface-container-lowest p-10 rounded-3xl group">
+        <div class="reveal card-lift bg-surface-container-lowest p-7 md:p-10 rounded-3xl group">
           <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
             <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">restaurant</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3">Bars & Restaurants</h3>
-          <p class="text-on-surface-variant leading-relaxed">Le client qui attend sa batterie rechargée consomme davantage. Résout le "vous avez un câble ?" définitivement.</p>
+          <h3 class="text-2xl font-bold mb-3" data-i18n="sectors.s1.title">Bars & Restaurants</h3>
+          <p class="text-on-surface-variant leading-relaxed" data-i18n="sectors.s1.text">Le client qui attend sa batterie rechargée consomme davantage. Résout le "vous avez un câble ?" définitivement.</p>
         </div>
-        <div class="reveal reveal-delay-1 card-lift bg-surface-container-lowest p-10 rounded-3xl group">
+        <div class="reveal reveal-delay-1 card-lift bg-surface-container-lowest p-7 md:p-10 rounded-3xl group">
           <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
             <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">hotel</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3">Hôtels</h3>
-          <p class="text-on-surface-variant leading-relaxed">Service premium sans coût. Un client qui a rechargé son téléphone à l'hôtel met 5 étoiles.</p>
+          <h3 class="text-2xl font-bold mb-3" data-i18n="sectors.s2.title">Hôtels</h3>
+          <p class="text-on-surface-variant leading-relaxed" data-i18n="sectors.s2.text">Service premium sans coût. Un client qui a rechargé son téléphone à l'hôtel met 5 étoiles.</p>
         </div>
-        <div class="reveal reveal-delay-2 card-lift bg-surface-container-lowest p-10 rounded-3xl group">
+        <div class="reveal reveal-delay-2 card-lift bg-surface-container-lowest p-7 md:p-10 rounded-3xl group">
           <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
             <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">storefront</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3">Centres commerciaux</h3>
-          <p class="text-on-surface-variant leading-relaxed">Un client dont le téléphone est mort repart. Un client qui peut recharger reste et continue à consommer.</p>
+          <h3 class="text-2xl font-bold mb-3" data-i18n="sectors.s3.title">Centres commerciaux</h3>
+          <p class="text-on-surface-variant leading-relaxed" data-i18n="sectors.s3.text">Un client dont le téléphone est mort repart. Un client qui peut recharger reste et continue à consommer.</p>
         </div>
-        <div class="reveal card-lift bg-surface-container-lowest p-10 rounded-3xl group">
+        <div class="reveal card-lift bg-surface-container-lowest p-7 md:p-10 rounded-3xl group">
           <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
             <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">fitness_center</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3">Salles de sport</h3>
-          <p class="text-on-surface-variant leading-relaxed">Les membres viennent souvent avec une batterie faible (musique, tracking). Station en accueil ou vestiaires.</p>
+          <h3 class="text-2xl font-bold mb-3" data-i18n="sectors.s4.title">Salles de sport</h3>
+          <p class="text-on-surface-variant leading-relaxed" data-i18n="sectors.s4.text">Les membres viennent souvent avec une batterie faible (musique, tracking). Station en accueil ou vestiaires.</p>
         </div>
-        <div class="reveal reveal-delay-1 card-lift bg-surface-container-lowest p-10 rounded-3xl group">
+        <div class="reveal reveal-delay-1 card-lift bg-surface-container-lowest p-7 md:p-10 rounded-3xl group">
           <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
             <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">event</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3">Événementiel</h3>
-          <p class="text-on-surface-variant leading-relaxed">Concerts, festivals, parcs de loisirs. Besoin fort et ponctuel — visibilité maximale pour la marque.</p>
+          <h3 class="text-2xl font-bold mb-3" data-i18n="sectors.s5.title">Événementiel</h3>
+          <p class="text-on-surface-variant leading-relaxed" data-i18n="sectors.s5.text">Concerts, festivals, parcs de loisirs. Besoin fort et ponctuel — visibilité maximale pour la marque.</p>
         </div>
-        <div class="reveal reveal-delay-2 card-lift bg-primary-container p-10 rounded-3xl flex flex-col justify-between">
+        <div class="reveal reveal-delay-2 card-lift bg-primary-container p-7 md:p-10 rounded-3xl flex flex-col justify-between">
           <div>
             <div class="w-14 h-14 bg-on-surface rounded-2xl flex items-center justify-center mb-6">
               <span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
             </div>
-            <h3 class="text-2xl font-bold mb-3 text-on-surface">Votre établissement</h3>
-            <p class="text-on-primary-container leading-relaxed">Installation gratuite, zéro engagement, station personnalisée à vos couleurs.</p>
+            <h3 class="text-2xl font-bold mb-3 text-on-surface" data-i18n="sectors.s6.title">Votre établissement</h3>
+            <p class="text-on-primary-container leading-relaxed" data-i18n="sectors.s6.text">Installation gratuite, zéro engagement, station personnalisée à vos couleurs.</p>
           </div>
-          <a href="partenaire.html" class="mt-8 inline-flex items-center gap-2 font-bold text-on-surface hover:gap-4 transition-all">
+          <a href="partenaire.html" class="mt-8 inline-flex items-center gap-2 font-bold text-on-surface hover:gap-4 transition-all" data-i18n="sectors.s6.cta">
             Devenir partenaire
             <span class="material-symbols-outlined text-xl">arrow_forward</span>
           </a>
@@ -301,14 +328,14 @@
   </section>
 
   <!-- AVANTAGES -->
-  <section class="py-32 max-w-7xl mx-auto px-6">
+  <section class="py-16 md:py-32 max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
       <div class="reveal order-2 lg:order-1">
         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF9yO10_vXHdmntX4DoB7rs4XmEIizKq7BLSdTbZxOeMRJ38qaTTt3iU129jKdJN-DDYx3fE7__BS-Q-4qWT1bOza37aa-KEstYEv6xNL1mPTzKHbNfIElZgBE8fZUSZgxjLyLaPYwLSnjmQzf_rK4SL9bKwyc0oPtwiYsTPGHz07iplO536i7TnHrrindFAA6llqpkw9pzU8R0xaeMhbsJipq66DyTEIBdVPkCNKuJLuvI9D3smb8ix8y98LV46RcLp8z8aDZ_xHV" alt="Station de recharge Volt en situation dans un établissement professionnel" width="600" height="600" loading="lazy" class="rounded-[2.5rem] shadow-xl w-full object-cover"/>
       </div>
       <div class="reveal reveal-delay-1 order-1 lg:order-2">
         <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Pour votre établissement</div>
-        <h2 class="text-5xl font-black tracking-tighter mb-12">Zéro risque.<br/>100% service.</h2>
+        <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-12" data-i18n="avantages.h2">Zéro risque.<br/>100% service.</h2>
         <div class="space-y-8">
           <div class="flex gap-5">
             <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
@@ -352,14 +379,14 @@
   </section>
 
   <!-- CTA -->
-  <section class="px-6 pb-32">
+  <section class="px-6 py-16 md:py-32">
     <div class="max-w-7xl mx-auto bg-primary-container rounded-[3rem] p-16 md:p-24 text-center relative overflow-hidden reveal">
       <div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
         <svg width="320" height="320" viewBox="0 0 32 32" fill="none"><path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#000"/></svg>
       </div>
-      <h2 class="text-5xl md:text-6xl font-black tracking-tighter text-on-surface mb-6 relative z-10">Prêt à électriser<br/>votre établissement ?</h2>
-      <p class="text-on-primary-container text-xl mb-10 max-w-xl mx-auto relative z-10">Installation gratuite, station personnalisée à vos couleurs, zéro engagement.</p>
-      <a href="partenaire.html" class="relative z-10 inline-flex items-center gap-3 bg-on-surface text-primary-container px-12 py-5 rounded-full font-black text-xl hover:scale-105 transition-transform active:scale-95">
+      <h2 class="text-5xl md:text-6xl font-black tracking-tighter text-on-surface mb-6 relative z-10" data-i18n="cta.h2">Prêt à électriser<br/>votre établissement ?</h2>
+      <p class="text-on-primary-container text-xl mb-10 max-w-xl mx-auto relative z-10" data-i18n="cta.p">Installation gratuite, station personnalisée à vos couleurs, zéro engagement.</p>
+      <a href="partenaire.html" class="relative z-10 inline-flex items-center gap-3 bg-on-surface text-primary-container px-12 py-5 rounded-full font-black text-xl hover:scale-105 transition-transform active:scale-95" data-i18n="cta.btn">
         Devenir partenaire
         <span class="material-symbols-outlined">arrow_forward</span>
       </a>
@@ -375,7 +402,7 @@
       <a href="index.html" class="flex items-center gap-2.5 mb-4">
         <img src="images/logo-volt.png" alt="Volt" style="height:36px;width:auto;"/>
       </a>
-      <p class="text-sm text-on-surface-variant max-w-xs">La batterie de vos clients, c'est notre affaire.</p>
+      <p class="text-sm text-on-surface-variant max-w-xs" data-i18n="footer.tagline">La batterie de vos clients, c'est notre affaire.</p>
       <p class="text-xs text-on-surface-variant/50 mt-2">France</p>
       <p class="text-xs text-on-surface-variant/50 mt-2">© 2026 Volt — Alexis Astier</p>
     </div>
@@ -390,6 +417,16 @@
 </footer>
 
 <script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+  }
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
