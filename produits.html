@@ -35,6 +35,8 @@
   .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.15s; }
+  @media (min-width: 768px) { #menu-toggle { display: none !important; } #mobile-menu { display: none !important; } .nav-desktop-cta { display: inline-flex !important; } }
+  @media (max-width: 767px) { .nav-desktop-cta { display: none !important; } #menu-toggle { display: flex !important; } }
 </style>
 <script type="application/ld+json">
 {
@@ -83,7 +85,7 @@
         <span class="material-symbols-outlined text-on-surface-variant" style="font-size:13px;line-height:1;margin-left:2px;">expand_more</span>
       </button>
       <!-- CTA desktop -->
-      <a href="partenaire.html" class="hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all">
+      <a href="partenaire.html" class="nav-desktop-cta hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all">
         Devenir Partenaire
       </a>
       <!-- Hamburger mobile -->
@@ -95,7 +97,7 @@
 </header>
 
 <!-- Mobile menu -->
-<div id="mobile-menu" class="hidden fixed top-[73px] left-0 right-0 z-40 bg-[#fbf9f8]/97 backdrop-blur-xl border-b border-black/5 px-6 py-6 space-y-4 md:hidden">
+<div id="mobile-menu" class="hidden fixed top-[73px] left-0 right-0 border-b border-black/5 px-6 py-6 space-y-4 md:hidden" style="background:#fbf9f8;box-shadow:0 8px 32px rgba(0,0,0,0.12);z-index:200;">
   <a href="index.html" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Solutions</a>
   <a href="produits.html" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Produits</a>
   <a href="index.html#comment-ca-marche" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Comment ça marche</a>
