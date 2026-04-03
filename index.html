@@ -64,6 +64,30 @@
 
   /* Active nav */
   .nav-active { color: #526600; border-bottom: 2px solid #D0FF00; padding-bottom: 2px; }
+
+  /* Mobile steps slider */
+  @media (max-width: 767px) {
+    #steps-track {
+      display: flex !important;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      gap: 16px;
+      margin: 0 -24px;
+      padding: 0 24px 4px;
+    }
+    #steps-track::-webkit-scrollbar { display: none; }
+    #steps-track > div {
+      flex: 0 0 calc(100vw - 64px);
+      scroll-snap-align: start;
+      min-width: 0;
+    }
+  }
+  /* Dots */
+  .step-dot { width: 8px; height: 8px; border-radius: 4px; background: rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .step-dot.active { width: 20px; background: #526600; }
 </style>
 <script type="application/ld+json">
 {
@@ -166,7 +190,7 @@
 </header>
 
 <!-- Mobile menu -->
-<div id="mobile-menu" class="hidden fixed top-[73px] left-0 right-0 z-40 bg-[#fbf9f8]/97 backdrop-blur-xl border-b border-black/5 px-6 py-6 space-y-4 md:hidden">
+<div id="mobile-menu" class="hidden fixed top-[73px] left-0 right-0 z-40 border-b border-black/5 px-6 py-6 space-y-4 md:hidden" style="background:#fbf9f8;box-shadow:0 8px 32px rgba(0,0,0,0.08);">
   <a href="index.html" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Solutions</a>
   <a href="produits.html" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Produits</a>
   <a href="#comment-ca-marche" class="block font-medium text-on-surface-variant hover:text-on-surface py-2 border-b border-black/5">Comment ça marche</a>
@@ -175,10 +199,10 @@
   </a>
 </div>
 
-<main class="pt-20">
+<main>
 
   <!-- HERO -->
-  <section class="relative max-w-7xl mx-auto px-6 pt-10 pb-16 md:pt-20 md:pb-32 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center overflow-hidden">
+  <section class="relative max-w-7xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-32 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center overflow-hidden">
     <div class="z-10">
       <h1 class="animate-fade-up-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-on-surface leading-[0.95] mb-8" data-i18n="hero.h1">
         Vos clients ne tomberont plus à court de <span class="text-primary-container bg-on-surface px-2 whitespace-nowrap">batterie.</span>
@@ -238,7 +262,7 @@
       <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Simple & rapide</div>
       <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface" data-i18n="how.h2">Comment ça marche</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div id="steps-track" class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="reveal card-lift bg-surface-container-low p-7 md:p-10 rounded-3xl">
         <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
           <span class="font-black text-2xl text-on-primary-container">1</span>
@@ -261,6 +285,11 @@
         <p class="text-on-surface-variant leading-relaxed" data-i18n="how.step3.text">La batterie est rendue dans la station. La garantie est libérée automatiquement.</p>
       </div>
     </div>
+    <div id="steps-dots" class="md:hidden flex justify-center gap-2 mt-6">
+      <div class="step-dot active"></div>
+      <div class="step-dot"></div>
+      <div class="step-dot"></div>
+    </div>
   </section>
 
   <!-- SECTEURS -->
@@ -271,42 +300,42 @@
         <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface" data-i18n="sectors.h2">Secteurs d'activité</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="reveal card-lift bg-surface-container-lowest p-7 md:p-10 rounded-3xl group">
+        <div class="reveal card-lift bg-surface-container-lowest p-5 md:p-10 rounded-3xl group">
           <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
             <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">restaurant</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3" data-i18n="sectors.s1.title">Bars & Restaurants</h3>
+          <h3 class="text-lg md:text-2xl font-bold mb-3" data-i18n="sectors.s1.title">Bars & Restaurants</h3>
           <p class="text-on-surface-variant leading-relaxed" data-i18n="sectors.s1.text">Le client qui attend sa batterie rechargée consomme davantage. Résout le "vous avez un câble ?" définitivement.</p>
         </div>
-        <div class="reveal reveal-delay-1 card-lift bg-surface-container-lowest p-7 md:p-10 rounded-3xl group">
+        <div class="reveal reveal-delay-1 card-lift bg-surface-container-lowest p-5 md:p-10 rounded-3xl group">
           <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
             <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">hotel</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3" data-i18n="sectors.s2.title">Hôtels</h3>
+          <h3 class="text-lg md:text-2xl font-bold mb-3" data-i18n="sectors.s2.title">Hôtels</h3>
           <p class="text-on-surface-variant leading-relaxed" data-i18n="sectors.s2.text">Service premium sans coût. Un client qui a rechargé son téléphone à l'hôtel met 5 étoiles.</p>
         </div>
-        <div class="reveal reveal-delay-2 card-lift bg-surface-container-lowest p-7 md:p-10 rounded-3xl group">
+        <div class="reveal reveal-delay-2 card-lift bg-surface-container-lowest p-5 md:p-10 rounded-3xl group">
           <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
             <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">storefront</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3" data-i18n="sectors.s3.title">Centres commerciaux</h3>
+          <h3 class="text-lg md:text-2xl font-bold mb-3" data-i18n="sectors.s3.title">Centres commerciaux</h3>
           <p class="text-on-surface-variant leading-relaxed" data-i18n="sectors.s3.text">Un client dont le téléphone est mort repart. Un client qui peut recharger reste et continue à consommer.</p>
         </div>
-        <div class="reveal card-lift bg-surface-container-lowest p-7 md:p-10 rounded-3xl group">
+        <div class="reveal card-lift bg-surface-container-lowest p-5 md:p-10 rounded-3xl group">
           <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
             <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">fitness_center</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3" data-i18n="sectors.s4.title">Salles de sport</h3>
+          <h3 class="text-lg md:text-2xl font-bold mb-3" data-i18n="sectors.s4.title">Salles de sport</h3>
           <p class="text-on-surface-variant leading-relaxed" data-i18n="sectors.s4.text">Les membres viennent souvent avec une batterie faible (musique, tracking). Station en accueil ou vestiaires.</p>
         </div>
-        <div class="reveal reveal-delay-1 card-lift bg-surface-container-lowest p-7 md:p-10 rounded-3xl group">
+        <div class="reveal reveal-delay-1 card-lift bg-surface-container-lowest p-5 md:p-10 rounded-3xl group">
           <div class="w-14 h-14 bg-primary-container/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
             <span class="material-symbols-outlined text-primary text-3xl group-hover:text-on-primary-container transition-colors">event</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3" data-i18n="sectors.s5.title">Événementiel</h3>
+          <h3 class="text-lg md:text-2xl font-bold mb-3" data-i18n="sectors.s5.title">Événementiel</h3>
           <p class="text-on-surface-variant leading-relaxed" data-i18n="sectors.s5.text">Concerts, festivals, parcs de loisirs. Besoin fort et ponctuel — visibilité maximale pour la marque.</p>
         </div>
-        <div class="reveal reveal-delay-2 card-lift bg-primary-container p-7 md:p-10 rounded-3xl flex flex-col justify-between">
+        <div class="reveal reveal-delay-2 card-lift bg-primary-container p-5 md:p-10 rounded-3xl flex flex-col justify-between">
           <div>
             <div class="w-14 h-14 bg-on-surface rounded-2xl flex items-center justify-center mb-6">
               <span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
@@ -434,6 +463,47 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
+
+  // Steps slider (mobile only)
+  (function() {
+    if (window.innerWidth >= 768) return;
+    const track = document.getElementById('steps-track');
+    const dots = document.querySelectorAll('#steps-dots .step-dot');
+    if (!track || !dots.length) return;
+    const cards = Array.from(track.children);
+    let current = 0;
+    let timer;
+
+    function goTo(idx) {
+      current = (idx + cards.length) % cards.length;
+      const cardWidth = cards[0].offsetWidth + 16;
+      track.scrollTo({ left: cardWidth * current, behavior: 'smooth' });
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 2500);
+    }
+
+    track.addEventListener('scroll', () => {
+      const cardWidth = cards[0].offsetWidth + 16;
+      const idx = Math.round(track.scrollLeft / cardWidth);
+      if (idx !== current) {
+        current = idx;
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        startTimer();
+      }
+    });
+
+    // Touch: pause then restart timer
+    track.addEventListener('touchstart', () => clearInterval(timer), { passive: true });
+    track.addEventListener('touchend', () => { startTimer(); }, { passive: true });
+
+    startTimer();
+  })();
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
