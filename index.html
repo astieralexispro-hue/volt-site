@@ -65,6 +65,17 @@
   /* Active nav */
   .nav-active { color: #526600; border-bottom: 2px solid #D0FF00; padding-bottom: 2px; }
 
+  /* Force hamburger/CTA visibility rules (override compiled Tailwind if needed) */
+  @media (min-width: 768px) {
+    #menu-toggle { display: none !important; }
+    #mobile-menu { display: none !important; }
+    .nav-desktop-cta { display: inline-flex !important; }
+  }
+  @media (max-width: 767px) {
+    .nav-desktop-cta { display: none !important; }
+    #menu-toggle { display: flex !important; }
+  }
+
   /* Mobile steps slider */
   @media (max-width: 767px) {
     #steps-track {
@@ -80,7 +91,7 @@
     }
     #steps-track::-webkit-scrollbar { display: none; }
     #steps-track > div {
-      flex: 0 0 calc(100vw - 64px);
+      flex: 0 0 calc(100vw - 72px);
       scroll-snap-align: start;
       min-width: 0;
     }
@@ -178,7 +189,7 @@
         <span class="material-symbols-outlined text-on-surface-variant" style="font-size:13px;line-height:1;margin-left:2px;">expand_more</span>
       </button>
       <!-- CTA desktop -->
-      <a href="partenaire.html" data-i18n="nav.cta" class="hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all pulse-lime">
+      <a href="partenaire.html" data-i18n="nav.cta" class="nav-desktop-cta hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all pulse-lime">
         Devenir Partenaire
       </a>
       <!-- Hamburger mobile -->
@@ -262,22 +273,22 @@
       <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Simple & rapide</div>
       <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface" data-i18n="how.h2">Comment ça marche</h2>
     </div>
-    <div id="steps-track" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="reveal card-lift bg-surface-container-low p-7 md:p-10 rounded-3xl">
+    <div id="steps-track" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="reveal card-lift bg-surface-container-low p-8 md:p-12 rounded-3xl">
         <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
           <span class="font-black text-2xl text-on-primary-container">1</span>
         </div>
         <h3 class="text-xl font-bold mb-3" data-i18n="how.step1.title">Scan du QR code</h3>
         <p class="text-on-surface-variant leading-relaxed" data-i18n="how.step1.text">Le client scanne directement sur la station — aucune app à télécharger.</p>
       </div>
-      <div class="reveal reveal-delay-1 card-lift bg-surface-container-low p-7 md:p-10 rounded-3xl">
+      <div class="reveal reveal-delay-1 card-lift bg-surface-container-low p-8 md:p-12 rounded-3xl">
         <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
           <span class="font-black text-2xl text-on-primary-container">2</span>
         </div>
         <h3 class="text-xl font-bold mb-3" data-i18n="how.step2.title">Location de la batterie</h3>
         <p class="text-on-surface-variant leading-relaxed" data-i18n="how.step2.text">Paiement Stripe par carte — <strong>€1 / 30 min</strong>. €30 bloqués en garantie, remboursés au retour.</p>
       </div>
-      <div class="reveal reveal-delay-2 card-lift bg-surface-container-low p-7 md:p-10 rounded-3xl">
+      <div class="reveal reveal-delay-2 card-lift bg-surface-container-low p-8 md:p-12 rounded-3xl">
         <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
           <span class="font-black text-2xl text-on-primary-container">3</span>
         </div>
@@ -406,8 +417,10 @@
   <!-- CTA -->
   <section class="px-6 pb-16 md:pb-32">
     <div class="max-w-7xl mx-auto bg-primary-container rounded-[3rem] p-8 md:p-16 lg:p-24 text-center relative overflow-hidden reveal">
-      <div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
-        <svg width="320" height="320" viewBox="0 0 32 32" fill="none"><path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#000"/></svg>
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <svg style="width:min(70%,480px);height:auto;opacity:0.07;" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#000"/>
+        </svg>
       </div>
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter text-on-surface mb-6 relative z-10" data-i18n="cta.h2">Prêt à électriser<br/>votre établissement ?</h2>
       <p class="text-on-primary-container text-xl mb-10 max-w-xl mx-auto relative z-10" data-i18n="cta.p">Installation gratuite, station personnalisée à vos couleurs, zéro engagement.</p>
