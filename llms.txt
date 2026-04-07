@@ -1,11 +1,11 @@
-# Volt — Réseau de stations de location de powerbanks
+# Bod — Réseau de stations de location de powerbanks
 
-Volt est une entreprise française (Sud de la France, Nîmes / Gard) qui installe des stations
+Bod est une entreprise française (Sud de la France, Nîmes / Gard) qui installe des stations
 de location de batteries portables dans des établissements professionnels.
 
 ## Services
 
-Volt installe gratuitement des stations de location de batteries portables (powerbanks)
+Bod installe gratuitement des stations de location de batteries portables (powerbanks)
 dans des bars, restaurants, hôtels, salles de sport, centres commerciaux et lieux événementiels.
 
 ## Modèle économique

@@ -5,7 +5,7 @@ const translations = {
     'nav.comment': 'Comment ça marche',
     'nav.cta': 'Devenir Partenaire',
     'hero.h1': 'Vos clients ne tomberont plus à court de <span class="text-primary-container bg-on-surface px-2 whitespace-nowrap">batterie.</span>',
-    'hero.p': 'Volt installe des stations de location de batteries portables dans votre établissement — gratuitement, sans engagement, personnalisées à vos couleurs.',
+    'hero.p': 'Bod installe des stations de location de batteries portables dans votre établissement — gratuitement, sans engagement, personnalisées à vos couleurs.',
     'hero.cta1': 'Installer une station',
     'hero.cta2': 'Comment ça marche',
     'hero.badge.label': 'Installation gratuite',
@@ -43,7 +43,7 @@ const translations = {
     'nav.comment': 'How it works',
     'nav.cta': 'Become a Partner',
     'hero.h1': 'Your customers will never run out of <span class="text-primary-container bg-on-surface px-2 whitespace-nowrap">battery.</span>',
-    'hero.p': 'Volt installs portable battery rental stations in your venue — for free, with no commitment, customised to your brand.',
+    'hero.p': 'Bod installs portable battery rental stations in your venue — for free, with no commitment, customised to your brand.',
     'hero.cta1': 'Install a station',
     'hero.cta2': 'How it works',
     'hero.badge.label': 'Free installation',
@@ -78,7 +78,7 @@ const translations = {
 };
 
 function getLang() {
-  return localStorage.getItem('volt-lang') || 'fr';
+  return localStorage.getItem('bod-lang') || 'fr';
 }
 
 function applyLang(lang) {
@@ -89,26 +89,26 @@ function applyLang(lang) {
     if (t[key] !== undefined) el.innerHTML = t[key];
   });
   document.documentElement.lang = lang;
-  localStorage.setItem('volt-lang', lang);
+  localStorage.setItem('bod-lang', lang);
   // Update nav button
   const flagEl = document.getElementById('lang-flag');
   const labelEl = document.getElementById('lang-label');
   if (flagEl) flagEl.textContent = lang === 'fr' ? '🇫🇷' : '🇬🇧';
   if (labelEl) labelEl.textContent = lang === 'fr' ? 'FR' : 'EN';
   // Update modal active state
-  document.querySelectorAll('.volt-lang-opt').forEach(btn => {
+  document.querySelectorAll('.bod-lang-opt').forEach(btn => {
     const active = btn.getAttribute('data-lang') === lang;
     btn.style.background = active ? '#e6f5c9' : '#f0ede9';
     btn.style.fontWeight = active ? '700' : '500';
-    const check = btn.querySelector('.volt-check');
+    const check = btn.querySelector('.bod-check');
     if (check) check.style.display = active ? 'block' : 'none';
   });
   closeModal();
 }
 
 function closeModal() {
-  const overlay = document.getElementById('volt-lang-overlay');
-  const sheet = document.getElementById('volt-lang-sheet');
+  const overlay = document.getElementById('bod-lang-overlay');
+  const sheet = document.getElementById('bod-lang-sheet');
   if (!overlay || overlay.style.display === 'none') return;
   sheet.style.transform = 'translateY(100%)';
   sheet.style.opacity = '0';
@@ -116,8 +116,8 @@ function closeModal() {
 }
 
 function openModal() {
-  const overlay = document.getElementById('volt-lang-overlay');
-  const sheet = document.getElementById('volt-lang-sheet');
+  const overlay = document.getElementById('bod-lang-overlay');
+  const sheet = document.getElementById('bod-lang-sheet');
   if (!overlay) return;
   overlay.style.display = 'flex';
   requestAnimationFrame(() => {
@@ -128,31 +128,31 @@ function openModal() {
 
 function injectModal() {
   const overlay = document.createElement('div');
-  overlay.id = 'volt-lang-overlay';
+  overlay.id = 'bod-lang-overlay';
   overlay.style.cssText = 'display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.4);align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0);';
   overlay.innerHTML = `
-    <div id="volt-lang-sheet" style="background:#fbf9f8;border-radius:24px 24px 0 0;padding:0 24px 40px;width:100%;max-width:480px;transform:translateY(100%);opacity:0;transition:transform 0.28s cubic-bezier(0.32,0.72,0,1),opacity 0.28s ease;">
+    <div id="bod-lang-sheet" style="background:#fbf9f8;border-radius:24px 24px 0 0;padding:0 24px 40px;width:100%;max-width:480px;transform:translateY(100%);opacity:0;transition:transform 0.28s cubic-bezier(0.32,0.72,0,1),opacity 0.28s ease;">
       <div style="padding:14px 0 8px;text-align:center;">
         <div style="width:36px;height:4px;border-radius:4px;background:#d4d0cc;margin:0 auto;"></div>
       </div>
       <p style="font-size:10px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#9a9690;margin:16px 0 12px;font-family:Inter,sans-serif;">Langue · Language</p>
       <div style="display:flex;flex-direction:column;gap:8px;">
-        <button class="volt-lang-opt" data-lang="fr" style="display:flex;align-items:center;gap:14px;padding:15px 18px;border-radius:16px;border:none;cursor:pointer;font-size:15px;font-family:Inter,sans-serif;width:100%;text-align:left;transition:background 0.15s;background:#f0ede9;font-weight:500;">
+        <button class="bod-lang-opt" data-lang="fr" style="display:flex;align-items:center;gap:14px;padding:15px 18px;border-radius:16px;border:none;cursor:pointer;font-size:15px;font-family:Inter,sans-serif;width:100%;text-align:left;transition:background 0.15s;background:#f0ede9;font-weight:500;">
           <span style="font-size:22px;flex-shrink:0;">🇫🇷</span>
           <span style="color:#1a1a1a;">Français</span>
-          <span class="volt-check" style="display:none;margin-left:auto;color:#5a7a00;font-size:18px;font-weight:900;">✓</span>
+          <span class="bod-check" style="display:none;margin-left:auto;color:#5a7a00;font-size:18px;font-weight:900;">✓</span>
         </button>
-        <button class="volt-lang-opt" data-lang="en" style="display:flex;align-items:center;gap:14px;padding:15px 18px;border-radius:16px;border:none;cursor:pointer;font-size:15px;font-family:Inter,sans-serif;width:100%;text-align:left;transition:background 0.15s;background:#f0ede9;font-weight:500;">
+        <button class="bod-lang-opt" data-lang="en" style="display:flex;align-items:center;gap:14px;padding:15px 18px;border-radius:16px;border:none;cursor:pointer;font-size:15px;font-family:Inter,sans-serif;width:100%;text-align:left;transition:background 0.15s;background:#f0ede9;font-weight:500;">
           <span style="font-size:22px;flex-shrink:0;">🇬🇧</span>
           <span style="color:#1a1a1a;">English</span>
-          <span class="volt-check" style="display:none;margin-left:auto;color:#5a7a00;font-size:18px;font-weight:900;">✓</span>
+          <span class="bod-check" style="display:none;margin-left:auto;color:#5a7a00;font-size:18px;font-weight:900;">✓</span>
         </button>
       </div>
     </div>
   `;
   document.body.appendChild(overlay);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-  overlay.querySelectorAll('.volt-lang-opt').forEach(btn => {
+  overlay.querySelectorAll('.bod-lang-opt').forEach(btn => {
     btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
   });
 }
