@@ -54,17 +54,17 @@
       <img src="images/logo-bod.png" alt="Bod" style="height:44px;width:auto;"/>
     </a>
     <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-on-surface-variant">
-      <a href="index.html#comment-ca-marche" class="hover:text-on-surface transition-colors">Comment ça marche</a>
-      <a href="tarifs.html" class="hover:text-on-surface transition-colors">Tarifs</a>
-      <a href="lieux.html" class="text-primary border-b-2 border-primary-container pb-0.5">Lieux</a>
-      <a href="contact.html" class="hover:text-on-surface transition-colors">Contact</a>
+      <a href="index.html#comment-ca-marche" class="hover:text-on-surface transition-colors" data-i18n="nav.how">Comment ça marche</a>
+      <a href="tarifs.html" class="hover:text-on-surface transition-colors" data-i18n="nav.tarifs">Tarifs</a>
+      <a href="lieux.html" class="text-primary border-b-2 border-primary-container pb-0.5" data-i18n="nav.lieux">Lieux</a>
+      <a href="contact.html" class="hover:text-on-surface transition-colors" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="flex items-center gap-3">
       <button id="lang-btn" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-low text-xs font-bold text-on-surface hover:bg-surface-container transition-colors">
         <span id="lang-flag">🇫🇷</span><span id="lang-label" class="ml-1">FR</span>
         <span class="material-symbols-outlined text-on-surface-variant" style="font-size:13px;line-height:1;margin-left:2px;">expand_more</span>
       </button>
-      <a href="partenaire.html" class="nav-desktop-cta hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all">
+      <a href="partenaire.html" class="nav-desktop-cta hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all" data-i18n="nav.cta">
         Devenir Partenaire
       </a>
       <button id="menu-toggle" class="md:hidden p-2 rounded-xl hover:bg-surface-container-low transition-colors" aria-label="Menu">
@@ -77,11 +77,11 @@
 <!-- Mobile menu -->
 <div id="mobile-menu" class="hidden fixed top-[73px] left-0 right-0 md:hidden" style="background:#fbf9f8;box-shadow:0 12px 40px rgba(0,0,0,0.12);z-index:200;border-radius:0 0 20px 20px;border-bottom:1px solid rgba(0,0,0,0.06);">
   <div style="padding:8px 16px 20px;">
-    <a href="index.html#comment-ca-marche" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;">Comment ça marche</a>
-    <a href="tarifs.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;">Tarifs</a>
-    <a href="lieux.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#526600;border-radius:12px;text-decoration:none;margin-bottom:2px;">Lieux</a>
-    <a href="contact.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:12px;">Contact</a>
-    <a href="partenaire.html" style="display:flex;align-items:center;justify-content:center;padding:15px;background:#cef700;color:#1a2e00;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;">Devenir Partenaire</a>
+    <a href="index.html#comment-ca-marche" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.how">Comment ça marche</a>
+    <a href="tarifs.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.tarifs">Tarifs</a>
+    <a href="lieux.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#526600;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.lieux">Lieux</a>
+    <a href="contact.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:12px;" data-i18n="nav.contact">Contact</a>
+    <a href="partenaire.html" style="display:flex;align-items:center;justify-content:center;padding:15px;background:#cef700;color:#1a2e00;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;" data-i18n="nav.cta">Devenir Partenaire</a>
   </div>
 </div>
 
@@ -89,11 +89,11 @@
 
   <!-- HERO -->
   <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
-    <div class="animate-fade-up text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Lieux</div>
-    <h1 class="animate-fade-up-delay-1 text-4xl md:text-6xl font-black tracking-tighter text-on-surface leading-[0.95] mb-6 max-w-3xl">
+    <div class="animate-fade-up text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4" data-i18n="lieux.label">Lieux</div>
+    <h1 class="animate-fade-up-delay-1 text-4xl md:text-6xl font-black tracking-tighter text-on-surface leading-[0.95] mb-6 max-w-3xl" data-i18n="lieux.h1">
       BOD arrive<br/>bientôt<br/><span class="text-primary-container bg-on-surface px-2 whitespace-nowrap">près de vous.</span>
     </h1>
-    <p class="animate-fade-up-delay-2 text-xl text-on-surface-variant leading-relaxed max-w-xl">
+    <p class="animate-fade-up-delay-2 text-xl text-on-surface-variant leading-relaxed max-w-xl" data-i18n="lieux.intro">
       Notre réseau est en cours de déploiement. Les premières stations seront en ligne dans les prochaines semaines.
     </p>
   </section>
@@ -167,31 +167,31 @@
   <section class="bg-surface-container-low py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-6">
       <div class="reveal mb-16 text-center">
-        <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Déploiement</div>
-        <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface">Comment ça se passe ?</h2>
-        <p class="text-on-surface-variant text-lg mt-4 max-w-xl mx-auto">Le réseau grandit au rythme des partenaires. Chaque établissement signé = une station de plus sur la carte.</p>
+        <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3" data-i18n="lieux.deploy.label">Déploiement</div>
+        <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface" data-i18n="lieux.deploy.h2">Comment ça se passe ?</h2>
+        <p class="text-on-surface-variant text-lg mt-4 max-w-xl mx-auto" data-i18n="lieux.deploy.sub">Le réseau grandit au rythme des partenaires. Chaque établissement signé = une station de plus sur la carte.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="reveal card-lift bg-surface-container-lowest rounded-3xl p-8">
           <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
             <span class="font-black text-2xl text-on-primary-container">1</span>
           </div>
-          <h3 class="text-xl font-bold mb-3">Un établissement signe</h3>
-          <p class="text-on-surface-variant leading-relaxed">Un bar, un restaurant, un hôtel devient partenaire. Aucun coût, zéro engagement.</p>
+          <h3 class="text-xl font-bold mb-3" data-i18n="lieux.deploy.s1.title">Un établissement signe</h3>
+          <p class="text-on-surface-variant leading-relaxed" data-i18n="lieux.deploy.s1.text">Un bar, un restaurant, un hôtel devient partenaire. Aucun coût, zéro engagement.</p>
         </div>
         <div class="reveal reveal-delay-1 card-lift bg-surface-container-lowest rounded-3xl p-8">
           <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
             <span class="font-black text-2xl text-on-primary-container">2</span>
           </div>
-          <h3 class="text-xl font-bold mb-3">La station est installée</h3>
-          <p class="text-on-surface-variant leading-relaxed">BOD installe, configure et référence la station. En moins de 48h l'établissement est opérationnel.</p>
+          <h3 class="text-xl font-bold mb-3" data-i18n="lieux.deploy.s2.title">La station est installée</h3>
+          <p class="text-on-surface-variant leading-relaxed" data-i18n="lieux.deploy.s2.text">BOD installe, configure et référence la station. En moins de 48h l'établissement est opérationnel.</p>
         </div>
         <div class="reveal reveal-delay-2 card-lift bg-surface-container-lowest rounded-3xl p-8">
           <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
             <span class="font-black text-2xl text-on-primary-container">3</span>
           </div>
-          <h3 class="text-xl font-bold mb-3">Elle apparaît sur la carte</h3>
-          <p class="text-on-surface-variant leading-relaxed">Les utilisateurs trouvent la station, l'établissement est visible. Le réseau grandit.</p>
+          <h3 class="text-xl font-bold mb-3" data-i18n="lieux.deploy.s3.title">Elle apparaît sur la carte</h3>
+          <p class="text-on-surface-variant leading-relaxed" data-i18n="lieux.deploy.s3.text">Les utilisateurs trouvent la station, l'établissement est visible. Le réseau grandit.</p>
         </div>
       </div>
     </div>
@@ -200,8 +200,8 @@
   <!-- TYPES DE LIEUX -->
   <section class="max-w-7xl mx-auto px-6 py-16 md:py-32">
     <div class="reveal mb-12">
-      <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Où trouver BOD</div>
-      <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface">Partout où vous sortez</h2>
+      <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3" data-i18n="lieux.sectors.label">Où trouver BOD</div>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface" data-i18n="lieux.sectors.h2">Partout où vous sortez</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
       <div class="card-lift bg-surface-container-low rounded-2xl p-6 text-center group hover:bg-primary-container transition-colors">
@@ -246,8 +246,8 @@
       <!-- CTA Utilisateur -->
       <div class="bg-on-surface rounded-[2.5rem] p-10 md:p-14 flex flex-col justify-between gap-10">
         <div>
-          <div class="text-white/40 text-xs font-bold uppercase tracking-widest mb-5">Utilisateurs</div>
-          <h3 class="text-4xl md:text-5xl font-black text-primary-container tracking-tighter leading-[0.95]">
+          <div class="text-white/40 text-xs font-bold uppercase tracking-widest mb-5" data-i18n="lieux.cta1.label">Utilisateurs</div>
+          <h3 class="text-4xl md:text-5xl font-black text-primary-container tracking-tighter leading-[0.95]" data-i18n="lieux.cta1.h3">
             Soyez alerté<br/>à l'ouverture.
           </h3>
         </div>
@@ -255,7 +255,7 @@
           <input name="email" type="email" placeholder="votre@email.fr" required
             style="background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.12);border-radius:100px;padding:16px 22px;color:#fff;font-size:15px;outline:none;width:100%;"
             onfocus="this.style.borderColor='rgba(208,255,0,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'"/>
-          <button type="submit" class="bg-primary-container text-on-surface px-8 py-4 rounded-full font-black text-base hover:scale-105 active:scale-95 transition-all">
+          <button type="submit" class="bg-primary-container text-on-surface px-8 py-4 rounded-full font-black text-base hover:scale-105 active:scale-95 transition-all" data-i18n="lieux.cta1.btn">
             Me notifier
           </button>
         </form>
@@ -264,16 +264,16 @@
       <!-- CTA Etablissement -->
       <div class="bg-primary-container rounded-[2.5rem] p-10 md:p-14 flex flex-col justify-between gap-10">
         <div>
-          <div class="text-on-surface/40 text-xs font-bold uppercase tracking-widest mb-5">Établissements</div>
-          <h3 class="text-4xl md:text-5xl font-black text-on-surface tracking-tighter leading-[0.95]">
+          <div class="text-on-surface/40 text-xs font-bold uppercase tracking-widest mb-5" data-i18n="lieux.cta2.label">Établissements</div>
+          <h3 class="text-4xl md:text-5xl font-black text-on-surface tracking-tighter leading-[0.95]" data-i18n="lieux.cta2.h3">
             Vous gérez un<br/>établissement ?
           </h3>
         </div>
         <div>
-          <p class="text-on-surface/60 text-base mb-6 leading-relaxed">
+          <p class="text-on-surface/60 text-base mb-6 leading-relaxed" data-i18n="lieux.cta2.p">
             Installation gratuite. Zéro engagement.<br/>Vos clients sur la carte dès le premier jour.
           </p>
-          <a href="partenaire.html" class="inline-flex items-center gap-3 bg-on-surface text-primary-container px-8 py-4 rounded-full font-black text-base hover:scale-105 transition-transform active:scale-95">
+          <a href="partenaire.html" class="inline-flex items-center gap-3 bg-on-surface text-primary-container px-8 py-4 rounded-full font-black text-base hover:scale-105 transition-transform active:scale-95" data-i18n="lieux.cta2.btn">
             Devenir partenaire
             <span class="material-symbols-outlined text-xl">arrow_forward</span>
           </a>
@@ -291,14 +291,14 @@
       <a href="index.html" class="flex items-center gap-2.5 mb-4">
         <img src="images/logo-bod.png" alt="Bod" style="height:36px;width:auto;"/>
       </a>
-      <p class="text-sm text-on-surface-variant max-w-xs">La batterie de vos clients, c'est notre affaire.</p>
+      <p class="text-sm text-on-surface-variant max-w-xs" data-i18n="footer.tagline">La batterie de vos clients, c'est notre affaire.</p>
       <p class="text-xs text-on-surface-variant/50 mt-2">© 2026 Bod, Alexis Astier</p>
     </div>
     <div class="flex flex-wrap gap-x-12 gap-y-4 text-sm font-medium text-on-surface-variant">
-      <a href="tarifs.html" class="hover:text-on-surface transition-colors">Tarifs</a>
-      <a href="lieux.html" class="hover:text-on-surface transition-colors">Lieux</a>
-      <a href="partenaire.html" class="hover:text-on-surface transition-colors">Devenir partenaire</a>
-      <a href="contact.html" class="hover:text-on-surface transition-colors">Contact</a>
+      <a href="tarifs.html" class="hover:text-on-surface transition-colors" data-i18n="nav.tarifs">Tarifs</a>
+      <a href="lieux.html" class="hover:text-on-surface transition-colors" data-i18n="nav.lieux">Lieux</a>
+      <a href="partenaire.html" class="hover:text-on-surface transition-colors" data-i18n="footer.partner">Devenir partenaire</a>
+      <a href="contact.html" class="hover:text-on-surface transition-colors" data-i18n="nav.contact">Contact</a>
       <a href="mailto:hello@bodcharge.com" class="hover:text-on-surface transition-colors">hello@bodcharge.com</a>
       <a href="mentions-legales.html" class="hover:text-on-surface transition-colors">Mentions légales</a>
     </div>
@@ -339,6 +339,7 @@
   const label = L.control({ position: 'topleft' });
   label.onAdd = () => {
     const d = L.DomUtil.create('div');
+    d.setAttribute('data-i18n', 'lieux.map.label');
     d.innerHTML = 'Exemple — à quoi ressemblera la carte';
     d.style.cssText = 'background:rgba(27,28,28,0.82);color:#D0FF00;font-size:11px;font-weight:700;font-family:Inter,sans-serif;padding:5px 14px;border-radius:100px;backdrop-filter:blur(10px);margin:12px;pointer-events:none;';
     return d;
