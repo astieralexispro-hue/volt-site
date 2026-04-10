@@ -306,7 +306,7 @@
   const map = L.map('bod-map', {
     center: [43.8367, 4.3604],
     zoom: 16,
-    scrollWheelZoom: false,
+    scrollWheelZoom: true,
     zoomControl: true
   });
 
@@ -317,14 +317,14 @@
   }).addTo(map);
 
   const bodIcon = L.divIcon({
-    html: `<svg viewBox="0 0 36 50" width="36" height="50" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 4px 10px rgba(0,0,0,0.25));">
+    html: `<svg viewBox="0 0 36 50" width="26" height="36" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 3px 8px rgba(0,0,0,0.25));">
       <path d="M18 1C8.6 1 1 8.6 1 18C1 30.5 18 49 18 49C18 49 35 30.5 35 18C35 8.6 27.4 1 18 1Z" fill="#D0FF00"/>
       <path d="M19.5 9L15 18H19L17 26L24 15H20L22 9H19.5Z" fill="#1b1c1c"/>
     </svg>`,
     className: '',
-    iconSize: [36, 50],
-    iconAnchor: [18, 49],
-    popupAnchor: [0, -50]
+    iconSize: [26, 36],
+    iconAnchor: [13, 35],
+    popupAnchor: [0, -36]
   });
 
   L.marker([43.8367, 4.3604], { icon: bodIcon })
