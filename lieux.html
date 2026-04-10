@@ -19,6 +19,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="lang.js" defer></script>
 <style>
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
@@ -35,9 +37,10 @@
   .card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
   .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
   .map-wrap { position: relative; overflow: hidden; border-radius: 2.5rem; }
-  .map-wrap iframe { display: block; width: 100%; height: 100%; border: 0; }
-  @keyframes bod-pulse { 0% { transform: scale(0.6); opacity: 0.6; } 100% { transform: scale(2.4); opacity: 0; } }
-  .bod-pulse { width: 36px; height: 36px; background: #D0FF00; border-radius: 50%; animation: bod-pulse 2s ease-out infinite; }
+  #bod-map { width: 100%; height: 100%; min-height: 460px; border-radius: 2.5rem; }
+  .leaflet-control-attribution { font-size: 10px !important; }
+  .leaflet-control-zoom { border: none !important; box-shadow: 0 2px 12px rgba(0,0,0,0.12) !important; }
+  .leaflet-control-zoom a { border-radius: 12px !important; font-size: 18px !important; width: 36px !important; height: 36px !important; line-height: 36px !important; color: #1b1c1c !important; background: #fbf9f8 !important; border: none !important; margin-bottom: 4px !important; display: block !important; }
   @media (min-width: 768px) { #menu-toggle { display: none !important; } #mobile-menu { display: none !important; } .nav-desktop-cta { display: inline-flex !important; } }
   @media (max-width: 767px) { .nav-desktop-cta { display: none !important; } #menu-toggle { display: flex !important; } }
 </style>
@@ -95,31 +98,9 @@
   <section class="max-w-7xl mx-auto px-6 pb-20">
     <div class="reveal grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
 
-      <!-- MAP (Google Maps réel) -->
-      <div class="lg:col-span-2 map-wrap relative" style="min-height:460px;">
-        <iframe
-          src="https://maps.google.com/maps?q=14+Boulevard+des+Arènes,+30000+Nîmes&z=16&output=embed"
-          style="position:absolute;inset:0;width:100%;height:100%;border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Carte des stations BOD à Nîmes"></iframe>
-        <!-- Pin BOD custom -->
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-100%);z-index:2;pointer-events:none;filter:drop-shadow(0 6px 16px rgba(0,0,0,0.35));">
-          <div style="width:52px;height:52px;background:#D0FF00;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;">
-            <svg style="transform:rotate(45deg);width:24px;height:24px;" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#1b1c1c"/>
-            </svg>
-          </div>
-        </div>
-        <!-- Pulse ring -->
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) translateY(-26px);z-index:1;pointer-events:none;">
-          <div class="bod-pulse"></div>
-        </div>
-        <!-- Label flottant -->
-        <div style="position:absolute;top:16px;left:16px;background:rgba(27,28,28,0.82);color:#D0FF00;font-size:11px;font-weight:700;padding:5px 14px;border-radius:100px;backdrop-filter:blur(10px);pointer-events:none;z-index:3;">
-          Exemple — à quoi ressemblera la carte
-        </div>
+      <!-- MAP (Leaflet) -->
+      <div class="lg:col-span-2 map-wrap" style="min-height:460px;">
+        <div id="bod-map"></div>
       </div>
 
       <!-- FICHE ÉTABLISSEMENT -->
@@ -321,6 +302,45 @@
 </footer>
 
 <script>
+  // --- Leaflet map ---
+  const map = L.map('bod-map', {
+    center: [43.8367, 4.3604],
+    zoom: 16,
+    scrollWheelZoom: false,
+    zoomControl: true
+  });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 20
+  }).addTo(map);
+
+  const bodIcon = L.divIcon({
+    html: `<svg viewBox="0 0 36 50" width="36" height="50" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 4px 10px rgba(0,0,0,0.25));">
+      <path d="M18 1C8.6 1 1 8.6 1 18C1 30.5 18 49 18 49C18 49 35 30.5 35 18C35 8.6 27.4 1 18 1Z" fill="#D0FF00"/>
+      <path d="M19.5 9L15 18H19L17 26L24 15H20L22 9H19.5Z" fill="#1b1c1c"/>
+    </svg>`,
+    className: '',
+    iconSize: [36, 50],
+    iconAnchor: [18, 49],
+    popupAnchor: [0, -50]
+  });
+
+  L.marker([43.8367, 4.3604], { icon: bodIcon })
+    .addTo(map)
+    .bindPopup('<b style="font-family:Inter,sans-serif">Le Patio des Arènes</b><br/><span style="font-family:Inter,sans-serif;font-size:12px;color:#666">Station BOD · 4 batteries dispo</span>');
+
+  // Label flottant
+  const label = L.control({ position: 'topleft' });
+  label.onAdd = () => {
+    const d = L.DomUtil.create('div');
+    d.innerHTML = 'Exemple — à quoi ressemblera la carte';
+    d.style.cssText = 'background:rgba(27,28,28,0.82);color:#D0FF00;font-size:11px;font-weight:700;font-family:Inter,sans-serif;padding:5px 14px;border-radius:100px;backdrop-filter:blur(10px);margin:12px;pointer-events:none;';
+    return d;
+  };
+  label.addTo(map);
+
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
   const icon = document.getElementById('menu-icon');
