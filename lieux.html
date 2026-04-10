@@ -34,13 +34,22 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
   .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-  .map-placeholder { background: linear-gradient(135deg, #f0ede8 0%, #e8e4de 100%); position: relative; overflow: hidden; }
-  .map-placeholder::before {
+  .map-bg { background: #e8e4dc; position: relative; overflow: hidden; }
+  .map-bg::before {
     content: '';
     position: absolute; inset: 0;
-    background-image: radial-gradient(circle, rgba(82,102,0,0.06) 1px, transparent 1px);
-    background-size: 32px 32px;
+    background-image:
+      linear-gradient(rgba(82,102,0,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(82,102,0,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
+  .map-road-h { position: absolute; height: 8px; background: rgba(255,255,255,0.7); border-radius: 4px; left: 0; right: 0; }
+  .map-road-v { position: absolute; width: 8px; background: rgba(255,255,255,0.7); border-radius: 4px; top: 0; bottom: 0; }
+  .map-block { position: absolute; background: rgba(200,195,185,0.5); border-radius: 4px; }
+  .map-pin { position: absolute; transform: translate(-50%, -100%); }
+  .map-pin-dot { width: 20px; height: 20px; background: #D0FF00; border: 3px solid #1b1c1c; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .map-pin-tail { width: 3px; height: 10px; background: #1b1c1c; margin: 0 auto; }
+  .map-popup { position: absolute; background: white; border-radius: 20px; padding: 16px 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); min-width: 220px; transform: translate(-50%, 0); white-space: nowrap; }
   @media (min-width: 768px) { #menu-toggle { display: none !important; } #mobile-menu { display: none !important; } .nav-desktop-cta { display: inline-flex !important; } }
   @media (max-width: 767px) { .nav-desktop-cta { display: none !important; } #menu-toggle { display: flex !important; } }
 </style>
@@ -94,16 +103,120 @@
     </p>
   </section>
 
-  <!-- MAP PLACEHOLDER -->
+  <!-- MAP EXAMPLE -->
   <section class="max-w-7xl mx-auto px-6 pb-20">
-    <div class="map-placeholder rounded-[2.5rem] h-72 md:h-96 flex items-center justify-center reveal">
-      <div class="text-center">
-        <div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <span class="material-symbols-outlined text-on-surface text-3xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+    <div class="reveal grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
+
+      <!-- MAP -->
+      <div class="lg:col-span-2 map-bg rounded-[2.5rem] relative" style="min-height:420px;">
+        <!-- Routes horizontales -->
+        <div class="map-road-h" style="top:30%;"></div>
+        <div class="map-road-h" style="top:58%;"></div>
+        <div class="map-road-h" style="top:80%;height:14px;"></div>
+        <!-- Routes verticales -->
+        <div class="map-road-v" style="left:25%;"></div>
+        <div class="map-road-v" style="left:55%;width:12px;"></div>
+        <div class="map-road-v" style="left:78%;"></div>
+        <!-- Îlots -->
+        <div class="map-block" style="top:10%;left:30%;width:22%;height:17%;"></div>
+        <div class="map-block" style="top:10%;left:60%;width:15%;height:17%;"></div>
+        <div class="map-block" style="top:35%;left:5%;width:17%;height:20%;"></div>
+        <div class="map-block" style="top:35%;left:30%;width:22%;height:20%;"></div>
+        <div class="map-block" style="top:35%;left:60%;width:15%;height:20%;"></div>
+        <div class="map-block" style="top:35%;left:80%;width:15%;height:20%;"></div>
+        <div class="map-block" style="top:62%;left:5%;width:17%;height:14%;"></div>
+        <div class="map-block" style="top:62%;left:30%;width:22%;height:14%;"></div>
+        <div class="map-block" style="top:62%;left:60%;width:15%;height:14%;"></div>
+
+        <!-- PIN actif -->
+        <div class="map-pin" style="left:54.5%;top:58%;">
+          <div style="background:#1b1c1c;border-radius:50% 50% 50% 0;width:36px;height:36px;transform:rotate(-45deg);box-shadow:0 4px 16px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined" style="transform:rotate(45deg);color:#D0FF00;font-size:18px;font-variation-settings:'FILL' 1;">bolt</span>
+          </div>
         </div>
-        <div class="font-bold text-on-surface text-lg mb-1">Carte des stations</div>
-        <div class="text-on-surface-variant text-sm">Disponible au lancement — printemps 2026</div>
+
+        <!-- POPUP -->
+        <div class="map-popup" style="left:54.5%;top:calc(58% + 12px);">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+            <div style="width:36px;height:36px;background:#D0FF00;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span class="material-symbols-outlined" style="color:#1b1c1c;font-size:18px;font-variation-settings:'FILL' 1;">restaurant</span>
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:14px;color:#1b1c1c;line-height:1.2;">Le Patio des Arènes</div>
+              <div style="font-size:11px;color:#444933;font-weight:500;">Bar • Nîmes, 30000</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+            <div style="display:flex;align-items:center;gap:5px;">
+              <span class="material-symbols-outlined" style="color:#526600;font-size:15px;font-variation-settings:'FILL' 1;">battery_charging_full</span>
+              <span style="font-size:12px;font-weight:700;color:#1b1c1c;">4 / 6 dispo</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:5px;">
+              <span style="width:7px;height:7px;background:#22c55e;border-radius:50%;display:inline-block;"></span>
+              <span style="font-size:12px;font-weight:600;color:#444933;">Ouvert</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Label "Exemple" -->
+        <div style="position:absolute;top:16px;left:20px;background:rgba(27,28,28,0.75);color:#D0FF00;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;backdrop-filter:blur(8px);">
+          Aperçu — à quoi ressemblera la carte
+        </div>
       </div>
+
+      <!-- FICHE ÉTABLISSEMENT -->
+      <div class="flex flex-col gap-4">
+        <div class="bg-surface-container-lowest rounded-3xl p-6 shadow-sm flex-1">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="w-12 h-12 bg-primary-container rounded-2xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-on-surface text-xl" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+            </div>
+            <div>
+              <div class="font-black text-on-surface text-lg leading-tight">Le Patio des Arènes</div>
+              <div class="text-sm text-on-surface-variant font-medium">Bar • Nîmes</div>
+            </div>
+          </div>
+          <div class="space-y-3 text-sm mb-6">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">location_on</span>
+              <span class="text-on-surface-variant">14 Bd des Arènes, 30000 Nîmes</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">schedule</span>
+              <span class="text-on-surface-variant">Lun–Sam : 10h – 2h • Dim : 14h – 23h</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">battery_charging_full</span>
+              <div class="flex items-center gap-2">
+                <span class="font-bold text-on-surface">4 batteries disponibles</span>
+                <span class="text-xs bg-primary-container/20 text-primary px-2 py-0.5 rounded-full font-semibold">sur 6</span>
+              </div>
+            </div>
+          </div>
+          <!-- Batteries visuelles -->
+          <div class="flex gap-2 mb-5">
+            <div class="flex-1 h-2.5 bg-primary-container rounded-full"></div>
+            <div class="flex-1 h-2.5 bg-primary-container rounded-full"></div>
+            <div class="flex-1 h-2.5 bg-primary-container rounded-full"></div>
+            <div class="flex-1 h-2.5 bg-primary-container rounded-full"></div>
+            <div class="flex-1 h-2.5 bg-surface-container-low rounded-full"></div>
+            <div class="flex-1 h-2.5 bg-surface-container-low rounded-full"></div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span style="width:8px;height:8px;background:#22c55e;border-radius:50%;display:inline-block;"></span>
+              <span class="text-sm font-semibold text-on-surface">Station active</span>
+            </div>
+            <span class="text-xs text-on-surface-variant">€1 / 30 min</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-low rounded-3xl p-5 text-center">
+          <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1">Réseau en lancement</div>
+          <div class="text-sm text-on-surface-variant">Bientôt dans d'autres établissements</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
