@@ -34,22 +34,8 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
   .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-  .map-bg { background: #e8e4dc; position: relative; overflow: hidden; }
-  .map-bg::before {
-    content: '';
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(82,102,0,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(82,102,0,0.06) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-  .map-road-h { position: absolute; height: 8px; background: rgba(255,255,255,0.7); border-radius: 4px; left: 0; right: 0; }
-  .map-road-v { position: absolute; width: 8px; background: rgba(255,255,255,0.7); border-radius: 4px; top: 0; bottom: 0; }
-  .map-block { position: absolute; background: rgba(200,195,185,0.5); border-radius: 4px; }
-  .map-pin { position: absolute; transform: translate(-50%, -100%); }
-  .map-pin-dot { width: 20px; height: 20px; background: #D0FF00; border: 3px solid #1b1c1c; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
-  .map-pin-tail { width: 3px; height: 10px; background: #1b1c1c; margin: 0 auto; }
-  .map-popup { position: absolute; background: white; border-radius: 20px; padding: 16px 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); min-width: 220px; transform: translate(-50%, 0); white-space: nowrap; }
+  .map-wrap { position: relative; overflow: hidden; border-radius: 2.5rem; }
+  .map-wrap iframe { display: block; width: 100%; height: 100%; border: 0; }
   @media (min-width: 768px) { #menu-toggle { display: none !important; } #mobile-menu { display: none !important; } .nav-desktop-cta { display: inline-flex !important; } }
   @media (max-width: 767px) { .nav-desktop-cta { display: none !important; } #menu-toggle { display: flex !important; } }
 </style>
@@ -107,60 +93,18 @@
   <section class="max-w-7xl mx-auto px-6 pb-20">
     <div class="reveal grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
 
-      <!-- MAP -->
-      <div class="lg:col-span-2 map-bg rounded-[2.5rem] relative" style="min-height:420px;">
-        <!-- Routes horizontales -->
-        <div class="map-road-h" style="top:30%;"></div>
-        <div class="map-road-h" style="top:58%;"></div>
-        <div class="map-road-h" style="top:80%;height:14px;"></div>
-        <!-- Routes verticales -->
-        <div class="map-road-v" style="left:25%;"></div>
-        <div class="map-road-v" style="left:55%;width:12px;"></div>
-        <div class="map-road-v" style="left:78%;"></div>
-        <!-- Îlots -->
-        <div class="map-block" style="top:10%;left:30%;width:22%;height:17%;"></div>
-        <div class="map-block" style="top:10%;left:60%;width:15%;height:17%;"></div>
-        <div class="map-block" style="top:35%;left:5%;width:17%;height:20%;"></div>
-        <div class="map-block" style="top:35%;left:30%;width:22%;height:20%;"></div>
-        <div class="map-block" style="top:35%;left:60%;width:15%;height:20%;"></div>
-        <div class="map-block" style="top:35%;left:80%;width:15%;height:20%;"></div>
-        <div class="map-block" style="top:62%;left:5%;width:17%;height:14%;"></div>
-        <div class="map-block" style="top:62%;left:30%;width:22%;height:14%;"></div>
-        <div class="map-block" style="top:62%;left:60%;width:15%;height:14%;"></div>
-
-        <!-- PIN actif -->
-        <div class="map-pin" style="left:54.5%;top:58%;">
-          <div style="background:#1b1c1c;border-radius:50% 50% 50% 0;width:36px;height:36px;transform:rotate(-45deg);box-shadow:0 4px 16px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="transform:rotate(45deg);color:#D0FF00;font-size:18px;font-variation-settings:'FILL' 1;">bolt</span>
-          </div>
-        </div>
-
-        <!-- POPUP -->
-        <div class="map-popup" style="left:54.5%;top:calc(58% + 12px);">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-            <div style="width:36px;height:36px;background:#D0FF00;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <span class="material-symbols-outlined" style="color:#1b1c1c;font-size:18px;font-variation-settings:'FILL' 1;">restaurant</span>
-            </div>
-            <div>
-              <div style="font-weight:800;font-size:14px;color:#1b1c1c;line-height:1.2;">Le Patio des Arènes</div>
-              <div style="font-size:11px;color:#444933;font-weight:500;">Bar • Nîmes, 30000</div>
-            </div>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
-            <div style="display:flex;align-items:center;gap:5px;">
-              <span class="material-symbols-outlined" style="color:#526600;font-size:15px;font-variation-settings:'FILL' 1;">battery_charging_full</span>
-              <span style="font-size:12px;font-weight:700;color:#1b1c1c;">4 / 6 dispo</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:5px;">
-              <span style="width:7px;height:7px;background:#22c55e;border-radius:50%;display:inline-block;"></span>
-              <span style="font-size:12px;font-weight:600;color:#444933;">Ouvert</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Label "Exemple" -->
-        <div style="position:absolute;top:16px;left:20px;background:rgba(27,28,28,0.75);color:#D0FF00;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;backdrop-filter:blur(8px);">
-          Aperçu — à quoi ressemblera la carte
+      <!-- MAP (Google Maps réel) -->
+      <div class="lg:col-span-2 map-wrap relative" style="min-height:460px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22979.8!2d4.3530597!3d43.8363547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b42f64d1e1bc25%3A0x61d2b2e6fd0d5568!2sN%C3%AEmes!5e0!3m2!1sfr!2sfr!4v1712768400000!5m2!1sfr!2sfr"
+          style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Carte des stations BOD à Nîmes"></iframe>
+        <!-- Label flottant -->
+        <div style="position:absolute;top:16px;left:16px;background:rgba(27,28,28,0.82);color:#D0FF00;font-size:11px;font-weight:700;padding:5px 14px;border-radius:100px;backdrop-filter:blur(10px);pointer-events:none;z-index:1;">
+          Exemple — à quoi ressemblera la carte
         </div>
       </div>
 
@@ -290,7 +234,7 @@
         <div class="font-semibold text-on-surface text-sm">Événementiel</div>
       </div>
       <div class="card-lift bg-surface-container-low rounded-2xl p-6 text-center group hover:bg-primary-container transition-colors">
-        <span class="material-symbols-outlined text-primary text-3xl mb-3 block group-hover:text-on-surface transition-colors" style="font-variation-settings: 'FILL' 1;">local_cinema</span>
+        <span class="material-symbols-outlined text-primary text-3xl mb-3 block group-hover:text-on-surface transition-colors" style="font-variation-settings: 'FILL' 1;">theaters</span>
         <div class="font-semibold text-on-surface text-sm">Cinémas</div>
       </div>
     </div>
@@ -299,32 +243,50 @@
   <!-- CTA DOUBLE -->
   <section class="max-w-7xl mx-auto px-6 pb-16 md:pb-32">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+
       <!-- CTA Utilisateur -->
-      <div class="bg-surface-container-low rounded-[2.5rem] p-8 md:p-12">
-        <div class="w-14 h-14 bg-primary-container/20 rounded-2xl flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">notification_add</span>
+      <div class="bg-on-surface rounded-[2.5rem] p-8 md:p-12 flex flex-col">
+        <div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-8 shrink-0">
+          <span class="material-symbols-outlined text-on-surface text-3xl" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
         </div>
-        <h3 class="text-2xl font-black text-on-surface mb-3">Soyez alerté à l'ouverture</h3>
-        <p class="text-on-surface-variant leading-relaxed mb-6">Vous voulez savoir dès qu'une station ouvre dans votre ville ? Laissez votre email.</p>
+        <h3 class="text-3xl md:text-4xl font-black text-primary-container tracking-tighter leading-tight mb-4">
+          Soyez alerté<br/>à l'ouverture.
+        </h3>
+        <p class="text-white/60 leading-relaxed mb-8 text-lg flex-1">
+          Laissez votre email — on vous prévient dès qu'une station est disponible près de vous.
+        </p>
         <form action="mailto:hello@bodcharge.com" method="get" enctype="text/plain" class="flex flex-col sm:flex-row gap-3">
-          <input name="email" type="email" placeholder="votre@email.fr" required class="flex-1 bg-surface-container-lowest rounded-full px-5 py-3 text-on-surface border-none outline-none text-sm"/>
-          <button type="submit" class="bg-on-surface text-primary-container px-6 py-3 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all whitespace-nowrap">
+          <input name="email" type="email" placeholder="votre@email.fr" required
+            style="flex:1;background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.15);border-radius:100px;padding:14px 20px;color:#fff;font-size:15px;outline:none;"
+            onfocus="this.style.background='rgba(255,255,255,0.15)'" onblur="this.style.background='rgba(255,255,255,0.1)'"/>
+          <button type="submit" class="bg-primary-container text-on-surface px-8 py-4 rounded-full font-black text-base hover:scale-105 active:scale-95 transition-all whitespace-nowrap">
             Me notifier
           </button>
         </form>
       </div>
+
       <!-- CTA Etablissement -->
-      <div class="bg-primary-container rounded-[2.5rem] p-8 md:p-12">
-        <div class="w-14 h-14 bg-on-surface rounded-2xl flex items-center justify-center mb-6">
+      <div class="bg-primary-container rounded-[2.5rem] p-8 md:p-12 flex flex-col relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-5">
+          <svg style="width:80%;height:auto;" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#000"/>
+          </svg>
+        </div>
+        <div class="w-16 h-16 bg-on-surface rounded-2xl flex items-center justify-center mb-8 shrink-0 relative z-10">
           <span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">add_business</span>
         </div>
-        <h3 class="text-2xl font-black text-on-surface mb-3">Vous gérez un établissement ?</h3>
-        <p class="text-on-surface/70 leading-relaxed mb-6">Installez une station gratuitement. Vos clients seront sur la carte dès le premier jour.</p>
-        <a href="partenaire.html" class="inline-flex items-center gap-2 bg-on-surface text-primary-container px-6 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform active:scale-95">
+        <h3 class="text-3xl md:text-4xl font-black text-on-surface tracking-tighter leading-tight mb-4 relative z-10">
+          Vous gérez un<br/>établissement ?
+        </h3>
+        <p class="text-on-surface/70 leading-relaxed mb-8 text-lg flex-1 relative z-10">
+          Installation gratuite. Zéro engagement. Vos clients sur la carte dès le premier jour.
+        </p>
+        <a href="partenaire.html" class="relative z-10 inline-flex items-center gap-3 bg-on-surface text-primary-container px-10 py-5 rounded-full font-black text-lg hover:scale-105 transition-transform active:scale-95 self-start">
           Devenir partenaire
-          <span class="material-symbols-outlined text-base">arrow_forward</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
         </a>
       </div>
+
     </div>
   </section>
 
