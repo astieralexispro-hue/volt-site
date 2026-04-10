@@ -245,46 +245,40 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
 
       <!-- CTA Utilisateur -->
-      <div class="bg-on-surface rounded-[2.5rem] p-8 md:p-12 flex flex-col">
-        <div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-8 shrink-0">
-          <span class="material-symbols-outlined text-on-surface text-3xl" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+      <div class="bg-on-surface rounded-[2.5rem] p-10 md:p-14 flex flex-col justify-between gap-10">
+        <div>
+          <div class="text-white/40 text-xs font-bold uppercase tracking-widest mb-5">Utilisateurs</div>
+          <h3 class="text-4xl md:text-5xl font-black text-primary-container tracking-tighter leading-[0.95]">
+            Soyez alerté<br/>à l'ouverture.
+          </h3>
         </div>
-        <h3 class="text-3xl md:text-4xl font-black text-primary-container tracking-tighter leading-tight mb-4">
-          Soyez alerté<br/>à l'ouverture.
-        </h3>
-        <p class="text-white/60 leading-relaxed mb-8 text-lg flex-1">
-          Laissez votre email — on vous prévient dès qu'une station est disponible près de vous.
-        </p>
-        <form action="mailto:hello@bodcharge.com" method="get" enctype="text/plain" class="flex flex-col sm:flex-row gap-3">
+        <form action="mailto:hello@bodcharge.com" method="get" enctype="text/plain" class="flex flex-col gap-3">
           <input name="email" type="email" placeholder="votre@email.fr" required
-            style="flex:1;background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.15);border-radius:100px;padding:14px 20px;color:#fff;font-size:15px;outline:none;"
-            onfocus="this.style.background='rgba(255,255,255,0.15)'" onblur="this.style.background='rgba(255,255,255,0.1)'"/>
-          <button type="submit" class="bg-primary-container text-on-surface px-8 py-4 rounded-full font-black text-base hover:scale-105 active:scale-95 transition-all whitespace-nowrap">
+            style="background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.12);border-radius:100px;padding:16px 22px;color:#fff;font-size:15px;outline:none;width:100%;"
+            onfocus="this.style.borderColor='rgba(208,255,0,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'"/>
+          <button type="submit" class="bg-primary-container text-on-surface px-8 py-4 rounded-full font-black text-base hover:scale-105 active:scale-95 transition-all">
             Me notifier
           </button>
         </form>
       </div>
 
       <!-- CTA Etablissement -->
-      <div class="bg-primary-container rounded-[2.5rem] p-8 md:p-12 flex flex-col relative overflow-hidden">
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-5">
-          <svg style="width:80%;height:auto;" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#000"/>
-          </svg>
+      <div class="bg-primary-container rounded-[2.5rem] p-10 md:p-14 flex flex-col justify-between gap-10">
+        <div>
+          <div class="text-on-surface/40 text-xs font-bold uppercase tracking-widest mb-5">Établissements</div>
+          <h3 class="text-4xl md:text-5xl font-black text-on-surface tracking-tighter leading-[0.95]">
+            Vous gérez un<br/>établissement ?
+          </h3>
         </div>
-        <div class="w-16 h-16 bg-on-surface rounded-2xl flex items-center justify-center mb-8 shrink-0 relative z-10">
-          <span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">add_business</span>
+        <div>
+          <p class="text-on-surface/60 text-base mb-6 leading-relaxed">
+            Installation gratuite. Zéro engagement.<br/>Vos clients sur la carte dès le premier jour.
+          </p>
+          <a href="partenaire.html" class="inline-flex items-center gap-3 bg-on-surface text-primary-container px-8 py-4 rounded-full font-black text-base hover:scale-105 transition-transform active:scale-95">
+            Devenir partenaire
+            <span class="material-symbols-outlined text-xl">arrow_forward</span>
+          </a>
         </div>
-        <h3 class="text-3xl md:text-4xl font-black text-on-surface tracking-tighter leading-tight mb-4 relative z-10">
-          Vous gérez un<br/>établissement ?
-        </h3>
-        <p class="text-on-surface/70 leading-relaxed mb-8 text-lg flex-1 relative z-10">
-          Installation gratuite. Zéro engagement. Vos clients sur la carte dès le premier jour.
-        </p>
-        <a href="partenaire.html" class="relative z-10 inline-flex items-center gap-3 bg-on-surface text-primary-container px-10 py-5 rounded-full font-black text-lg hover:scale-105 transition-transform active:scale-95 self-start">
-          Devenir partenaire
-          <span class="material-symbols-outlined">arrow_forward</span>
-        </a>
       </div>
 
     </div>
