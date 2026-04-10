@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact BOD — Une question ? On vous répond rapidement</title>
+<meta name="description" content="Contactez l'équipe BOD pour toute question sur nos stations de recharge, un partenariat ou simplement pour en savoir plus."/>
+<link rel="canonical" href="https://bodcharge.com/contact"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Alexis Astier"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z' fill='%23D0FF00'/></svg>"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://bodcharge.com/contact"/>
+<meta property="og:title" content="Contact BOD"/>
+<meta property="og:description" content="Contactez l'équipe BOD pour toute question sur nos stations de recharge, un partenariat ou simplement pour en savoir plus."/>
+<meta property="og:site_name" content="Bod"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="lang.js" defer></script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  body { font-family: 'Inter', sans-serif; background-color: #fbf9f8; }
+  .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-fade-up { animation: fadeUp 0.7s ease forwards; }
+  .animate-fade-up-delay-1 { animation: fadeUp 0.7s ease 0.1s forwards; opacity: 0; }
+  .animate-fade-up-delay-2 { animation: fadeUp 0.7s ease 0.2s forwards; opacity: 0; }
+  input:focus, textarea:focus, select:focus { outline: none; background-color: #eae8e7; }
+  @media (min-width: 768px) { #menu-toggle { display: none !important; } #mobile-menu { display: none !important; } .nav-desktop-cta { display: inline-flex !important; } }
+  @media (max-width: 767px) { .nav-desktop-cta { display: none !important; } #menu-toggle { display: flex !important; } }
+</style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container">
+
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 glass-nav bg-[#fbf9f8]/85 border-b border-black/5">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="flex items-center">
+      <img src="images/logo-bod.png" alt="Bod" style="height:44px;width:auto;"/>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-on-surface-variant">
+      <a href="index.html#comment-ca-marche" class="hover:text-on-surface transition-colors">Comment ça marche</a>
+      <a href="tarifs.html" class="hover:text-on-surface transition-colors">Tarifs</a>
+      <a href="lieux.html" class="hover:text-on-surface transition-colors">Lieux</a>
+      <a href="contact.html" class="text-primary border-b-2 border-primary-container pb-0.5">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="partenaire.html" class="nav-desktop-cta hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all">
+        Devenir Partenaire
+      </a>
+      <button id="menu-toggle" class="md:hidden p-2 rounded-xl hover:bg-surface-container-low transition-colors" aria-label="Menu">
+        <span class="material-symbols-outlined text-on-surface" id="menu-icon">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden fixed top-[73px] left-0 right-0 md:hidden" style="background:#fbf9f8;box-shadow:0 12px 40px rgba(0,0,0,0.12);z-index:200;border-radius:0 0 20px 20px;border-bottom:1px solid rgba(0,0,0,0.06);">
+  <div style="padding:8px 16px 20px;">
+    <a href="index.html#comment-ca-marche" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;">Comment ça marche</a>
+    <a href="tarifs.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;">Tarifs</a>
+    <a href="lieux.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;">Lieux</a>
+    <a href="contact.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#526600;border-radius:12px;text-decoration:none;margin-bottom:12px;">Contact</a>
+    <a href="partenaire.html" style="display:flex;align-items:center;justify-content:center;padding:15px;background:#cef700;color:#1a2e00;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;">Devenir Partenaire</a>
+  </div>
+</div>
+
+<main class="pt-20 pb-20 px-6">
+  <div class="max-w-7xl mx-auto pt-12 md:pt-20 grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+
+    <!-- FORM -->
+    <section>
+      <div class="animate-fade-up text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Contact</div>
+      <h1 class="animate-fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl font-black text-on-surface tracking-tighter leading-tight mb-6">
+        Une question ?<br/><span class="text-primary-container bg-on-surface px-2">On répond.</span>
+      </h1>
+      <p class="animate-fade-up-delay-2 text-xl text-on-surface-variant max-w-lg leading-relaxed mb-10">
+        Utilisateur, presse, partenariat — écrivez-nous. Réponse sous 24h.
+      </p>
+
+      <form class="space-y-5" action="mailto:hello@bodcharge.com" method="get" enctype="text/plain">
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Nom</label>
+            <input name="nom" type="text" placeholder="Jean Dupont" required class="w-full bg-surface-container-low rounded-xl px-4 py-3.5 text-on-surface border-none transition-colors"/>
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Email</label>
+            <input name="email" type="email" placeholder="jean@exemple.fr" required class="w-full bg-surface-container-low rounded-xl px-4 py-3.5 text-on-surface border-none transition-colors"/>
+          </div>
+        </div>
+        <div>
+          <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Sujet</label>
+          <select name="sujet" class="w-full bg-surface-container-low rounded-xl px-4 py-3.5 text-on-surface border-none transition-colors">
+            <option>Question générale</option>
+            <option>Devenir partenaire</option>
+            <option>Problème avec une station</option>
+            <option>Presse / Média</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Message</label>
+          <textarea name="message" rows="5" placeholder="Votre message..." required class="w-full bg-surface-container-low rounded-xl px-4 py-3.5 text-on-surface border-none transition-colors resize-none"></textarea>
+        </div>
+        <button type="submit" class="group flex items-center gap-3 bg-primary-container text-on-primary-container px-10 py-5 rounded-full font-black text-lg hover:shadow-lg hover:shadow-primary-container/30 active:scale-95 transition-all">
+          Envoyer
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- SIDEBAR INFO -->
+    <aside class="space-y-5">
+
+      <div class="bg-surface-container-low rounded-3xl p-8">
+        <h2 class="font-black text-xl text-on-surface mb-6">Autres façons de nous joindre</h2>
+        <div class="space-y-5">
+          <a href="mailto:hello@bodcharge.com" class="flex items-center gap-4 group">
+            <div class="w-12 h-12 bg-primary-container/15 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-primary-container transition-colors">
+              <span class="material-symbols-outlined text-primary group-hover:text-on-surface transition-colors" style="font-variation-settings: 'FILL' 1;">alternate_email</span>
+            </div>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Email</div>
+              <div class="font-semibold text-on-surface group-hover:underline">hello@bodcharge.com</div>
+            </div>
+          </a>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary-container/15 rounded-2xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">schedule</span>
+            </div>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Délai de réponse</div>
+              <div class="font-semibold text-on-surface">Moins de 24h</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary-container/15 rounded-2xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+            </div>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Siège</div>
+              <div class="font-semibold text-on-surface">France</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary-container rounded-3xl p-8">
+        <h3 class="font-black text-xl text-on-surface mb-3">Vous avez un établissement ?</h3>
+        <p class="text-on-surface/70 leading-relaxed mb-6">Déposez directement une demande de partenariat pour une réponse prioritaire.</p>
+        <a href="partenaire.html" class="inline-flex items-center gap-2 bg-on-surface text-primary-container px-6 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform active:scale-95">
+          Devenir partenaire
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="bg-surface-container-low rounded-3xl p-8">
+        <h3 class="font-bold text-on-surface mb-3">Presse & Médias</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          Pour toute demande presse, interview ou partenariat éditorial, écrivez directement à <a href="mailto:hello@bodcharge.com" class="font-semibold text-primary hover:underline">hello@bodcharge.com</a> avec "Presse" en objet.
+        </p>
+      </div>
+
+    </aside>
+
+  </div>
+</main>
+
+<footer class="bg-surface-container-lowest border-t border-black/5 py-16 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+    <div>
+      <a href="index.html" class="flex items-center gap-2.5 mb-4">
+        <img src="images/logo-bod.png" alt="Bod" style="height:36px;width:auto;"/>
+      </a>
+      <p class="text-sm text-on-surface-variant max-w-xs">La batterie de vos clients, c'est notre affaire.</p>
+      <p class="text-xs text-on-surface-variant/50 mt-2">© 2026 Bod, Alexis Astier</p>
+    </div>
+    <div class="flex flex-wrap gap-x-12 gap-y-4 text-sm font-medium text-on-surface-variant">
+      <a href="tarifs.html" class="hover:text-on-surface transition-colors">Tarifs</a>
+      <a href="lieux.html" class="hover:text-on-surface transition-colors">Lieux</a>
+      <a href="partenaire.html" class="hover:text-on-surface transition-colors">Devenir partenaire</a>
+      <a href="contact.html" class="hover:text-on-surface transition-colors">Contact</a>
+      <a href="mailto:hello@bodcharge.com" class="hover:text-on-surface transition-colors">hello@bodcharge.com</a>
+      <a href="mentions-legales.html" class="hover:text-on-surface transition-colors">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+  }
+</script>
+
+</body>
+</html>

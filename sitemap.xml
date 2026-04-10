@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vooolt.fr/</loc>
+    <loc>https://bodcharge.com/</loc>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://vooolt.fr/produits</loc>
+    <loc>https://bodcharge.com/produits</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://vooolt.fr/partenaire</loc>
+    <loc>https://bodcharge.com/partenaire</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://vooolt.fr/mentions-legales</loc>
+    <loc>https://bodcharge.com/mentions-legales</loc>
     <priority>0.2</priority>
     <changefreq>yearly</changefreq>
   </url>
