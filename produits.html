@@ -34,7 +34,9 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
   .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-  .photo-placeholder { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 4/3; overflow: hidden; position: relative; }
+  .photo-placeholder { display: flex; align-items: center; justify-content: center; width: 100%; height: 160px; overflow: hidden; position: relative; }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   @media (min-width: 768px) { #menu-toggle { display: none !important; } #mobile-menu { display: none !important; } .nav-desktop-cta { display: inline-flex !important; } }
   @media (max-width: 767px) { .nav-desktop-cta { display: none !important; } #menu-toggle { display: flex !important; } }
 </style>
@@ -240,8 +242,8 @@
           </p>
           <div class="space-y-6">
             <div class="flex items-start gap-4">
-              <div class="w-11 h-11 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-on-surface" style="font-size:20px;line-height:1;font-variation-settings:'FILL' 1;">brush</span>
+              <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-on-surface" style="font-size:26px;line-height:1;font-variation-settings:'FILL' 1;">brush</span>
               </div>
               <div>
                 <div class="font-bold text-on-surface mb-1" data-i18n="produits.wrap.f1.title">Wrap vinyl full-cover</div>
@@ -249,8 +251,8 @@
               </div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-11 h-11 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-on-surface" style="font-size:20px;line-height:1;font-variation-settings:'FILL' 1;">devices</span>
+              <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-on-surface" style="font-size:26px;line-height:1;font-variation-settings:'FILL' 1;">devices</span>
               </div>
               <div>
                 <div class="font-bold text-on-surface mb-1" data-i18n="produits.wrap.f2.title">Écran BOD standard</div>
@@ -258,8 +260,8 @@
               </div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-11 h-11 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-on-surface" style="font-size:20px;line-height:1;font-variation-settings:'FILL' 1;">sell</span>
+              <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-on-surface" style="font-size:26px;line-height:1;font-variation-settings:'FILL' 1;">sell</span>
               </div>
               <div>
                 <div class="font-bold text-on-surface mb-1" data-i18n="produits.wrap.f3.title">Option payante</div>
@@ -297,6 +299,46 @@
         </div>
       </div>
     </div>
+
+    <!-- SLIDER PHOTOS CLIENTS -->
+    <div class="mt-14 reveal max-w-7xl mx-auto px-6">
+      <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-5" data-i18n="produits.wrap.slider.label">Exemples d'installations</div>
+      <div class="hide-scrollbar" style="display:flex;gap:14px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;">
+        <!-- Remplacer chaque div par <img src="images/venue-XXX.jpg" style="width:180px;height:180px;object-fit:cover;border-radius:20px;scroll-snap-align:start;flex-shrink:0;"> -->
+        <div class="shrink-0 rounded-[20px] flex flex-col items-center justify-center gap-2 relative overflow-hidden" style="width:180px;height:180px;scroll-snap-align:start;background-color:#e0dbd5;">
+          <svg viewBox="0 0 32 32" width="32" height="32" style="opacity:0.15;" xmlns="http://www.w3.org/2000/svg"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.3);">Bar</span>
+        </div>
+        <div class="shrink-0 rounded-[20px] flex flex-col items-center justify-center gap-2 relative overflow-hidden" style="width:180px;height:180px;scroll-snap-align:start;background-color:#1b1c1c;">
+          <svg viewBox="0 0 32 32" width="32" height="32" style="opacity:0.2;" xmlns="http://www.w3.org/2000/svg"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/></svg>
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(208,255,0,0.4);">Restaurant</span>
+        </div>
+        <div class="shrink-0 rounded-[20px] flex flex-col items-center justify-center gap-2 relative overflow-hidden" style="width:180px;height:180px;scroll-snap-align:start;background-color:#d4ceC7;">
+          <svg viewBox="0 0 32 32" width="32" height="32" style="opacity:0.15;" xmlns="http://www.w3.org/2000/svg"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.3);">Hôtel</span>
+        </div>
+        <div class="shrink-0 rounded-[20px] flex flex-col items-center justify-center gap-2 relative overflow-hidden" style="width:180px;height:180px;scroll-snap-align:start;background-color:#b5de00;">
+          <svg viewBox="0 0 32 32" width="32" height="32" style="opacity:0.2;" xmlns="http://www.w3.org/2000/svg"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.35);">Salle de sport</span>
+        </div>
+        <div class="shrink-0 rounded-[20px] flex flex-col items-center justify-center gap-2 relative overflow-hidden" style="width:180px;height:180px;scroll-snap-align:start;background-color:#1b1c1c;">
+          <svg viewBox="0 0 32 32" width="32" height="32" style="opacity:0.2;" xmlns="http://www.w3.org/2000/svg"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/></svg>
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(208,255,0,0.4);">Club</span>
+        </div>
+        <div class="shrink-0 rounded-[20px] flex flex-col items-center justify-center gap-2 relative overflow-hidden" style="width:180px;height:180px;scroll-snap-align:start;background-color:#e0dbd5;">
+          <svg viewBox="0 0 32 32" width="32" height="32" style="opacity:0.15;" xmlns="http://www.w3.org/2000/svg"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.3);">Cinéma</span>
+        </div>
+        <div class="shrink-0 rounded-[20px] flex flex-col items-center justify-center gap-2 relative overflow-hidden" style="width:180px;height:180px;scroll-snap-align:start;background-color:#b5de00;">
+          <svg viewBox="0 0 32 32" width="32" height="32" style="opacity:0.2;" xmlns="http://www.w3.org/2000/svg"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.35);">Festival</span>
+        </div>
+        <div class="shrink-0 rounded-[20px] flex flex-col items-center justify-center gap-2 relative overflow-hidden" style="width:180px;height:180px;scroll-snap-align:start;background-color:#d4cec7;">
+          <svg viewBox="0 0 32 32" width="32" height="32" style="opacity:0.15;" xmlns="http://www.w3.org/2000/svg"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.3);">Aéroport</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- PUBLICITÉ -->
@@ -330,14 +372,23 @@
         <div class="text-xs font-black text-primary uppercase tracking-widest" data-i18n="produits.pub.network.tag">Sur devis</div>
       </div>
     </div>
-    <div class="reveal mt-6 bg-on-surface rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6 justify-between">
-      <div>
-        <div class="font-black text-primary-container text-xl tracking-tight mb-2" data-i18n="produits.pub.cta.title">Intéressé par la publicité sur écran ?</div>
-        <div class="text-white/60 text-sm" data-i18n="produits.pub.cta.sub">Parlez-nous de votre projet. On revient vers vous sous 24h.</div>
+    <div class="reveal mt-6 bg-primary-container rounded-[2.5rem] p-8 md:p-10 relative overflow-hidden">
+      <div class="absolute right-6 top-1/2 pointer-events-none" style="transform:translateY(-50%);opacity:0.08;">
+        <svg viewBox="0 0 32 32" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/>
+        </svg>
       </div>
-      <a href="contact.html" class="shrink-0 inline-flex items-center gap-2 bg-primary-container text-on-surface px-7 py-4 rounded-full font-black text-sm hover:scale-105 transition-transform active:scale-95 whitespace-nowrap" data-i18n="produits.pub.cta.btn">
-        Nous contacter
-      </a>
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-6 justify-between relative z-10">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-widest text-on-surface/50 mb-3" data-i18n="produits.pub.label">Écran publicitaire</div>
+          <div class="font-black text-on-surface text-2xl tracking-tight mb-1" data-i18n="produits.pub.cta.title">Intéressé par la publicité sur écran ?</div>
+          <div class="text-on-surface/60 text-sm" data-i18n="produits.pub.cta.sub">Parlez-nous de votre projet. On revient vers vous sous 24h.</div>
+        </div>
+        <a href="contact.html" class="shrink-0 inline-flex items-center gap-2 bg-on-surface text-primary-container px-7 py-4 rounded-full font-black text-sm hover:scale-105 transition-transform active:scale-95 whitespace-nowrap" data-i18n="produits.pub.cta.btn">
+          Nous contacter
+          <span class="material-symbols-outlined" style="font-size:18px;line-height:1;">arrow_forward</span>
+        </a>
+      </div>
     </div>
   </section>
 
