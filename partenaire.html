@@ -55,6 +55,17 @@
     outline: none;
     background-color: #eae8e7;
   }
+  /* Select styled like inputs */
+  .custom-select-wrap { position: relative; }
+  .custom-select-wrap select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 2.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    cursor: pointer;
+  }
   @media (min-width: 768px) { #menu-toggle { display: none !important; } #mobile-menu { display: none !important; } .nav-desktop-cta { display: inline-flex !important; } }
   @media (max-width: 767px) { .nav-desktop-cta { display: none !important; } #menu-toggle { display: flex !important; } }
 </style>
@@ -103,7 +114,7 @@
 </div>
 
 <main class="pt-20 pb-20 px-6">
-  <div class="max-w-7xl mx-auto pt-10 md:pt-16 grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+  <div class="max-w-7xl mx-auto pt-16 md:pt-24 grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
 
     <!-- FORM -->
     <section>
@@ -133,14 +144,16 @@
           </div>
           <div>
             <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Type d'établissement</label>
-            <select name="type" class="w-full bg-surface-container-low rounded-xl px-4 py-3.5 text-on-surface border-none transition-colors">
-              <option>Bar / Restaurant</option>
-              <option>Hôtel</option>
-              <option>Centre commercial</option>
-              <option>Salle de sport</option>
-              <option>Événementiel</option>
-              <option>Autre</option>
-            </select>
+            <div class="custom-select-wrap">
+              <select name="type" class="w-full bg-surface-container-low rounded-xl px-4 py-3.5 text-on-surface border-none transition-colors">
+                <option>Bar / Restaurant</option>
+                <option>Hôtel</option>
+                <option>Centre commercial</option>
+                <option>Salle de sport</option>
+                <option>Événementiel</option>
+                <option>Autre</option>
+              </select>
+            </div>
           </div>
         </div>
         <div>
@@ -166,13 +179,6 @@
             <div class="font-semibold text-sm">contact@bodcharge.com</div>
           </div>
         </div>
-        <div class="flex items-center gap-3 bg-surface-container-lowest rounded-2xl px-5 py-4 shadow-sm">
-          <span class="material-symbols-outlined text-primary">location_on</span>
-          <div>
-            <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Zone</div>
-            <div class="font-semibold text-sm">France</div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -193,10 +199,6 @@
         <div class="space-y-3">
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-on-surface text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-            <span class="font-medium text-on-surface">Station personnalisée à vos couleurs</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-on-surface text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
             <span class="font-medium text-on-surface">Installation gratuite</span>
           </div>
           <div class="flex items-center gap-3">
@@ -209,7 +211,11 @@
           </div>
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-on-surface text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-            <span class="font-medium text-on-surface">Électricité seule à votre charge (~€5/mois)</span>
+            <span class="font-medium text-on-surface">Clients qui restent plus longtemps</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-on-surface text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            <span class="font-medium text-on-surface">Meilleurs avis Google, plus de retours</span>
           </div>
         </div>
       </div>
