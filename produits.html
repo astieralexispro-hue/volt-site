@@ -47,6 +47,9 @@
   .station-text-right { text-align: right; }
   .station-text-right .slot-bubble { justify-content: flex-end; }
   .station-text-right .feature-row { flex-direction: row-reverse; }
+  @keyframes insta-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .insta-marquee { animation: insta-scroll 28s linear infinite; }
+  .insta-marquee:hover { animation-play-state: paused; }
 </style>
 </head>
 <body class="bg-surface text-on-surface selection:bg-primary-container">
@@ -219,31 +222,31 @@
   </section>
 
   <!-- PERSONNALISATION -->
-  <section class="bg-surface-container-low py-20 md:py-32">
+  <section class="bg-surface-container-low" style="padding-top:96px;padding-bottom:0;">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- Header + prix -->
-      <div class="reveal mb-14">
-        <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4" data-i18n="produits.wrap.label">Personnalisation</div>
-        <div class="flex flex-col lg:flex-row lg:items-end gap-6 justify-between mb-10">
+      <div class="reveal" style="margin-bottom:72px;">
+        <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" style="margin-bottom:24px;" data-i18n="produits.wrap.label">Personnalisation</div>
+        <div class="flex flex-col lg:flex-row lg:items-end gap-6 justify-between" style="margin-bottom:48px;">
           <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface max-w-xl" data-i18n="produits.wrap.h2">La station s'adapte<br/>à votre univers.</h2>
           <p class="text-on-surface-variant text-lg leading-relaxed max-w-md" data-i18n="produits.wrap.p">Wrap vinyl full-cover aux couleurs de votre établissement — logo, ambiance, code couleur. Pose incluse.</p>
         </div>
         <!-- Prix wrap -->
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <div style="background:#fff;border-radius:1.25rem;padding:20px 28px;display:flex;flex-direction:column;gap:4px;min-width:130px;">
+          <div style="background:#fff;border-radius:1.25rem;padding:24px 32px;display:flex;flex-direction:column;gap:6px;min-width:140px;">
             <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.4);">Basic</span>
-            <span style="font-size:28px;font-weight:900;color:#1b1c1c;line-height:1;">30 €</span>
+            <span style="font-size:30px;font-weight:900;color:#1b1c1c;line-height:1;">30 €</span>
           </div>
-          <div style="background:#1b1c1c;border-radius:1.25rem;padding:20px 28px;display:flex;flex-direction:column;gap:4px;min-width:130px;">
+          <div style="background:#1b1c1c;border-radius:1.25rem;padding:24px 32px;display:flex;flex-direction:column;gap:6px;min-width:140px;">
             <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(208,255,0,0.5);">Medium</span>
-            <span style="font-size:28px;font-weight:900;color:#D0FF00;line-height:1;">60 €</span>
+            <span style="font-size:30px;font-weight:900;color:#D0FF00;line-height:1;">60 €</span>
           </div>
-          <div style="background:#D0FF00;border-radius:1.25rem;padding:20px 28px;display:flex;flex-direction:column;gap:4px;min-width:130px;">
+          <div style="background:#D0FF00;border-radius:1.25rem;padding:24px 32px;display:flex;flex-direction:column;gap:6px;min-width:140px;">
             <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.5);">Maxi</span>
-            <span style="font-size:28px;font-weight:900;color:#1b1c1c;line-height:1;">120 €</span>
+            <span style="font-size:30px;font-weight:900;color:#1b1c1c;line-height:1;">120 €</span>
           </div>
-          <div style="border:1.5px solid rgba(27,28,28,0.1);border-radius:1.25rem;padding:20px 28px;display:flex;align-items:center;gap:10px;">
+          <div style="border:1.5px solid rgba(27,28,28,0.1);border-radius:1.25rem;padding:24px 32px;display:flex;align-items:center;gap:10px;">
             <span class="material-symbols-outlined text-on-surface-variant" style="font-size:20px;line-height:1;font-variation-settings:'FILL' 1;">check_circle</span>
             <span style="font-size:13px;font-weight:700;color:#526600;" data-i18n="produits.wrap.pose">Pose incluse</span>
           </div>
@@ -251,66 +254,99 @@
       </div>
 
       <!-- Avant / Après slider -->
-      <div class="reveal mb-16">
-        <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-5" data-i18n="produits.wrap.ba.label">Avant / Après</div>
+      <div class="reveal" style="margin-bottom:80px;">
+        <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" style="margin-bottom:20px;" data-i18n="produits.wrap.ba.label">Avant / Après</div>
         <div class="ba-wrap" style="position:relative;overflow:hidden;border-radius:2rem;width:100%;max-width:760px;aspect-ratio:4/3;background:#e0dbd5;cursor:ew-resize;user-select:none;touch-action:none;">
-          <!-- APRÈS (fond, pleine largeur) — remplacer le div par <img src="images/wrap-apres.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"> -->
+          <!-- APRÈS — remplacer le div par <img src="images/wrap-apres.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"> -->
           <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
             <span class="material-symbols-outlined" style="font-size:36px;opacity:0.15;color:#1b1c1c;font-variation-settings:'FILL' 1;">image</span>
             <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.25);" data-i18n="produits.wrap.ba.after">Avec wrap</span>
           </div>
-          <!-- AVANT (clippé à gauche) — remplacer le div intérieur par <img src="images/wrap-avant.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"> -->
+          <!-- AVANT — remplacer le div intérieur par <img src="images/wrap-avant.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"> -->
           <div class="ba-before" style="position:absolute;top:0;left:0;width:50%;height:100%;overflow:hidden;border-right:2px solid rgba(255,255,255,0.9);">
             <div style="position:absolute;inset:0;background:#1b1c1c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
               <span class="material-symbols-outlined" style="font-size:36px;opacity:0.2;color:#D0FF00;font-variation-settings:'FILL' 1;">image</span>
               <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(208,255,0,0.3);" data-i18n="produits.wrap.ba.before">Sans wrap</span>
             </div>
           </div>
-          <!-- Handle -->
           <div class="ba-handle" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:44px;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:none;">
             <div style="width:44px;height:44px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 16px rgba(0,0,0,0.18);">
               <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 1L2 7L7 13" stroke="#1b1c1c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 1L20 7L15 13" stroke="#1b1c1c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
           </div>
-          <!-- Range input invisible -->
           <input type="range" min="0" max="100" value="50" class="ba-input" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;padding:0;">
         </div>
       </div>
 
-      <!-- Grille Instagram -->
-      <div class="reveal">
-        <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-5" data-i18n="produits.wrap.insta.label">Vu sur Instagram</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:760px;">
-          <!-- Remplacer chaque bloc par un embed Instagram :
-               <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POSTID/" data-instgrm-version="14" style="width:100%;margin:0;"></blockquote>
-               Ajouter en bas de page : <script async src="//www.instagram.com/embed.js"></script> -->
-          <div style="aspect-ratio:1;border-radius:1.25rem;background:#e0dbd5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
-            <svg viewBox="0 0 32 32" width="28" height="28" style="opacity:0.15;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
-            <span style="font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.25);">@bodcharge</span>
+    </div>
+
+    <!-- Marquee Instagram — pleine largeur -->
+    <div class="reveal" style="padding-bottom:96px;">
+      <div class="max-w-7xl mx-auto px-6" style="margin-bottom:20px;">
+        <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" data-i18n="produits.wrap.insta.label">Vu sur Instagram</div>
+      </div>
+      <div style="overflow:hidden;width:100%;">
+        <div class="insta-marquee" style="display:flex;gap:12px;width:max-content;">
+          <!-- 7 posts originaux -->
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#e0dbd5;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.15;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.25);">@bodcharge</span>
           </div>
-          <div style="aspect-ratio:1;border-radius:1.25rem;background:#1b1c1c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
-            <svg viewBox="0 0 32 32" width="28" height="28" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/></svg>
-            <span style="font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(208,255,0,0.3);">@bodcharge</span>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#1b1c1c;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(208,255,0,0.3);">@bodcharge</span>
           </div>
-          <div style="aspect-ratio:1;border-radius:1.25rem;background:#D0FF00;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
-            <svg viewBox="0 0 32 32" width="28" height="28" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
-            <span style="font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.3);">@bodcharge</span>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#D0FF00;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.3);">@bodcharge</span>
           </div>
-          <div style="aspect-ratio:1;border-radius:1.25rem;background:#e0dbd5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
-            <svg viewBox="0 0 32 32" width="28" height="28" style="opacity:0.15;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
-            <span style="font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.25);">@bodcharge</span>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#1b1c1c;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(208,255,0,0.3);">@bodcharge</span>
           </div>
-          <div style="aspect-ratio:1;border-radius:1.25rem;background:#1b1c1c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
-            <svg viewBox="0 0 32 32" width="28" height="28" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/></svg>
-            <span style="font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(208,255,0,0.3);">@bodcharge</span>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#e0dbd5;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.15;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.25);">@bodcharge</span>
           </div>
-          <div style="aspect-ratio:1;border-radius:1.25rem;background:#D0FF00;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
-            <svg viewBox="0 0 32 32" width="28" height="28" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
-            <span style="font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.3);">@bodcharge</span>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#D0FF00;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.3);">@bodcharge</span>
+          </div>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#1b1c1c;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(208,255,0,0.3);">@bodcharge</span>
+          </div>
+          <!-- Duplicate pour loop sans-couture -->
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#e0dbd5;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.15;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.25);">@bodcharge</span>
+          </div>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#1b1c1c;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(208,255,0,0.3);">@bodcharge</span>
+          </div>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#D0FF00;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.3);">@bodcharge</span>
+          </div>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#1b1c1c;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(208,255,0,0.3);">@bodcharge</span>
+          </div>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#e0dbd5;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.15;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.25);">@bodcharge</span>
+          </div>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#D0FF00;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(27,28,28,0.3);">@bodcharge</span>
+          </div>
+          <div style="width:160px;aspect-ratio:3/4;border-radius:1.25rem;background:#1b1c1c;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;">
+            <svg viewBox="0 0 32 32" width="24" height="24" style="opacity:0.2;"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/></svg>
+            <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(208,255,0,0.3);">@bodcharge</span>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -320,17 +356,12 @@
       var before = wrap.querySelector('.ba-before');
       var handle = wrap.querySelector('.ba-handle');
       var input = wrap.querySelector('.ba-input');
-      function update(val) {
-        before.style.width = val + '%';
-        handle.style.left = val + '%';
-      }
+      function update(val) { before.style.width = val + '%'; handle.style.left = val + '%'; }
       input.addEventListener('input', function(e) { update(e.target.value); });
-      // Touch support
       wrap.addEventListener('touchmove', function(e) {
         var rect = wrap.getBoundingClientRect();
         var pct = Math.max(0, Math.min(100, (e.touches[0].clientX - rect.left) / rect.width * 100));
-        input.value = pct;
-        update(pct);
+        input.value = pct; update(pct);
       }, { passive: true });
     });
   </script>
