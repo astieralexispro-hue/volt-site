@@ -343,18 +343,52 @@
   </section>
 
   <script>
-    // Avant/Après slider
     document.querySelectorAll('.ba-wrap').forEach(function(wrap) {
       var before = wrap.querySelector('.ba-before');
       var handle = wrap.querySelector('.ba-handle');
       var input = wrap.querySelector('.ba-input');
-      function update(val) { before.style.width = val + '%'; handle.style.left = val + '%'; }
+      var beforeImg = before.querySelector('img');
+
+      // Fixe la largeur de l'image avant = largeur totale du conteneur (pas du clip)
+      function fixImgWidth() {
+        if (beforeImg) {
+          beforeImg.style.position = 'absolute';
+          beforeImg.style.top = '0';
+          beforeImg.style.left = '0';
+          beforeImg.style.height = '100%';
+          beforeImg.style.width = wrap.offsetWidth + 'px';
+          beforeImg.style.objectFit = 'cover';
+          beforeImg.style.maxWidth = 'none';
+        }
+      }
+      fixImgWidth();
+      window.addEventListener('resize', fixImgWidth);
+
+      function update(val) {
+        before.style.width = val + '%';
+        handle.style.left = val + '%';
+      }
+
       input.addEventListener('input', function(e) { update(e.target.value); });
       wrap.addEventListener('touchmove', function(e) {
         var rect = wrap.getBoundingClientRect();
         var pct = Math.max(0, Math.min(100, (e.touches[0].clientX - rect.left) / rect.width * 100));
         input.value = pct; update(pct);
       }, { passive: true });
+
+      // Animation d'indice au chargement : glisse de 50% → 20% → 50%
+      var hinted = false;
+      input.addEventListener('input', function() { hinted = true; });
+      setTimeout(function() {
+        if (hinted) return;
+        var pct = 50, dir = -1;
+        var anim = setInterval(function() {
+          pct += dir * 1.5;
+          if (pct <= 20) dir = 1;
+          if (pct >= 50 && dir === 1) { clearInterval(anim); pct = 50; }
+          input.value = pct; update(pct);
+        }, 16);
+      }, 1200);
     });
   </script>
 
