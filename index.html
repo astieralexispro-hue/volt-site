@@ -29,13 +29,6 @@
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   body { font-family: 'Inter', sans-serif; background-color: #fbf9f8; }
   .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-  .hero-img-default { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 15%;transition:transform 0.25s ease; }
-  .hero-img-reveal { position:absolute;top:0;left:0;height:100%;width:0;overflow:hidden;border-right:2px solid rgba(255,255,255,0.9);transition:width 0.25s ease; }
-  .hero-img-hover { position:absolute;top:0;left:0;height:100%;object-fit:cover; }
-  @keyframes zoom-only { from{transform:scale(1);} to{transform:scale(2.2);} }
-  @keyframes wipe-white { from{width:0%;} to{width:100%;border-right-color:transparent;} }
-  .hero-img-wrap:hover .hero-img-default { animation:zoom-only 0.5s ease forwards; }
-  .hero-img-wrap:hover .hero-img-reveal { animation:wipe-white 0.45s ease-in-out 0.5s both; }
 
   /* Animations */
   @keyframes fadeUp {
@@ -255,10 +248,7 @@
     <div class="animate-fade-in relative flex justify-center items-center">
       <div class="absolute inset-0 bg-primary-container/15 rounded-full blur-[80px]"></div>
       <div class="hero-img-wrap relative w-full max-w-[440px] aspect-[4/5] max-h-72 sm:max-h-none rounded-3xl overflow-hidden shadow-2xl rotate-2">
-        <img src="images/personne-au-telephone.png" alt="Client utilisant une station Bod" class="hero-img-default"/>
-        <div class="hero-img-reveal">
-          <img src="images/personne-au-telephone-zoom.png" alt="Client utilisant une station Bod" class="hero-img-hover"/>
-        </div>
+        <img src="images/personne-au-telephone-zoom.png" alt="Client utilisant une station Bod" class="w-full h-full object-cover"/>
         <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-5 flex items-center gap-4">
           <div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
             <span class="material-symbols-outlined text-on-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
@@ -555,15 +545,6 @@
 </script>
 
 <script>
-  // Fix hero reveal image width (must match container, not shrinking parent)
-  const heroWrap = document.querySelector('.hero-img-wrap');
-  const heroRevealImg = document.querySelector('.hero-img-hover');
-  function fixHeroReveal() {
-    if (heroWrap && heroRevealImg) heroRevealImg.style.width = heroWrap.offsetWidth + 'px';
-  }
-  fixHeroReveal();
-  window.addEventListener('resize', fixHeroReveal);
-
   // Counter animation on scroll
   const counterEls = document.querySelectorAll('[data-counter]');
   const counterObserver = new IntersectionObserver((entries) => {
