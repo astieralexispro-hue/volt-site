@@ -97,20 +97,19 @@
   <!-- 3 STATIONS -->
   <section class="max-w-7xl mx-auto px-6 pb-20 md:pb-32 space-y-6">
 
-    <!-- BASIC — texte gauche / image droite -->
-    <div class="reveal card-lift bg-surface-container-low rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row min-h-[340px]">
-      <!-- Content -->
-      <div class="flex flex-col justify-center p-8 md:p-12 flex-1">
-        <div class="flex items-center gap-3 mb-6">
+    <!-- BASIC -->
+    <div class="reveal card-lift bg-surface-container-low rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row" style="min-height:380px;">
+      <div class="flex flex-col justify-center p-10 md:p-14 md:w-[480px] shrink-0">
+        <div class="flex items-center gap-3 mb-8">
           <div class="inline-flex items-center gap-2 bg-primary-container rounded-full px-4 py-2">
             <span class="font-black text-2xl text-on-surface" style="line-height:1;">6</span>
             <span class="text-on-surface/50 text-xs font-bold uppercase tracking-wide" style="line-height:1;">slots</span>
           </div>
           <span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" data-i18n="produits.basic.badge">Compact</span>
         </div>
-        <h2 class="text-3xl font-black tracking-tighter text-on-surface mb-1" data-i18n="produits.basic.name">Basic Station</h2>
-        <p class="text-primary font-bold text-sm mb-7" data-i18n="produits.basic.tagline">L'essentiel, bien pensé.</p>
-        <div class="space-y-3 mb-8">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tighter text-on-surface mb-2" data-i18n="produits.basic.name">Basic Station</h2>
+        <p class="text-primary font-bold text-sm mb-8" data-i18n="produits.basic.tagline">L'essentiel, bien pensé.</p>
+        <div class="space-y-4 mb-10">
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-primary shrink-0" style="font-size:18px;line-height:1;font-variation-settings:'FILL' 1;">check_circle</span>
             <span class="text-sm text-on-surface-variant" data-i18n="produits.basic.f1">Format compact — comptoir ou mural</span>
@@ -128,33 +127,27 @@
             <span class="text-sm text-on-surface-variant" data-i18n="produits.basic.f4">Wrap vinyl dès 30 €</span>
           </div>
         </div>
-        <a href="partenaire.html" class="self-start inline-flex items-center gap-2 bg-on-surface text-primary-container px-7 py-3.5 rounded-full font-black text-sm hover:scale-105 transition-transform active:scale-95" data-i18n="produits.cta">
-          Demander cette station
-        </a>
+        <a href="partenaire.html" class="self-start inline-flex items-center gap-2 bg-on-surface text-primary-container px-7 py-3.5 rounded-full font-black text-sm hover:scale-105 transition-transform active:scale-95" data-i18n="produits.cta">Demander cette station</a>
       </div>
-      <!-- Image -->
-      <div class="md:w-2/5 shrink-0 flex items-center justify-center" style="background-color:#e5e0db;min-height:240px;">
-        <!-- Remplacer par : <img src="images/basic-station.jpg" class="w-full h-full object-cover"> -->
-        <svg viewBox="0 0 32 32" width="64" height="64" style="opacity:0.1;" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/>
-        </svg>
+      <!-- Image — prend tout le reste -->
+      <div class="flex-1 flex items-center justify-center self-stretch" style="background-color:#e5e0db;">
+        <!-- <img src="images/basic-station.jpg" class="w-full h-full object-cover"> -->
+        <svg viewBox="0 0 32 32" width="56" height="56" style="opacity:0.1;" xmlns="http://www.w3.org/2000/svg"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
       </div>
     </div>
 
-    <!-- MEDIUM — image gauche / texte droite (featured) -->
-    <div class="reveal reveal-delay-1 bg-primary-container rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row-reverse min-h-[340px]">
-      <!-- Content -->
-      <div class="flex flex-col justify-center p-8 md:p-12 flex-1 relative">
-        <div class="absolute top-6 right-6 md:top-8 md:right-10 bg-on-surface text-primary-container text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-full" data-i18n="produits.medium.popular">La plus populaire</div>
-        <div class="flex items-center gap-3 mb-6 mt-8 md:mt-0">
+    <!-- MEDIUM — même structure (texte gauche, image droite) -->
+    <div class="reveal reveal-delay-1 bg-primary-container rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row" style="min-height:380px;">
+      <div class="flex flex-col justify-center p-10 md:p-14 md:w-[480px] shrink-0">
+        <div class="flex items-center gap-3 mb-8">
           <div class="inline-flex items-center gap-2 bg-on-surface rounded-full px-4 py-2">
             <span class="font-black text-2xl text-primary-container" style="line-height:1;">12</span>
             <span class="text-primary-container/50 text-xs font-bold uppercase tracking-wide" style="line-height:1;">slots</span>
           </div>
         </div>
-        <h2 class="text-3xl font-black tracking-tighter text-on-surface mb-1" data-i18n="produits.medium.name">Medium Station</h2>
-        <p class="text-on-surface/60 font-bold text-sm mb-7" data-i18n="produits.medium.tagline">Le bon équilibre.</p>
-        <div class="space-y-3 mb-8">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tighter text-on-surface mb-2" data-i18n="produits.medium.name">Medium Station</h2>
+        <p class="text-on-surface/60 font-bold text-sm mb-8" data-i18n="produits.medium.tagline">Le bon équilibre.</p>
+        <div class="space-y-4 mb-10">
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-on-surface shrink-0" style="font-size:18px;line-height:1;font-variation-settings:'FILL' 1;">check_circle</span>
             <span class="text-sm text-on-surface/70" data-i18n="produits.medium.f1">Sur pied ou mural — s'intègre partout</span>
@@ -172,32 +165,26 @@
             <span class="text-sm text-on-surface/70" data-i18n="produits.medium.f4">Wrap vinyl dès 60 €</span>
           </div>
         </div>
-        <a href="partenaire.html" class="self-start inline-flex items-center gap-2 bg-on-surface text-primary-container px-7 py-3.5 rounded-full font-black text-sm hover:scale-105 transition-transform active:scale-95" data-i18n="produits.cta">
-          Demander cette station
-        </a>
+        <a href="partenaire.html" class="self-start inline-flex items-center gap-2 bg-on-surface text-primary-container px-7 py-3.5 rounded-full font-black text-sm hover:scale-105 transition-transform active:scale-95" data-i18n="produits.cta">Demander cette station</a>
       </div>
-      <!-- Image -->
-      <div class="md:w-2/5 shrink-0 flex items-center justify-center" style="background-color:#b5de00;min-height:240px;">
-        <svg viewBox="0 0 32 32" width="64" height="64" style="opacity:0.12;" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/>
-        </svg>
+      <div class="flex-1 flex items-center justify-center self-stretch" style="background-color:#b5de00;">
+        <svg viewBox="0 0 32 32" width="56" height="56" style="opacity:0.12;" xmlns="http://www.w3.org/2000/svg"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#1b1c1c"/></svg>
       </div>
     </div>
 
-    <!-- MAXI — texte gauche / image droite (dark) -->
-    <div class="reveal reveal-delay-2 bg-on-surface rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row min-h-[340px]">
-      <!-- Content -->
-      <div class="flex flex-col justify-center p-8 md:p-12 flex-1">
-        <div class="flex items-center gap-3 mb-6">
+    <!-- MAXI -->
+    <div class="reveal reveal-delay-2 bg-on-surface rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row" style="min-height:380px;">
+      <div class="flex flex-col justify-center p-10 md:p-14 md:w-[480px] shrink-0">
+        <div class="flex items-center gap-3 mb-8">
           <div class="inline-flex items-center gap-2 bg-primary-container rounded-full px-4 py-2">
             <span class="font-black text-2xl text-on-surface" style="line-height:1;">24</span>
             <span class="text-on-surface/50 text-xs font-bold uppercase tracking-wide" style="line-height:1;">slots</span>
           </div>
           <span class="text-xs font-bold uppercase tracking-widest text-primary-container/50" data-i18n="produits.maxi.badge">Grand format</span>
         </div>
-        <h2 class="text-3xl font-black tracking-tighter text-primary-container mb-1" data-i18n="produits.maxi.name">Maxi Station</h2>
-        <p class="text-primary-container/60 font-bold text-sm mb-7" data-i18n="produits.maxi.tagline">Pensée pour les grands flux.</p>
-        <div class="space-y-3 mb-8">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tighter text-primary-container mb-2" data-i18n="produits.maxi.name">Maxi Station</h2>
+        <p class="text-primary-container/60 font-bold text-sm mb-8" data-i18n="produits.maxi.tagline">Pensée pour les grands flux.</p>
+        <div class="space-y-4 mb-10">
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-primary-container shrink-0" style="font-size:18px;line-height:1;font-variation-settings:'FILL' 1;">check_circle</span>
             <span class="text-sm text-white/60" data-i18n="produits.maxi.f1">Grand format sur pied — présence forte</span>
@@ -215,15 +202,10 @@
             <span class="text-sm text-white/60" data-i18n="produits.maxi.f4">Wrap vinyl dès 120 €</span>
           </div>
         </div>
-        <a href="partenaire.html" class="self-start inline-flex items-center gap-2 bg-primary-container text-on-surface px-7 py-3.5 rounded-full font-black text-sm hover:scale-105 transition-transform active:scale-95" data-i18n="produits.cta">
-          Demander cette station
-        </a>
+        <a href="partenaire.html" class="self-start inline-flex items-center gap-2 bg-primary-container text-on-surface px-7 py-3.5 rounded-full font-black text-sm hover:scale-105 transition-transform active:scale-95" data-i18n="produits.cta">Demander cette station</a>
       </div>
-      <!-- Image -->
-      <div class="md:w-2/5 shrink-0 flex items-center justify-center" style="background-color:#252525;min-height:240px;">
-        <svg viewBox="0 0 32 32" width="64" height="64" style="opacity:0.15;" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/>
-        </svg>
+      <div class="flex-1 flex items-center justify-center self-stretch" style="background-color:#252525;">
+        <svg viewBox="0 0 32 32" width="56" height="56" style="opacity:0.15;" xmlns="http://www.w3.org/2000/svg"><path d="M18 9L13.5 18H17.5L15.5 26L22.5 15H18.5L20.5 9H18Z" fill="#D0FF00"/></svg>
       </div>
     </div>
 
@@ -244,40 +226,40 @@
         </div>
       </div>
 
-      <!-- 3 feature cards -->
-      <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-        <div class="bg-surface rounded-[2rem] p-8">
+      <!-- 3 feature items — sans fond, sur le gris de la section -->
+      <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div class="p-2">
           <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
             <span class="material-symbols-outlined text-on-surface" style="font-size:26px;line-height:1;font-variation-settings:'FILL' 1;">brush</span>
           </div>
-          <div class="font-black text-on-surface text-lg mb-2" data-i18n="produits.wrap.f1.title">Wrap vinyl full-cover</div>
+          <div class="font-black text-on-surface text-lg mb-3" data-i18n="produits.wrap.f1.title">Wrap vinyl full-cover</div>
           <div class="text-sm text-on-surface-variant leading-relaxed" data-i18n="produits.wrap.f1.text">Impression haute résolution, résistant à l'usage quotidien.</div>
         </div>
-        <div class="bg-surface rounded-[2rem] p-8">
+        <div class="p-2">
           <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
             <span class="material-symbols-outlined text-on-surface" style="font-size:26px;line-height:1;font-variation-settings:'FILL' 1;">devices</span>
           </div>
-          <div class="font-black text-on-surface text-lg mb-2" data-i18n="produits.wrap.f2.title">Écran BOD standard</div>
+          <div class="font-black text-on-surface text-lg mb-3" data-i18n="produits.wrap.f2.title">Écran BOD standard</div>
           <div class="text-sm text-on-surface-variant leading-relaxed" data-i18n="produits.wrap.f2.text">L'interface utilisateur reste celle de BOD — garantie, maintenance et cohérence du réseau.</div>
         </div>
-        <div class="bg-on-surface rounded-[2rem] p-8">
+        <div class="p-2">
           <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
             <span class="material-symbols-outlined text-on-surface" style="font-size:26px;line-height:1;font-variation-settings:'FILL' 1;">sell</span>
           </div>
-          <div class="font-black text-primary-container text-lg mb-2" data-i18n="produits.wrap.f3.title">Option payante</div>
-          <div class="text-sm text-white/60 leading-relaxed mb-4" data-i18n="produits.wrap.f3.text">30 € (Basic), 60 € (Medium), 120 € (Maxi) — pose incluse.</div>
+          <div class="font-black text-on-surface text-lg mb-3" data-i18n="produits.wrap.f3.title">Option payante</div>
+          <div class="text-sm text-on-surface-variant leading-relaxed mb-5" data-i18n="produits.wrap.f3.text">30 € (Basic), 60 € (Medium), 120 € (Maxi) — pose incluse.</div>
           <div class="space-y-2">
-            <div class="flex items-center justify-between bg-white/5 rounded-xl px-3 py-2">
-              <span class="text-white/50 text-xs font-medium">Basic</span>
-              <span class="text-primary-container font-black text-sm">30 €</span>
+            <div class="flex items-center justify-between border border-black/8 rounded-xl px-4 py-2.5">
+              <span class="text-on-surface-variant text-xs font-medium">Basic</span>
+              <span class="text-on-surface font-black text-sm">30 €</span>
             </div>
-            <div class="flex items-center justify-between bg-white/5 rounded-xl px-3 py-2">
-              <span class="text-white/50 text-xs font-medium">Medium</span>
-              <span class="text-primary-container font-black text-sm">60 €</span>
+            <div class="flex items-center justify-between border border-black/8 rounded-xl px-4 py-2.5">
+              <span class="text-on-surface-variant text-xs font-medium">Medium</span>
+              <span class="text-on-surface font-black text-sm">60 €</span>
             </div>
-            <div class="flex items-center justify-between bg-white/5 rounded-xl px-3 py-2">
-              <span class="text-white/50 text-xs font-medium">Maxi</span>
-              <span class="text-primary-container font-black text-sm">120 €</span>
+            <div class="flex items-center justify-between border border-black/8 rounded-xl px-4 py-2.5">
+              <span class="text-on-surface-variant text-xs font-medium">Maxi</span>
+              <span class="text-on-surface font-black text-sm">120 €</span>
             </div>
           </div>
         </div>
@@ -327,31 +309,31 @@
   </section>
 
   <!-- PUBLICITÉ -->
-  <section class="max-w-7xl mx-auto px-6 py-16 md:py-32">
-    <div class="reveal">
-      <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4" data-i18n="produits.pub.label">Écran publicitaire</div>
-      <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface mb-4" data-i18n="produits.pub.h2">Votre station<br/>parle à vos clients.</h2>
-      <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl mb-12" data-i18n="produits.pub.intro">
+  <section class="max-w-7xl mx-auto px-6 py-20 md:py-40">
+    <div class="reveal mb-16">
+      <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-5" data-i18n="produits.pub.label">Écran publicitaire</div>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface mb-6" data-i18n="produits.pub.h2">Votre station<br/>parle à vos clients.</h2>
+      <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl" data-i18n="produits.pub.intro">
         Chaque station est équipée d'un écran. Il peut diffuser vos propres contenus ou accueillir des campagnes publicitaires — photos ou vidéos en boucle, ciblées sur vos clients au moment exact où ils rechargent.
       </p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
-      <div class="card-lift bg-surface-container-low rounded-[2rem] p-8 md:p-10">
-        <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center mb-7">
-          <span class="material-symbols-outlined text-on-surface" style="font-size:22px;line-height:1;font-variation-settings:'FILL' 1;">tv</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal mb-8">
+      <div class="card-lift bg-surface-container-low rounded-[2rem] p-10 md:p-12">
+        <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-8">
+          <span class="material-symbols-outlined text-on-surface" style="font-size:26px;line-height:1;font-variation-settings:'FILL' 1;">tv</span>
         </div>
-        <h3 class="text-xl font-black text-on-surface tracking-tight mb-3" data-i18n="produits.pub.own.title">Votre contenu</h3>
-        <p class="text-on-surface-variant leading-relaxed mb-5" data-i18n="produits.pub.own.text">
+        <h3 class="text-2xl font-black text-on-surface tracking-tight mb-4" data-i18n="produits.pub.own.title">Votre contenu</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-6" data-i18n="produits.pub.own.text">
           Diffusez vos promotions, événements à venir, menus du jour ou ambiance de marque. Photos ou vidéos, en boucle sur l'écran de la station.
         </p>
         <div class="text-xs font-black text-primary uppercase tracking-widest" data-i18n="produits.pub.own.tag">Inclus sur demande</div>
       </div>
-      <div class="card-lift bg-surface-container-low rounded-[2rem] p-8 md:p-10">
-        <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center mb-7">
-          <span class="material-symbols-outlined text-on-surface" style="font-size:22px;line-height:1;font-variation-settings:'FILL' 1;">campaign</span>
+      <div class="card-lift bg-surface-container-low rounded-[2rem] p-10 md:p-12">
+        <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-8">
+          <span class="material-symbols-outlined text-on-surface" style="font-size:26px;line-height:1;font-variation-settings:'FILL' 1;">campaign</span>
         </div>
-        <h3 class="text-xl font-black text-on-surface tracking-tight mb-3" data-i18n="produits.pub.network.title">Réseau publicitaire BOD</h3>
-        <p class="text-on-surface-variant leading-relaxed mb-5" data-i18n="produits.pub.network.text">
+        <h3 class="text-2xl font-black text-on-surface tracking-tight mb-4" data-i18n="produits.pub.network.title">Réseau publicitaire BOD</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-6" data-i18n="produits.pub.network.text">
           BOD peut gérer la vente d'espace publicitaire sur vos écrans à des annonceurs locaux ou nationaux. Une source de revenus passifs supplémentaire pour votre établissement.
         </p>
         <div class="text-xs font-black text-primary uppercase tracking-widest" data-i18n="produits.pub.network.tag">Sur devis</div>
