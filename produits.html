@@ -44,6 +44,9 @@
     .station-text { width: 520px !important; flex-shrink: 0 !important; min-width: 0; }
     .station-img-zone { flex: 1 1 0%; min-width: 0; }
   }
+  .station-text-right { text-align: right; }
+  .station-text-right .slot-bubble { justify-content: flex-end; }
+  .station-text-right .feature-row { flex-direction: row-reverse; }
 </style>
 </head>
 <body class="bg-surface text-on-surface selection:bg-primary-container">
@@ -145,8 +148,8 @@
         <img src="images/medium-station.png" alt="Medium Station BOD" style="object-fit:contain;max-height:440px;width:auto;">
         <img src="images/batterie-externe-bod.png" alt="Batterie BOD" style="object-fit:contain;max-height:200px;width:auto;">
       </div>
-      <div class="station-text flex flex-col justify-center p-10 md:p-14">
-        <div class="flex items-center gap-3 mb-8">
+      <div class="station-text station-text-right flex flex-col justify-center p-10 md:p-14">
+        <div class="slot-bubble flex items-center gap-3 mb-8">
           <div class="inline-flex items-center justify-center gap-2 bg-on-surface rounded-full px-5 py-2.5">
             <span class="font-black text-3xl text-primary-container" style="line-height:1;">12</span>
             <span class="text-primary-container text-sm font-black uppercase tracking-wide" style="line-height:1;">slots</span>
@@ -155,19 +158,19 @@
         <h2 class="text-3xl md:text-4xl font-black tracking-tighter text-on-surface mb-2" data-i18n="produits.medium.name">Medium Station</h2>
         <p class="text-on-surface/60 font-bold text-sm mb-8" data-i18n="produits.medium.tagline">Le bon équilibre.</p>
         <div class="space-y-4 mb-10">
-          <div class="flex items-center gap-3">
+          <div class="feature-row flex items-center gap-3">
             <span class="material-symbols-outlined text-on-surface shrink-0" style="font-size:18px;line-height:1;font-variation-settings:'FILL' 1;">check_circle</span>
             <span class="text-sm text-on-surface/70" data-i18n="produits.medium.f1">Sur pied ou mural — s'intègre partout</span>
           </div>
-          <div class="flex items-center gap-3">
+          <div class="feature-row flex items-center gap-3">
             <span class="material-symbols-outlined text-on-surface shrink-0" style="font-size:18px;line-height:1;font-variation-settings:'FILL' 1;">check_circle</span>
             <span class="text-sm text-on-surface/70" data-i18n="produits.medium.f2">200 à 600 personnes/jour</span>
           </div>
-          <div class="flex items-center gap-3">
+          <div class="feature-row flex items-center gap-3">
             <span class="material-symbols-outlined text-on-surface shrink-0" style="font-size:18px;line-height:1;font-variation-settings:'FILL' 1;">check_circle</span>
             <span class="text-sm text-on-surface/70" data-i18n="produits.medium.f3">Rotation complète en ~2h</span>
           </div>
-          <div class="flex items-center gap-3">
+          <div class="feature-row flex items-center gap-3">
             <span class="material-symbols-outlined text-on-surface shrink-0" style="font-size:18px;line-height:1;font-variation-settings:'FILL' 1;">check_circle</span>
             <span class="text-sm text-on-surface/70" data-i18n="produits.medium.f4">Wrap vinyl dès 60 €</span>
           </div>
