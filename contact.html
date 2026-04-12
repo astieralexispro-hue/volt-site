@@ -29,6 +29,16 @@
   .animate-fade-up-delay-1 { animation: fadeUp 0.7s ease 0.1s forwards; opacity: 0; }
   .animate-fade-up-delay-2 { animation: fadeUp 0.7s ease 0.2s forwards; opacity: 0; }
   input:focus, textarea:focus, select:focus { outline: none; background-color: #eae8e7; }
+  .custom-select-wrap { position: relative; }
+  .custom-select-wrap select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 2.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    cursor: pointer;
+  }
   @media (min-width: 768px) { #menu-toggle { display: none !important; } #mobile-menu { display: none !important; } .nav-desktop-cta { display: inline-flex !important; } }
   @media (max-width: 767px) { .nav-desktop-cta { display: none !important; } #menu-toggle { display: flex !important; } }
 </style>
@@ -74,7 +84,7 @@
 </div>
 
 <main class="pt-20 pb-20">
-  <div class="max-w-7xl mx-auto px-6 pt-12 md:pt-20 grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+  <div class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
 
     <!-- FORM -->
     <section>
@@ -99,13 +109,15 @@
         </div>
         <div>
           <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2" data-i18n="contact.form.subject">Sujet</label>
-          <select name="sujet" class="w-full bg-surface-container-low rounded-xl px-4 py-3.5 text-on-surface border-none transition-colors">
-            <option data-i18n="contact.form.opt1">Question générale</option>
-            <option data-i18n="contact.form.opt2">Devenir partenaire</option>
-            <option data-i18n="contact.form.opt3">Problème avec une station</option>
-            <option data-i18n="contact.form.opt4">Presse / Média</option>
-            <option data-i18n="contact.form.opt5">Autre</option>
-          </select>
+          <div class="custom-select-wrap">
+            <select name="sujet" class="w-full bg-surface-container-low rounded-xl px-4 py-3.5 text-on-surface border-none transition-colors">
+              <option data-i18n="contact.form.opt1">Question générale</option>
+              <option data-i18n="contact.form.opt2">Devenir partenaire</option>
+              <option data-i18n="contact.form.opt3">Problème avec une station</option>
+              <option data-i18n="contact.form.opt4">Presse / Média</option>
+              <option data-i18n="contact.form.opt5">Autre</option>
+            </select>
+          </div>
         </div>
         <div>
           <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2" data-i18n="contact.form.message">Message</label>
@@ -154,10 +166,10 @@
         </div>
       </div>
 
-      <div class="bg-primary-container rounded-3xl p-8">
-        <h3 class="font-black text-xl text-on-surface mb-3" data-i18n="contact.sidebar.venue.h3">Vous avez un établissement ?</h3>
-        <p class="text-on-surface/70 leading-relaxed mb-6" data-i18n="contact.sidebar.venue.p">Déposez directement une demande de partenariat pour une réponse prioritaire.</p>
-        <a href="partenaire.html" class="inline-flex items-center gap-2 bg-on-surface text-primary-container px-6 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform active:scale-95" data-i18n="contact.sidebar.venue.cta">
+      <div class="bg-on-surface rounded-3xl p-8">
+        <h3 class="font-black text-xl text-primary-container mb-3" data-i18n="contact.sidebar.venue.h3">Vous avez un établissement ?</h3>
+        <p class="text-white/60 leading-relaxed mb-6" data-i18n="contact.sidebar.venue.p">Déposez directement une demande de partenariat pour une réponse prioritaire.</p>
+        <a href="partenaire.html" class="inline-flex items-center gap-2 bg-primary-container text-on-surface px-6 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform active:scale-95" data-i18n="contact.sidebar.venue.cta">
           Devenir partenaire
           <span class="material-symbols-outlined text-base">arrow_forward</span>
         </a>
