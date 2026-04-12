@@ -30,11 +30,12 @@
   body { font-family: 'Inter', sans-serif; background-color: #fbf9f8; }
   .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
   .hero-img-default { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 15%;transition:transform 0.25s ease, opacity 0.15s ease; }
-  .hero-img-hover { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(0 100% 0 0);transition:clip-path 0.05s; }
+  .hero-img-reveal { position:absolute;top:0;left:0;height:100%;width:0;overflow:hidden;transition:width 0.05s; }
+  .hero-img-hover { position:absolute;top:0;left:0;height:100%;object-fit:cover; }
   @keyframes zoom-fade { 0%{transform:scale(1);opacity:1;} 100%{transform:scale(2.8);opacity:0;} }
-  @keyframes wipe-lr { from{clip-path:inset(0 100% 0 0);} to{clip-path:inset(0 0% 0 0);} }
+  @keyframes slide-reveal { from{width:0%;} to{width:100%;} }
   .hero-img-wrap:hover .hero-img-default { animation:zoom-fade 0.55s ease forwards; }
-  .hero-img-wrap:hover .hero-img-hover { animation:wipe-lr 0.35s cubic-bezier(0.4,0,0.2,1) 0.4s both; }
+  .hero-img-wrap:hover .hero-img-reveal { animation:slide-reveal 0.4s cubic-bezier(0.4,0,0.2,1) 0.38s both; }
 
   /* Animations */
   @keyframes fadeUp {
@@ -255,7 +256,9 @@
       <div class="absolute inset-0 bg-primary-container/15 rounded-full blur-[80px]"></div>
       <div class="hero-img-wrap relative w-full max-w-[440px] aspect-[4/5] max-h-72 sm:max-h-none rounded-3xl overflow-hidden shadow-2xl rotate-2">
         <img src="images/personne-au-telephone.png" alt="Client utilisant une station Bod" class="hero-img-default"/>
-        <img src="images/personne-au-telephone-zoom.png" alt="Client utilisant une station Bod" class="hero-img-hover"/>
+        <div class="hero-img-reveal">
+          <img src="images/personne-au-telephone-zoom.png" alt="Client utilisant une station Bod" class="hero-img-hover"/>
+        </div>
         <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-5 flex items-center gap-4">
           <div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center shrink-0">
             <span class="material-symbols-outlined text-on-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
@@ -389,7 +392,7 @@
   <section class="py-16 md:py-32 max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
       <div class="reveal order-2 lg:order-1">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF9yO10_vXHdmntX4DoB7rs4XmEIizKq7BLSdTbZxOeMRJ38qaTTt3iU129jKdJN-DDYx3fE7__BS-Q-4qWT1bOza37aa-KEstYEv6xNL1mPTzKHbNfIElZgBE8fZUSZgxjLyLaPYwLSnjmQzf_rK4SL9bKwyc0oPtwiYsTPGHz07iplO536i7TnHrrindFAA6llqpkw9pzU8R0xaeMhbsJipq66DyTEIBdVPkCNKuJLuvI9D3smb8ix8y98LV46RcLp8z8aDZ_xHV" alt="Station de recharge Bod en situation dans un établissement professionnel" width="600" height="600" loading="lazy" class="rounded-[2.5rem] shadow-xl w-full object-cover"/>
+        <img src="images/station-metro.png" alt="Station de recharge Bod en situation dans un établissement professionnel" width="600" height="600" loading="lazy" class="rounded-[2.5rem] shadow-xl w-full object-cover"/>
       </div>
       <div class="reveal reveal-delay-1 order-1 lg:order-2">
         <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Pour votre établissement</div>
@@ -552,6 +555,15 @@
 </script>
 
 <script>
+  // Hero image reveal — fix width to container (same as BA slider)
+  const heroWrap = document.querySelector('.hero-img-wrap');
+  const heroRevealImg = document.querySelector('.hero-img-hover');
+  function fixHeroReveal() {
+    if (heroWrap && heroRevealImg) heroRevealImg.style.width = heroWrap.offsetWidth + 'px';
+  }
+  fixHeroReveal();
+  window.addEventListener('resize', fixHeroReveal);
+
   // Counter animation on scroll
   const counterEls = document.querySelectorAll('[data-counter]');
   const counterObserver = new IntersectionObserver((entries) => {
