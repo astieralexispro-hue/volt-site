@@ -266,12 +266,12 @@
   <section class="bg-on-surface py-10">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10">
       <div class="reveal px-8 py-6 text-center md:text-left">
-        <div class="text-5xl font-black text-primary-container tracking-tighter mb-1">67%</div>
+        <div class="text-5xl font-black text-primary-container tracking-tighter mb-1" data-counter data-to="67" data-suffix="%">67%</div>
         <div class="text-sm text-white/60">des clients ont quitté un lieu à cause d'une batterie morte</div>
         <div class="text-xs text-white/30 mt-1">Source : Powermat Consumer Study</div>
       </div>
       <div class="reveal reveal-delay-1 px-8 py-6 text-center md:text-left">
-        <div class="text-5xl font-black text-primary-container tracking-tighter mb-1">+20 min</div>
+        <div class="text-5xl font-black text-primary-container tracking-tighter mb-1" data-counter data-to="20" data-prefix="+" data-suffix=" min">+20 min</div>
         <div class="text-sm text-white/60">de présence en moyenne quand le client peut recharger</div>
       </div>
       <div class="reveal reveal-delay-2 px-8 py-6 text-center md:text-left">
@@ -542,6 +542,31 @@
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
+</script>
+
+<script>
+  // Counter animation on scroll
+  const counterEls = document.querySelectorAll('[data-counter]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const to = parseInt(el.dataset.to);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = prefix + Math.round(eased * to) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+  counterEls.forEach(el => counterObserver.observe(el));
 </script>
 
 </body>
