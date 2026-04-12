@@ -42,6 +42,11 @@
   .float-battery { animation: float 3.5s ease-in-out 0.6s infinite; }
   @media (min-width: 768px) { #menu-toggle { display: none !important; } #mobile-menu { display: none !important; } .nav-desktop-cta { display: inline-flex !important; } }
   @media (max-width: 767px) { .nav-desktop-cta { display: none !important; } #menu-toggle { display: flex !important; } }
+  @media (min-width: 768px) {
+    .station-card { height: 500px !important; }
+    .station-text { width: 520px !important; flex-shrink: 0 !important; min-width: 0; }
+    .station-img-zone { flex: 1 1 0%; min-width: 0; }
+  }
 </style>
 </head>
 <body class="bg-surface text-on-surface selection:bg-primary-container">
@@ -101,8 +106,8 @@
   <section class="max-w-7xl mx-auto px-6 pb-20 md:pb-32 space-y-6">
 
     <!-- BASIC -->
-    <div class="reveal card-lift bg-surface-container-low rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row md:h-[500px]">
-      <div class="flex flex-col justify-center p-10 md:p-14 md:w-[560px] shrink-0">
+    <div class="reveal card-lift station-card bg-surface-container-low rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row">
+      <div class="station-text flex flex-col justify-center p-10 md:p-14">
         <div class="flex items-center gap-3 mb-8">
           <div class="inline-flex items-center justify-center gap-2 bg-primary-container rounded-full px-5 py-2.5">
             <span class="font-black text-3xl text-on-surface" style="line-height:1;">6</span>
@@ -131,15 +136,15 @@
         </div>
         <a href="partenaire.html" class="w-full inline-flex items-center justify-center bg-on-surface px-7 py-3.5 rounded-full font-black text-sm hover:scale-105 transition-transform active:scale-95" style="color:#e8e4df;" data-i18n="produits.cta">Demander cette station</a>
       </div>
-      <div class="flex-1 flex items-center justify-center self-stretch p-6 gap-4" style="background-color:#e8e4df;">
+      <div class="station-img-zone flex items-center justify-center p-6 gap-4" style="background-color:#e8e4df;">
         <img src="images/basic-station.png" alt="Basic Station BOD" class="float-station" style="object-fit:contain;max-height:360px;width:auto;">
         <img src="images/batterie-externe-bod.png" alt="Batterie BOD" class="float-battery" style="object-fit:contain;max-height:160px;width:auto;">
       </div>
     </div>
 
     <!-- MEDIUM -->
-    <div class="reveal reveal-delay-1 bg-primary-container rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row md:h-[500px]">
-      <div class="flex flex-col justify-center p-10 md:p-14 md:w-[560px] shrink-0">
+    <div class="reveal reveal-delay-1 station-card bg-primary-container rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row">
+      <div class="station-text flex flex-col justify-center p-10 md:p-14">
         <div class="flex items-center gap-3 mb-8">
           <div class="inline-flex items-center justify-center gap-2 bg-on-surface rounded-full px-5 py-2.5">
             <span class="font-black text-3xl text-primary-container" style="line-height:1;">12</span>
@@ -168,15 +173,15 @@
         </div>
         <a href="partenaire.html" class="w-full inline-flex items-center justify-center bg-on-surface text-primary-container px-7 py-3.5 rounded-full font-black text-sm hover:scale-105 transition-transform active:scale-95" data-i18n="produits.cta">Demander cette station</a>
       </div>
-      <div class="flex-1 flex items-center justify-center self-stretch p-6 gap-4" style="background-color:#b5de00;">
+      <div class="station-img-zone flex items-center justify-center p-6 gap-4" style="background-color:#b5de00;">
         <img src="images/medium-station.png" alt="Medium Station BOD" class="float-station" style="object-fit:contain;max-height:360px;width:auto;">
         <img src="images/batterie-externe-bod.png" alt="Batterie BOD" class="float-battery" style="object-fit:contain;max-height:160px;width:auto;">
       </div>
     </div>
 
     <!-- MAXI -->
-    <div class="reveal reveal-delay-2 bg-on-surface rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row md:h-[500px]">
-      <div class="flex flex-col justify-center p-10 md:p-14 md:w-[560px] shrink-0">
+    <div class="reveal reveal-delay-2 station-card bg-on-surface rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row">
+      <div class="station-text flex flex-col justify-center p-10 md:p-14">
         <div class="flex items-center gap-3 mb-8">
           <div class="inline-flex items-center justify-center gap-2 bg-primary-container rounded-full px-5 py-2.5">
             <span class="font-black text-3xl text-on-surface" style="line-height:1;">24</span>
@@ -205,7 +210,7 @@
         </div>
         <a href="partenaire.html" class="w-full inline-flex items-center justify-center bg-primary-container text-on-surface px-7 py-3.5 rounded-full font-black text-sm hover:scale-105 transition-transform active:scale-95" data-i18n="produits.cta">Demander cette station</a>
       </div>
-      <div class="flex-1 flex items-center justify-center self-stretch p-6 gap-4" style="background-color:#252525;">
+      <div class="station-img-zone flex items-center justify-center p-6 gap-4" style="background-color:#252525;">
         <img src="images/maxi-station.png" alt="Maxi Station BOD" class="float-station" style="object-fit:contain;max-height:360px;width:auto;">
         <img src="images/batterie-externe-bod.png" alt="Batterie BOD" class="float-battery" style="object-fit:contain;max-height:160px;width:auto;">
       </div>
