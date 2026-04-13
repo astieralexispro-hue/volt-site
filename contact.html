@@ -96,7 +96,12 @@
         Utilisateur, presse, partenariat — écrivez-nous. Réponse sous 24h.
       </p>
 
-      <form class="space-y-5" action="mailto:hello@bodcharge.com" method="get" enctype="text/plain">
+      <div id="form-success" class="hidden bg-primary-container rounded-2xl p-8 text-center">
+        <span class="material-symbols-outlined text-4xl text-on-surface mb-3 block" style="font-variation-settings:'FILL' 1;">check_circle</span>
+        <h3 class="font-black text-xl text-on-surface mb-2">Message envoyé !</h3>
+        <p class="text-on-surface/70">On vous répond sous 24h.</p>
+      </div>
+      <form id="contact-form" class="space-y-5">
         <div class="grid md:grid-cols-2 gap-5">
           <div>
             <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2" data-i18n="contact.form.name">Nom</label>
@@ -123,11 +128,33 @@
           <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2" data-i18n="contact.form.message">Message</label>
           <textarea name="message" rows="5" placeholder="Votre message..." required class="w-full bg-surface-container-low rounded-xl px-4 py-3.5 text-on-surface border-none transition-colors resize-none"></textarea>
         </div>
-        <button type="submit" class="group flex items-center gap-3 bg-primary-container text-on-primary-container px-10 py-5 rounded-full font-black text-lg hover:shadow-lg hover:shadow-primary-container/30 active:scale-95 transition-all" data-i18n="contact.form.send">
+        <button type="submit" id="contact-btn" class="group flex items-center gap-3 bg-primary-container text-on-primary-container px-10 py-5 rounded-full font-black text-lg hover:shadow-lg hover:shadow-primary-container/30 active:scale-95 transition-all" data-i18n="contact.form.send">
           Envoyer
           <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </button>
       </form>
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const btn = document.getElementById('contact-btn');
+          btn.disabled = true;
+          btn.textContent = 'Envoi en cours…';
+          const data = Object.fromEntries(new FormData(this));
+          try {
+            await fetch('https://n8n.vooolt.fr/webhook/bod-contact', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify(data)
+            });
+            this.classList.add('hidden');
+            document.getElementById('form-success').classList.remove('hidden');
+          } catch(err) {
+            btn.disabled = false;
+            btn.textContent = 'Envoyer';
+            alert('Erreur, veuillez réessayer.');
+          }
+        });
+      </script>
     </section>
 
     <!-- SIDEBAR INFO -->

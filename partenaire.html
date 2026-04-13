@@ -126,7 +126,12 @@
         Installation gratuite, station personnalisée à vos couleurs, zéro engagement.
       </p>
 
-      <form class="space-y-6" action="mailto:contact@bodcharge.com" method="get" enctype="text/plain">
+      <div id="form-success" class="hidden bg-primary-container rounded-2xl p-8 text-center">
+        <span class="material-symbols-outlined text-4xl text-on-surface mb-3 block" style="font-variation-settings:'FILL' 1;">check_circle</span>
+        <h3 class="font-black text-xl text-on-surface mb-2">Demande envoyée !</h3>
+        <p class="text-on-surface/70">On revient vers vous sous 24h.</p>
+      </div>
+      <form id="partenaire-form" class="space-y-6">
         <div class="grid md:grid-cols-2 gap-5">
           <div>
             <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Nom complet</label>
@@ -164,11 +169,33 @@
           <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Message (optionnel)</label>
           <textarea name="message" rows="4" placeholder="Questions, précisions, contexte..." class="w-full bg-surface-container-low rounded-xl px-4 py-3.5 text-on-surface border-none transition-colors resize-none"></textarea>
         </div>
-        <button type="submit" class="group flex items-center gap-3 bg-primary-container text-on-primary-container px-10 py-5 rounded-full font-black text-lg hover:shadow-lg hover:shadow-primary-container/30 active:scale-95 transition-all">
+        <button type="submit" id="partenaire-btn" class="group flex items-center gap-3 bg-primary-container text-on-primary-container px-10 py-5 rounded-full font-black text-lg hover:shadow-lg hover:shadow-primary-container/30 active:scale-95 transition-all">
           Envoyer la demande
           <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </button>
       </form>
+      <script>
+        document.getElementById('partenaire-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const btn = document.getElementById('partenaire-btn');
+          btn.disabled = true;
+          btn.textContent = 'Envoi en cours…';
+          const data = Object.fromEntries(new FormData(this));
+          try {
+            await fetch('https://n8n.vooolt.fr/webhook/bod-partenaire', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify(data)
+            });
+            this.classList.add('hidden');
+            document.getElementById('form-success').classList.remove('hidden');
+          } catch(err) {
+            btn.disabled = false;
+            btn.textContent = 'Envoyer la demande';
+            alert('Erreur, veuillez réessayer.');
+          }
+        });
+      </script>
 
       <!-- CONTACT DIRECT -->
       <div class="mt-12 flex flex-wrap gap-4">
