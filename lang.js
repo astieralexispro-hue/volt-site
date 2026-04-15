@@ -6,6 +6,7 @@ const translations = {
     'nav.tarifs': 'Tarifs',
     'nav.lieux': 'Lieux',
     'nav.pub': 'Publicité',
+    'nav.blog': 'Blog',
     'nav.contact': 'Contact',
     'nav.cta': 'Devenir Partenaire',
     // NAV (old keys kept for compatibility)
@@ -262,6 +263,7 @@ const translations = {
     'nav.tarifs': 'Pricing',
     'nav.lieux': 'Locations',
     'nav.pub': 'Advertising',
+    'nav.blog': 'Blog',
     'nav.contact': 'Contact',
     'nav.cta': 'Become a Partner',
     // NAV (old keys)

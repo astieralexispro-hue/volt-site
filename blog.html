@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog BOD — Conseils et ressources pour les établissements</title>
+<meta name="description" content="Conseils, tendances et ressources pour les établissements qui veulent améliorer l'expérience client. Le blog BOD."/>
+<link rel="canonical" href="https://bodcharge.com/blog"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Alexis Astier"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z' fill='%23D0FF00'/></svg>"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://bodcharge.com/blog"/>
+<meta property="og:title" content="Blog BOD — Conseils pour les établissements"/>
+<meta property="og:description" content="Conseils, tendances et ressources pour les établissements qui veulent faire la différence."/>
+<meta property="og:site_name" content="Bod"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="lang.js" defer></script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fbf9f8; }
+  .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-fade-up { animation: fadeUp 0.7s ease forwards; }
+  .animate-fade-up-delay-1 { animation: fadeUp 0.7s ease 0.1s forwards; opacity: 0; }
+  .animate-fade-up-delay-2 { animation: fadeUp 0.7s ease 0.2s forwards; opacity: 0; }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .card-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,0.10); }
+  @media (min-width: 768px) { #menu-toggle { display: none !important; } #mobile-menu { display: none !important; } .nav-desktop-cta { display: inline-flex !important; } }
+  @media (max-width: 767px) { .nav-desktop-cta { display: none !important; } #menu-toggle { display: flex !important; } }
+  #mobile-menu { border-radius: 0 0 20px 20px; }
+</style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container">
+
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 glass-nav bg-[#fbf9f8]/85 border-b border-black/5">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="flex items-center">
+      <img src="images/logo-bod.png" alt="Bod" style="height:44px;width:auto;"/>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-on-surface-variant">
+      <a href="produits.html" class="hover:text-on-surface transition-colors" data-i18n="nav.products">Produits</a>
+      <a href="tarifs.html" class="hover:text-on-surface transition-colors" data-i18n="nav.tarifs">Tarifs</a>
+      <a href="lieux.html" class="hover:text-on-surface transition-colors" data-i18n="nav.lieux">Lieux</a>
+      <a href="publicite.html" class="hover:text-on-surface transition-colors" data-i18n="nav.pub">Publicité</a>
+      <a href="blog.html" class="text-primary border-b-2 border-primary-container pb-0.5" data-i18n="nav.blog">Blog</a>
+      <a href="contact.html" class="hover:text-on-surface transition-colors" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button id="lang-btn" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-low text-xs font-bold text-on-surface hover:bg-surface-container transition-colors">
+        <span id="lang-flag">🇫🇷</span><span id="lang-label" class="ml-1">FR</span>
+        <span class="material-symbols-outlined text-on-surface-variant" style="font-size:13px;line-height:1;margin-left:2px;">expand_more</span>
+      </button>
+      <a href="partenaire.html" class="nav-desktop-cta hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all" data-i18n="nav.cta">
+        Devenir Partenaire
+      </a>
+      <button id="menu-toggle" class="md:hidden p-2 rounded-xl hover:bg-surface-container-low transition-colors" aria-label="Menu">
+        <span class="material-symbols-outlined text-on-surface" id="menu-icon">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden fixed top-[73px] left-0 right-0 md:hidden" style="background:#fbf9f8;box-shadow:0 12px 40px rgba(0,0,0,0.12);z-index:200;border-radius:0 0 20px 20px;border-bottom:1px solid rgba(0,0,0,0.06);">
+  <div style="padding:8px 16px 20px;">
+    <a href="produits.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.products">Produits</a>
+    <a href="tarifs.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.tarifs">Tarifs</a>
+    <a href="lieux.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.lieux">Lieux</a>
+    <a href="publicite.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.pub">Publicité</a>
+    <a href="blog.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#526600;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.blog">Blog</a>
+    <a href="contact.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:12px;" data-i18n="nav.contact">Contact</a>
+    <a href="partenaire.html" style="display:flex;align-items:center;justify-content:center;padding:15px;background:#cef700;color:#1a2e00;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;" data-i18n="nav.cta">Devenir Partenaire</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- HERO — dark editorial -->
+  <section class="bg-on-surface px-6" style="padding-top:clamp(96px,18vw,128px);padding-bottom:clamp(48px,8vw,80px);">
+    <div class="max-w-7xl mx-auto">
+      <div class="animate-fade-up text-xs font-bold uppercase tracking-widest text-primary-container mb-5">Le Blog BOD</div>
+      <h1 class="animate-fade-up-delay-1 text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95] mb-6 max-w-3xl" style="color:#fbf9f8;">Nos dernières<br/>actus.</h1>
+      <p class="animate-fade-up-delay-2 text-xl leading-relaxed max-w-xl" style="color:rgba(251,249,248,0.5);">Conseils, tendances et ressources pour les établissements qui veulent faire la différence.</p>
+    </div>
+  </section>
+
+  <!-- ARTICLES GRID -->
+  <section class="px-6 py-16 md:py-24">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Article 1 -->
+        <article class="reveal card-lift bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col">
+          <div style="background:#1b1c1c;height:220px;display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined text-primary-container" style="font-size:56px;line-height:1;font-variation-settings:'FILL' 0;opacity:0.25;">storefront</span>
+          </div>
+          <div class="p-8 flex flex-col flex-1 gap-4">
+            <div class="text-xs font-black uppercase tracking-widest text-primary">ÉTABLISSEMENTS</div>
+            <h2 class="text-xl font-black text-on-surface leading-snug">Pourquoi vos clients repartent avant la deuxième commande</h2>
+            <p class="text-on-surface-variant leading-relaxed text-sm flex-1">Un client avec 5% de batterie commande son addition. Ce réflexe vous coûte plus que vous ne le pensez — et c'est réparable.</p>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-xs" style="color:rgba(82,102,0,0.5);">10 avril 2026</span>
+              <a href="#" class="flex items-center gap-1 text-sm font-bold text-primary hover:gap-3 transition-all">Lire <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="reveal reveal-delay-1 card-lift bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col">
+          <div style="background:#1b1c1c;height:220px;display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined text-primary-container" style="font-size:56px;line-height:1;font-variation-settings:'FILL' 0;opacity:0.25;">star</span>
+          </div>
+          <div class="p-8 flex flex-col flex-1 gap-4">
+            <div class="text-xs font-black uppercase tracking-widest text-primary">EXPÉRIENCE CLIENT</div>
+            <h2 class="text-xl font-black text-on-surface leading-snug">La note Google qui monte : le rôle inattendu de la recharge mobile</h2>
+            <p class="text-on-surface-variant leading-relaxed text-sm flex-1">Les établissements qui proposent un service de recharge partagée observent une progression de leur note en ligne. Les données le confirment.</p>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-xs" style="color:rgba(82,102,0,0.5);">3 avril 2026</span>
+              <a href="#" class="flex items-center gap-1 text-sm font-bold text-primary hover:gap-3 transition-all">Lire <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="reveal reveal-delay-2 card-lift bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col">
+          <div style="background:#1b1c1c;height:220px;display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined text-primary-container" style="font-size:56px;line-height:1;font-variation-settings:'FILL' 0;opacity:0.25;">trending_up</span>
+          </div>
+          <div class="p-8 flex flex-col flex-1 gap-4">
+            <div class="text-xs font-black uppercase tracking-widest text-primary">TENDANCES</div>
+            <h2 class="text-xl font-black text-on-surface leading-snug">75% des Français sortent avec moins de 50% de batterie</h2>
+            <p class="text-on-surface-variant leading-relaxed text-sm flex-1">Ce chiffre est une opportunité business concrète pour les établissements qui savent l'exploiter. Voici comment.</p>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-xs" style="color:rgba(82,102,0,0.5);">28 mars 2026</span>
+              <a href="#" class="flex items-center gap-1 text-sm font-bold text-primary hover:gap-3 transition-all">Lire <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 pb-16 md:pb-32">
+    <div class="max-w-7xl mx-auto bg-primary-container rounded-[3rem] p-8 md:p-16 lg:p-24 text-center relative overflow-hidden reveal">
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <svg style="width:min(70%,480px);height:auto;opacity:0.07;" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#000"/>
+        </svg>
+      </div>
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter text-on-surface mb-6 relative z-10" data-i18n="cta.h2">Prêt à électriser<br/>votre établissement ?</h2>
+      <p class="text-on-primary-container text-xl mb-10 max-w-xl mx-auto relative z-10" data-i18n="cta.p">Installation gratuite, station personnalisée à vos couleurs, zéro engagement.</p>
+      <a href="partenaire.html" class="relative z-10 inline-flex items-center gap-3 bg-on-surface text-primary-container px-12 py-5 rounded-full font-black text-xl hover:scale-105 transition-transform active:scale-95" data-i18n="cta.btn">
+        Devenir partenaire
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest border-t border-black/5 py-16 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+    <div>
+      <a href="index.html" class="flex items-center gap-2.5 mb-4">
+        <img src="images/logo-bod.png" alt="Bod" style="height:36px;width:auto;"/>
+      </a>
+      <p class="text-sm text-on-surface-variant max-w-xs" data-i18n="footer.tagline">La batterie de vos clients, c'est notre affaire.</p>
+      <p class="text-xs text-on-surface-variant/50 mt-2">France</p>
+      <p class="text-xs text-on-surface-variant/50 mt-2">© 2026 Bod, Alexis Astier</p>
+    </div>
+    <div class="flex flex-wrap gap-x-12 gap-y-4 text-sm font-medium text-on-surface-variant">
+      <a href="tarifs.html" class="hover:text-on-surface transition-colors" data-i18n="nav.tarifs">Tarifs</a>
+      <a href="lieux.html" class="hover:text-on-surface transition-colors" data-i18n="nav.lieux">Lieux</a>
+      <a href="partenaire.html" class="hover:text-on-surface transition-colors" data-i18n="footer.partner">Devenir partenaire</a>
+      <a href="publicite.html" class="hover:text-on-surface transition-colors" data-i18n="nav.pub">Publicité</a>
+      <a href="blog.html" class="hover:text-on-surface transition-colors" data-i18n="nav.blog">Blog</a>
+      <a href="contact.html" class="hover:text-on-surface transition-colors" data-i18n="nav.contact">Contact</a>
+      <a href="mailto:hello@bodcharge.com" class="hover:text-on-surface transition-colors">hello@bodcharge.com</a>
+      <a href="mentions-legales.html" class="hover:text-on-surface transition-colors" data-i18n="footer.legal">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+  }
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+  document.addEventListener('DOMContentLoaded', () => {
+    const lang = getLang();
+    applyLang(lang);
+    document.getElementById('lang-flag').textContent = lang === 'fr' ? '🇫🇷' : '🇬🇧';
+    document.getElementById('lang-label').textContent = lang.toUpperCase();
+  });
+  document.getElementById('lang-btn').addEventListener('click', () => {
+    const current = getLang();
+    const next = current === 'fr' ? 'en' : 'fr';
+    applyLang(next);
+    document.getElementById('lang-flag').textContent = next === 'fr' ? '🇫🇷' : '🇬🇧';
+    document.getElementById('lang-label').textContent = next.toUpperCase();
+  });
+</script>
+</body>
+</html>
