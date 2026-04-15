@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Publicité sur écran — BOD, réseau d'affichage en établissements</title>
+<meta name="description" content="Diffusez votre contenu ou monétisez l'écran de votre station BOD. Publicité locale ou nationale, en boucle, au moment exact où vos clients rechargent."/>
+<link rel="canonical" href="https://bodcharge.com/publicite"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Alexis Astier"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z' fill='%23D0FF00'/></svg>"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://bodcharge.com/publicite"/>
+<meta property="og:title" content="Publicité sur écran — BOD"/>
+<meta property="og:description" content="Votre station BOD est aussi un écran publicitaire. Diffusez votre contenu ou générez des revenus publicitaires passifs."/>
+<meta property="og:site_name" content="Bod"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="lang.js" defer></script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fbf9f8; }
+  .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-blur: blur(20px); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-fade-up { animation: fadeUp 0.7s ease forwards; }
+  .animate-fade-up-delay-1 { animation: fadeUp 0.7s ease 0.1s forwards; opacity: 0; }
+  .animate-fade-up-delay-2 { animation: fadeUp 0.7s ease 0.2s forwards; opacity: 0; }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+  @media (min-width: 768px) { #menu-toggle { display: none !important; } #mobile-menu { display: none !important; } .nav-desktop-cta { display: inline-flex !important; } }
+  @media (max-width: 767px) { .nav-desktop-cta { display: none !important; } #menu-toggle { display: flex !important; } }
+  .step-number { width: 48px; height: 48px; border-radius: 50%; background: #D0FF00; color: #1a2e00; font-weight: 900; font-size: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+</style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container">
+
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 glass-nav bg-[#fbf9f8]/85 border-b border-black/5">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="flex items-center">
+      <img src="images/logo-bod.png" alt="Bod" style="height:44px;width:auto;"/>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-on-surface-variant">
+      <a href="produits.html" class="hover:text-on-surface transition-colors" data-i18n="nav.products">Produits</a>
+      <a href="tarifs.html" class="hover:text-on-surface transition-colors" data-i18n="nav.tarifs">Tarifs</a>
+      <a href="lieux.html" class="hover:text-on-surface transition-colors" data-i18n="nav.lieux">Lieux</a>
+      <a href="publicite.html" class="text-primary border-b-2 border-primary-container pb-0.5" data-i18n="nav.pub">Publicité</a>
+      <a href="contact.html" class="hover:text-on-surface transition-colors" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button id="lang-btn" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-low text-xs font-bold text-on-surface hover:bg-surface-container transition-colors">
+        <span id="lang-flag">🇫🇷</span><span id="lang-label" class="ml-1">FR</span>
+        <span class="material-symbols-outlined text-on-surface-variant" style="font-size:13px;line-height:1;margin-left:2px;">expand_more</span>
+      </button>
+      <a href="partenaire.html" class="nav-desktop-cta hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-bold text-sm hover:opacity-90 active:scale-95 transition-all" data-i18n="nav.cta">
+        Devenir Partenaire
+      </a>
+      <button id="menu-toggle" class="md:hidden p-2 rounded-xl hover:bg-surface-container-low transition-colors" aria-label="Menu">
+        <span class="material-symbols-outlined text-on-surface" id="menu-icon">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden fixed top-[73px] left-0 right-0 md:hidden" style="background:#fbf9f8;box-shadow:0 12px 40px rgba(0,0,0,0.12);z-index:200;border-radius:0 0 20px 20px;border-bottom:1px solid rgba(0,0,0,0.06);">
+  <div style="padding:8px 16px 20px;">
+    <a href="produits.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.products">Produits</a>
+    <a href="tarifs.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.tarifs">Tarifs</a>
+    <a href="lieux.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.lieux">Lieux</a>
+    <a href="publicite.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#526600;border-radius:12px;text-decoration:none;margin-bottom:2px;" data-i18n="nav.pub">Publicité</a>
+    <a href="contact.html" style="display:flex;align-items:center;padding:14px 12px;font-size:16px;font-weight:600;color:#3a3a3a;border-radius:12px;text-decoration:none;margin-bottom:12px;" data-i18n="nav.contact">Contact</a>
+    <a href="partenaire.html" style="display:flex;align-items:center;justify-content:center;padding:15px;background:#cef700;color:#1a2e00;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;" data-i18n="nav.cta">Devenir Partenaire</a>
+  </div>
+</div>
+
+<main class="pt-20">
+
+  <!-- HERO -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16">
+    <div class="animate-fade-up text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4" data-i18n="pub.label">Écran publicitaire</div>
+    <h1 class="animate-fade-up-delay-1 text-4xl md:text-6xl font-black tracking-tighter text-on-surface leading-[0.95] mb-6 max-w-3xl" data-i18n="pub.h1">Votre station<br/>parle à vos clients.</h1>
+    <p class="animate-fade-up-delay-2 text-on-surface-variant text-xl leading-relaxed max-w-2xl" data-i18n="pub.intro">Chaque station BOD est équipée d'un écran intégré. Diffusez votre propre contenu — ou monétisez cet espace en accueillant des campagnes publicitaires locales ou nationales.</p>
+  </section>
+
+  <!-- DEUX OPTIONS -->
+  <section class="max-w-7xl mx-auto px-6 pb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+
+      <!-- Option 1 : Votre contenu -->
+      <div class="card-lift bg-primary-container rounded-[2.5rem] p-10 md:p-14 flex flex-col">
+        <div class="w-14 h-14 bg-on-surface rounded-2xl flex items-center justify-center mb-8">
+          <span class="material-symbols-outlined text-primary-container" style="font-size:26px;line-height:1;font-variation-settings:'FILL' 1;">tv</span>
+        </div>
+        <div class="text-xs font-black text-on-primary-container/60 uppercase tracking-widest mb-4" data-i18n="pub.own.tag">Inclus sur demande</div>
+        <h2 class="text-3xl font-black text-on-surface tracking-tight mb-4" data-i18n="pub.own.title">Votre contenu</h2>
+        <p class="text-on-primary-container/80 leading-relaxed text-lg mb-8 flex-1" data-i18n="pub.own.text">Promotions, événements à venir, menu du jour, ambiance de marque. Photos ou vidéos en boucle sur l'écran de la station, au moment exact où vos clients rechargent leur téléphone.</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-on-surface font-medium">
+            <span class="material-symbols-outlined text-on-surface" style="font-size:20px;font-variation-settings:'FILL' 1;">check_circle</span>
+            <span data-i18n="pub.own.f1">Mise à jour à distance</span>
+          </li>
+          <li class="flex items-center gap-3 text-on-surface font-medium">
+            <span class="material-symbols-outlined text-on-surface" style="font-size:20px;font-variation-settings:'FILL' 1;">check_circle</span>
+            <span data-i18n="pub.own.f2">Photos et vidéos acceptées</span>
+          </li>
+          <li class="flex items-center gap-3 text-on-surface font-medium">
+            <span class="material-symbols-outlined text-on-surface" style="font-size:20px;font-variation-settings:'FILL' 1;">check_circle</span>
+            <span data-i18n="pub.own.f3">Zéro frais supplémentaires</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Option 2 : Réseau pub BOD -->
+      <div class="card-lift bg-on-surface rounded-[2.5rem] p-10 md:p-14 flex flex-col">
+        <div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-8">
+          <span class="material-symbols-outlined text-on-surface" style="font-size:26px;line-height:1;font-variation-settings:'FILL' 1;">campaign</span>
+        </div>
+        <div class="text-xs font-black text-primary uppercase tracking-widest mb-4" data-i18n="pub.network.tag">Sur devis</div>
+        <h2 class="text-3xl font-black text-primary-container tracking-tight mb-4" data-i18n="pub.network.title">Réseau publicitaire BOD</h2>
+        <p class="text-primary-container/70 leading-relaxed text-lg mb-8 flex-1" data-i18n="pub.network.text">BOD gère la vente d'espace publicitaire sur vos écrans à des annonceurs locaux ou nationaux. Vous n'avez rien à faire — vous touchez une part des revenus générés, passivement.</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-primary-container font-medium">
+            <span class="material-symbols-outlined text-primary" style="font-size:20px;font-variation-settings:'FILL' 1;">check_circle</span>
+            <span data-i18n="pub.network.f1">Revenus passifs pour l'établissement</span>
+          </li>
+          <li class="flex items-center gap-3 text-primary-container font-medium">
+            <span class="material-symbols-outlined text-primary" style="font-size:20px;font-variation-settings:'FILL' 1;">check_circle</span>
+            <span data-i18n="pub.network.f2">Annonceurs sélectionnés par BOD</span>
+          </li>
+          <li class="flex items-center gap-3 text-primary-container font-medium">
+            <span class="material-symbols-outlined text-primary" style="font-size:20px;font-variation-settings:'FILL' 1;">check_circle</span>
+            <span data-i18n="pub.network.f3">Zéro gestion de votre côté</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIDÉO DÉMO -->
+  <section class="max-w-7xl mx-auto px-6 pb-20">
+    <div class="reveal">
+      <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6" data-i18n="pub.demo.label">En action</div>
+      <!-- Remplacer par : <video src="videos/pub-ecran.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;border-radius:2.5rem;"> -->
+      <div class="bg-on-surface rounded-[2.5rem] overflow-hidden" style="min-height:400px;display:flex;align-items:center;justify-content:center;">
+        <div class="flex flex-col items-center gap-3 opacity-20">
+          <span class="material-symbols-outlined text-primary-container" style="font-size:64px;line-height:1;font-variation-settings:'FILL' 0;">smart_display</span>
+          <span class="text-primary-container text-xs font-bold uppercase tracking-widest">Vidéo démo ici</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT ÇA MARCHE -->
+  <section class="bg-surface-container-low" style="padding:96px 0;">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="reveal" style="margin-bottom:64px;">
+        <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6" data-i18n="pub.how.label">Comment ça marche</div>
+        <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface" data-i18n="pub.how.h2">Simple pour tout le monde.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+        <div class="flex flex-col gap-5">
+          <div class="step-number">1</div>
+          <h3 class="text-xl font-black text-on-surface" data-i18n="pub.how.s1.title">Installation</h3>
+          <p class="text-on-surface-variant leading-relaxed" data-i18n="pub.how.s1.text">BOD installe la station dans votre établissement. L'écran est intégré, prêt à diffuser dès le premier jour.</p>
+        </div>
+        <div class="flex flex-col gap-5 reveal-delay-1">
+          <div class="step-number">2</div>
+          <h3 class="text-xl font-black text-on-surface" data-i18n="pub.how.s2.title">Votre contenu ou le nôtre</h3>
+          <p class="text-on-surface-variant leading-relaxed" data-i18n="pub.how.s2.text">Vous nous envoyez vos visuels, on les programme. Ou BOD gère l'intégralité de l'affichage avec des annonceurs partenaires.</p>
+        </div>
+        <div class="flex flex-col gap-5 reveal-delay-2">
+          <div class="step-number">3</div>
+          <h3 class="text-xl font-black text-on-surface" data-i18n="pub.how.s3.title">Vos clients voient, vous gagnez</h3>
+          <p class="text-on-surface-variant leading-relaxed" data-i18n="pub.how.s3.text">Chaque client qui recharge est exposé à votre message au moment où il est le plus attentif — téléphone en main, stationnaire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="px-6 py-16 md:py-32">
+    <div class="max-w-7xl mx-auto bg-primary-container rounded-[3rem] p-8 md:p-16 lg:p-24 text-center relative overflow-hidden reveal">
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <svg style="width:min(70%,480px);height:auto;opacity:0.07;" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.5 8L13 16.5H17L14.5 24L22 14H17.5L20 8H17.5Z" fill="#000"/>
+        </svg>
+      </div>
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter text-on-surface mb-6 relative z-10" data-i18n="pub.cta.h2">Intéressé par<br/>la publicité sur écran ?</h2>
+      <p class="text-on-primary-container text-xl mb-10 max-w-xl mx-auto relative z-10" data-i18n="pub.cta.p">Parlez-nous de votre projet. On revient vers vous sous 24h.</p>
+      <a href="contact.html" class="relative z-10 inline-flex items-center gap-3 bg-on-surface text-primary-container px-12 py-5 rounded-full font-black text-xl hover:scale-105 transition-transform active:scale-95" data-i18n="pub.cta.btn">
+        Nous contacter
+        <span class="material-symbols-outlined" style="font-size:22px;line-height:1;">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-surface-container-lowest border-t border-black/5 py-16 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+    <div>
+      <a href="index.html" class="flex items-center gap-2.5 mb-4">
+        <img src="images/logo-bod.png" alt="Bod" style="height:36px;width:auto;"/>
+      </a>
+      <p class="text-sm text-on-surface-variant max-w-xs" data-i18n="footer.tagline">La batterie de vos clients, c'est notre affaire.</p>
+      <p class="text-xs text-on-surface-variant/50 mt-2">© 2026 Bod, Alexis Astier</p>
+    </div>
+    <div class="flex flex-wrap gap-x-12 gap-y-4 text-sm font-medium text-on-surface-variant">
+      <a href="produits.html" class="hover:text-on-surface transition-colors" data-i18n="nav.products">Produits</a>
+      <a href="tarifs.html" class="hover:text-on-surface transition-colors" data-i18n="nav.tarifs">Tarifs</a>
+      <a href="lieux.html" class="hover:text-on-surface transition-colors" data-i18n="nav.lieux">Lieux</a>
+      <a href="publicite.html" class="hover:text-on-surface transition-colors" data-i18n="nav.pub">Publicité</a>
+      <a href="partenaire.html" class="hover:text-on-surface transition-colors" data-i18n="footer.partner">Devenir partenaire</a>
+      <a href="contact.html" class="hover:text-on-surface transition-colors" data-i18n="nav.contact">Contact</a>
+      <a href="mailto:hello@bodcharge.com" class="hover:text-on-surface transition-colors">hello@bodcharge.com</a>
+      <a href="mentions-legales.html" class="hover:text-on-surface transition-colors" data-i18n="footer.legal">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+  }
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
