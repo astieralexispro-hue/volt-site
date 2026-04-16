@@ -26,6 +26,21 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://bodcharge.com/blog-clients-deuxieme-commande</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://bodcharge.com/blog-note-google</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://bodcharge.com/blog-75-pourcent-batterie</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://bodcharge.com/mentions-legales</loc>
     <priority>0.2</priority>
     <changefreq>yearly</changefreq>
