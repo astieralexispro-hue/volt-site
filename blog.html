@@ -85,25 +85,32 @@
 
 <main>
 
-  <!-- HERO — dark editorial -->
-  <section class="bg-on-surface px-6" style="padding-top:clamp(96px,18vw,128px);padding-bottom:clamp(48px,8vw,80px);">
-    <div class="max-w-7xl mx-auto">
-      <div style="height:2px;background:#cef700;width:clamp(48px,8vw,80px);margin-bottom:clamp(24px,4vw,40px);" class="animate-fade-up"></div>
-      <h1 class="animate-fade-up-delay-1 font-black tracking-tighter leading-[0.88]" style="color:#fbf9f8;font-size:clamp(72px,14vw,152px);margin-bottom:clamp(24px,4vw,40px);">Blog BOD</h1>
-      <p class="animate-fade-up-delay-2 text-base leading-relaxed max-w-md" style="color:rgba(251,249,248,0.45);">Conseils, tendances et ressources pour les établissements qui veulent faire la différence.</p>
+  <!-- HERO — masthead style -->
+  <section class="px-6" style="background:#fbf9f8;padding-top:clamp(100px,18vw,140px);padding-bottom:0;">
+    <div style="max-width:900px;margin:0 auto;text-align:center;">
+      <div style="border-top:2px solid #1b1c1c;padding-top:clamp(20px,3vw,32px);" class="animate-fade-up">
+        <h1 class="animate-fade-up font-black tracking-tighter leading-none" style="color:#1b1c1c;font-size:clamp(60px,12vw,120px);margin:0 0 clamp(16px,2vw,24px);">Le Blog BOD</h1>
+        <p class="animate-fade-up-delay-1" style="color:rgba(27,28,28,0.45);font-size:.875rem;letter-spacing:.06em;margin:0 0 clamp(24px,4vw,36px);">Conseils &amp; ressources pour les établissements</p>
+      </div>
+      <div style="border-top:1px solid rgba(27,28,28,0.12);padding-top:clamp(16px,2.5vw,24px);padding-bottom:clamp(16px,2.5vw,24px);display:flex;align-items:center;justify-content:center;gap:clamp(8px,2vw,24px);flex-wrap:wrap;" class="animate-fade-up-delay-2">
+        <button onclick="filterBlog('tous')" data-cat="tous" class="blog-filter-btn" style="background:#1b1c1c;color:#fbf9f8;border:none;padding:.45rem 1.25rem;border-radius:100px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Tous</button>
+        <button onclick="filterBlog('etablissements')" data-cat="etablissements" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.45rem 1.25rem;border-radius:100px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Établissements</button>
+        <button onclick="filterBlog('experience')" data-cat="experience" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.45rem 1.25rem;border-radius:100px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Expérience client</button>
+        <button onclick="filterBlog('tendances')" data-cat="tendances" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.45rem 1.25rem;border-radius:100px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Tendances</button>
+      </div>
     </div>
   </section>
 
   <!-- ARTICLES GRID -->
   <section class="px-6 py-16 md:py-24">
     <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="blog-grid">
 
         <!-- Article 1 -->
-        <a href="blog-clients-deuxieme-commande.html" class="reveal card-lift bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col">
+        <a href="blog-clients-deuxieme-commande.html" data-category="etablissements" class="reveal card-lift bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col">
           <figure style="margin:0;background:#1b1c1c;height:220px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
             <img src="images/blog-1-clients.png" alt="Battery anxiety dans un restaurant" style="width:100%;height:100%;object-fit:cover;opacity:0.9;" onerror="this.style.display='none'"/>
-            
+
           </figure>
           <div class="p-8 flex flex-col flex-1 gap-4">
             <div class="text-xs font-black uppercase tracking-widest text-primary">ÉTABLISSEMENTS</div>
@@ -117,7 +124,7 @@
         </a>
 
         <!-- Article 2 -->
-        <a href="blog-note-google.html" class="reveal reveal-delay-1 card-lift bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col">
+        <a href="blog-note-google.html" data-category="experience" class="reveal reveal-delay-1 card-lift bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col">
           <figure style="margin:0;background:#1b1c1c;height:220px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
             <img src="images/blog-2-note-google.png" alt="Note Google 5 étoiles restaurant" style="width:100%;height:100%;object-fit:cover;opacity:0.9;" onerror="this.style.display='none'"/>
             
@@ -134,7 +141,7 @@
         </a>
 
         <!-- Article 3 -->
-        <a href="blog-75-pourcent-batterie.html" class="reveal reveal-delay-2 card-lift bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col">
+        <a href="blog-75-pourcent-batterie.html" data-category="tendances" class="reveal reveal-delay-2 card-lift bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col">
           <figure style="margin:0;background:#1b1c1c;height:220px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
             <img src="images/blog-3-tendances.png" alt="Comportements mobiles tendances batterie" style="width:100%;height:100%;object-fit:cover;opacity:0.9;" onerror="this.style.display='none'"/>
             
@@ -205,6 +212,18 @@
     toggle.addEventListener('click', () => {
       menu.classList.toggle('hidden');
       icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+  }
+  function filterBlog(cat) {
+    document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+      const active = btn.dataset.cat === cat;
+      btn.style.background = active ? '#1b1c1c' : 'transparent';
+      btn.style.color = active ? '#fbf9f8' : 'rgba(27,28,28,0.5)';
+      btn.style.border = active ? 'none' : '1px solid rgba(27,28,28,0.15)';
+    });
+    document.querySelectorAll('#blog-grid > a').forEach(card => {
+      const show = cat === 'tous' || card.dataset.category === cat;
+      card.style.display = show ? 'flex' : 'none';
     });
   }
   const reveals = document.querySelectorAll('.reveal');
