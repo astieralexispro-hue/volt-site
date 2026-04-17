@@ -92,13 +92,12 @@
         <h1 class="animate-fade-up font-black tracking-tighter leading-none" style="color:#1b1c1c;font-size:clamp(48px,9vw,96px);text-transform:uppercase;margin:0 0 clamp(10px,1.5vw,16px);">Le Blog BOD</h1>
         <p class="animate-fade-up-delay-1" style="color:rgba(27,28,28,0.4);font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;margin:0;">Conseils &amp; ressources pour les établissements</p>
       </div>
-      <div style="border-top:1px solid rgba(27,28,28,0.12);padding-top:clamp(14px,2vw,20px);padding-bottom:clamp(14px,2vw,20px);display:flex;align-items:center;justify-content:center;gap:clamp(6px,1.5vw,12px);flex-wrap:wrap;" class="animate-fade-up-delay-2">
-        <button onclick="filterBlog('tous')" data-cat="tous" class="blog-filter-btn" style="background:#1b1c1c;color:#fbf9f8;border:none;padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Tous</button>
-        <button onclick="filterBlog('experience')" data-cat="experience" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Expérience client</button>
-        <button onclick="filterBlog('chiffre-affaires')" data-cat="chiffre-affaires" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Chiffre d'affaires</button>
-        <button onclick="filterBlog('avis-reputation')" data-cat="avis-reputation" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Avis &amp; réputation</button>
-        <button onclick="filterBlog('fidelisation')" data-cat="fidelisation" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Fidélisation</button>
-        <button onclick="filterBlog('tendances')" data-cat="tendances" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Tendances mobiles</button>
+      <div style="border-top:1px solid rgba(27,28,28,0.12);padding-top:clamp(14px,2vw,20px);padding-bottom:clamp(14px,2vw,20px);display:flex;align-items:center;justify-content:center;gap:clamp(16px,3vw,32px);flex-wrap:nowrap;overflow-x:auto;" class="animate-fade-up-delay-2">
+        <button onclick="filterBlog('tous')" data-cat="tous" class="blog-filter-btn" style="background:none;border:none;padding:0;font-size:.8125rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;color:#1b1c1c;transition:color .2s;white-space:nowrap;">Tous</button>
+        <button onclick="filterBlog('experience')" data-cat="experience" class="blog-filter-btn" style="background:none;border:none;padding:0;font-size:.8125rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;color:rgba(27,28,28,0.35);transition:color .2s;white-space:nowrap;">Expérience client</button>
+        <button onclick="filterBlog('avis-reputation')" data-cat="avis-reputation" class="blog-filter-btn" style="background:none;border:none;padding:0;font-size:.8125rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;color:rgba(27,28,28,0.35);transition:color .2s;white-space:nowrap;">Avis &amp; réputation</button>
+        <button onclick="filterBlog('fidelisation')" data-cat="fidelisation" class="blog-filter-btn" style="background:none;border:none;padding:0;font-size:.8125rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;color:rgba(27,28,28,0.35);transition:color .2s;white-space:nowrap;">Fidélisation</button>
+        <button onclick="filterBlog('tendances')" data-cat="tendances" class="blog-filter-btn" style="background:none;border:none;padding:0;font-size:.8125rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;color:rgba(27,28,28,0.35);transition:color .2s;white-space:nowrap;">Tendances mobiles</button>
       </div>
     </div>
   </section>
@@ -218,10 +217,7 @@
   }
   function filterBlog(cat) {
     document.querySelectorAll('.blog-filter-btn').forEach(btn => {
-      const active = btn.dataset.cat === cat;
-      btn.style.background = active ? '#1b1c1c' : 'transparent';
-      btn.style.color = active ? '#fbf9f8' : 'rgba(27,28,28,0.5)';
-      btn.style.border = active ? 'none' : '1px solid rgba(27,28,28,0.15)';
+      btn.style.color = btn.dataset.cat === cat ? '#1b1c1c' : 'rgba(27,28,28,0.35)';
     });
     document.querySelectorAll('#blog-grid > a').forEach(card => {
       const show = cat === 'tous' || card.dataset.category === cat;
