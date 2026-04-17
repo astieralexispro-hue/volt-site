@@ -182,25 +182,42 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="bg-surface-container-lowest border-t border-black/5 py-16 px-6">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
-    <div>
-      <a href="index.html" class="flex items-center gap-2.5 mb-4">
-        <img src="images/logo-bod.png" alt="Bod" style="height:36px;width:auto;"/>
-      </a>
-      <p class="text-sm text-on-surface-variant max-w-xs" data-i18n="footer.tagline">La batterie de vos clients, c'est notre affaire.</p>
-      <p class="text-xs text-on-surface-variant/50 mt-2">France</p>
-      <p class="text-xs text-on-surface-variant/50 mt-2">© 2026 Bod, Alexis Astier</p>
+<footer style="background:#fbf9f8;border-top:1px solid rgba(27,28,28,0.08);padding:clamp(48px,7vw,72px) 24px 32px;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(24px,5vw,64px);margin-bottom:clamp(32px,5vw,56px);">
+
+      <div>
+        <a href="index.html" style="display:inline-block;margin-bottom:16px;">
+          <img src="/images/logo-bod.png" alt="Bod" style="height:38px;width:auto;"/>
+        </a>
+        <p style="font-size:.875rem;color:rgba(27,28,28,0.45);max-width:220px;line-height:1.65;margin:0 0 20px;" data-i18n="footer.tagline">La batterie de vos clients, c'est notre affaire.</p>
+        <a href="partenaire.html" style="display:inline-flex;align-items:center;gap:6px;background:#cef700;color:#1a2e00;padding:.55rem 1.25rem;border-radius:100px;font-size:.8125rem;font-weight:800;text-decoration:none;transition:opacity .15s;" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">Devenir partenaire</a>
+      </div>
+
+      <div>
+        <div style="font-size:.625rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:rgba(27,28,28,0.3);margin-bottom:18px;">Navigation</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="produits.html" style="font-size:.9375rem;font-weight:500;color:#1b1c1c;text-decoration:none;transition:opacity .15s;" onmouseover="this.style.opacity='.4'" onmouseout="this.style.opacity='1'">Produits</a>
+          <a href="tarifs.html" style="font-size:.9375rem;font-weight:500;color:#1b1c1c;text-decoration:none;transition:opacity .15s;" onmouseover="this.style.opacity='.4'" onmouseout="this.style.opacity='1'">Tarifs</a>
+          <a href="lieux.html" style="font-size:.9375rem;font-weight:500;color:#1b1c1c;text-decoration:none;transition:opacity .15s;" onmouseover="this.style.opacity='.4'" onmouseout="this.style.opacity='1'">Lieux</a>
+          <a href="publicite.html" style="font-size:.9375rem;font-weight:500;color:#1b1c1c;text-decoration:none;transition:opacity .15s;" onmouseover="this.style.opacity='.4'" onmouseout="this.style.opacity='1'">Publicité</a>
+          <a href="blog.html" style="font-size:.9375rem;font-weight:500;color:#1b1c1c;text-decoration:none;transition:opacity .15s;" onmouseover="this.style.opacity='.4'" onmouseout="this.style.opacity='1'">Blog</a>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:.625rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:rgba(27,28,28,0.3);margin-bottom:18px;">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="contact.html" style="font-size:.9375rem;font-weight:500;color:#1b1c1c;text-decoration:none;transition:opacity .15s;" onmouseover="this.style.opacity='.4'" onmouseout="this.style.opacity='1'">Nous contacter</a>
+          <a href="mailto:hello@bodcharge.com" style="font-size:.9375rem;font-weight:500;color:#1b1c1c;text-decoration:none;transition:opacity .15s;" onmouseover="this.style.opacity='.4'" onmouseout="this.style.opacity='1'">hello@bodcharge.com</a>
+          <a href="mentions-legales.html" style="font-size:.9375rem;font-weight:500;color:#1b1c1c;text-decoration:none;transition:opacity .15s;" onmouseover="this.style.opacity='.4'" onmouseout="this.style.opacity='1'">Mentions légales</a>
+        </div>
+      </div>
+
     </div>
-    <div class="flex flex-wrap gap-x-12 gap-y-4 text-sm font-medium text-on-surface-variant">
-      <a href="tarifs.html" class="hover:text-on-surface transition-colors" data-i18n="nav.tarifs">Tarifs</a>
-      <a href="lieux.html" class="hover:text-on-surface transition-colors" data-i18n="nav.lieux">Lieux</a>
-      <a href="partenaire.html" class="hover:text-on-surface transition-colors" data-i18n="footer.partner">Devenir partenaire</a>
-      <a href="publicite.html" class="hover:text-on-surface transition-colors" data-i18n="nav.pub">Publicité</a>
-      <a href="blog.html" class="hover:text-on-surface transition-colors" data-i18n="nav.blog">Blog</a>
-      <a href="contact.html" class="hover:text-on-surface transition-colors" data-i18n="nav.contact">Contact</a>
-      <a href="mailto:hello@bodcharge.com" class="hover:text-on-surface transition-colors">hello@bodcharge.com</a>
-      <a href="mentions-legales.html" class="hover:text-on-surface transition-colors" data-i18n="footer.legal">Mentions légales</a>
+    <div style="border-top:1px solid rgba(27,28,28,0.08);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+      <p style="font-size:.75rem;color:rgba(27,28,28,0.3);margin:0;">© 2026 BOD — Alexis Astier</p>
+      <p style="font-size:.75rem;color:rgba(27,28,28,0.3);margin:0;">France</p>
     </div>
   </div>
 </footer>
