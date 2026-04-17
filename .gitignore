@@ -3,3 +3,4 @@ package-lock.json
 tailwind.input.css
 tailwind.config.js
 package.json
+.vercel
