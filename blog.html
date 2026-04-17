@@ -86,17 +86,19 @@
 <main>
 
   <!-- HERO — masthead style -->
-  <section class="px-6" style="background:#fbf9f8;padding-top:clamp(100px,18vw,140px);padding-bottom:0;">
+  <section class="px-6" style="background:#fbf9f8;padding-top:clamp(88px,14vw,112px);padding-bottom:0;">
     <div style="max-width:900px;margin:0 auto;text-align:center;">
-      <div style="border-top:2px solid #1b1c1c;padding-top:clamp(20px,3vw,32px);" class="animate-fade-up">
-        <h1 class="animate-fade-up font-black tracking-tighter leading-none" style="color:#1b1c1c;font-size:clamp(60px,12vw,120px);margin:0 0 clamp(16px,2vw,24px);">Le Blog BOD</h1>
-        <p class="animate-fade-up-delay-1" style="color:rgba(27,28,28,0.45);font-size:.875rem;letter-spacing:.06em;margin:0 0 clamp(24px,4vw,36px);">Conseils &amp; ressources pour les établissements</p>
+      <div class="animate-fade-up" style="padding-bottom:clamp(20px,3vw,28px);">
+        <h1 class="animate-fade-up font-black tracking-tighter leading-none" style="color:#1b1c1c;font-size:clamp(48px,9vw,96px);text-transform:uppercase;margin:0 0 clamp(10px,1.5vw,16px);">Le Blog BOD</h1>
+        <p class="animate-fade-up-delay-1" style="color:rgba(27,28,28,0.4);font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;margin:0;">Conseils &amp; ressources pour les établissements</p>
       </div>
-      <div style="border-top:1px solid rgba(27,28,28,0.12);padding-top:clamp(16px,2.5vw,24px);padding-bottom:clamp(16px,2.5vw,24px);display:flex;align-items:center;justify-content:center;gap:clamp(8px,2vw,24px);flex-wrap:wrap;" class="animate-fade-up-delay-2">
-        <button onclick="filterBlog('tous')" data-cat="tous" class="blog-filter-btn" style="background:#1b1c1c;color:#fbf9f8;border:none;padding:.45rem 1.25rem;border-radius:100px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Tous</button>
-        <button onclick="filterBlog('etablissements')" data-cat="etablissements" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.45rem 1.25rem;border-radius:100px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Établissements</button>
-        <button onclick="filterBlog('experience')" data-cat="experience" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.45rem 1.25rem;border-radius:100px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Expérience client</button>
-        <button onclick="filterBlog('tendances')" data-cat="tendances" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.45rem 1.25rem;border-radius:100px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Tendances</button>
+      <div style="border-top:1px solid rgba(27,28,28,0.12);padding-top:clamp(14px,2vw,20px);padding-bottom:clamp(14px,2vw,20px);display:flex;align-items:center;justify-content:center;gap:clamp(6px,1.5vw,12px);flex-wrap:wrap;" class="animate-fade-up-delay-2">
+        <button onclick="filterBlog('tous')" data-cat="tous" class="blog-filter-btn" style="background:#1b1c1c;color:#fbf9f8;border:none;padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Tous</button>
+        <button onclick="filterBlog('experience')" data-cat="experience" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Expérience client</button>
+        <button onclick="filterBlog('chiffre-affaires')" data-cat="chiffre-affaires" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Chiffre d'affaires</button>
+        <button onclick="filterBlog('avis-reputation')" data-cat="avis-reputation" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Avis &amp; réputation</button>
+        <button onclick="filterBlog('fidelisation')" data-cat="fidelisation" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Fidélisation</button>
+        <button onclick="filterBlog('tendances')" data-cat="tendances" class="blog-filter-btn" style="background:transparent;color:rgba(27,28,28,0.5);border:1px solid rgba(27,28,28,0.15);padding:.4rem 1.1rem;border-radius:100px;font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .2s;">Tendances mobiles</button>
       </div>
     </div>
   </section>
