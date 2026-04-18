@@ -41,6 +41,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://bodcharge.com/a-propos</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://bodcharge.com/mentions-legales</loc>
     <priority>0.2</priority>
     <changefreq>yearly</changefreq>
