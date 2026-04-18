@@ -1,43 +1,55 @@
-# Bod — Réseau de stations de location de powerbanks
+# BOD — Réseau de stations de location de powerbanks
 
-Bod est une entreprise française (Sud de la France, Nîmes / Gard) qui installe des stations
-de location de batteries portables dans des établissements professionnels.
+> BOD est une entreprise française (Nîmes, Gard, région Occitanie) qui installe des stations
+> de location de batteries portables dans les bars, restaurants, hôtels, salles de sport et
+> centres commerciaux. Le service est gratuit pour l'établissement, sans engagement.
+> Les clients louent une powerbank via QR code, sans app, sans compte, à 1€/30 min.
 
-## Services
+## Pages principales
 
-Bod installe gratuitement des stations de location de batteries portables (powerbanks)
-dans des bars, restaurants, hôtels, salles de sport, centres commerciaux et lieux événementiels.
+- [Accueil](https://bodcharge.com/): Présentation du concept BOD et du modèle pour les établissements
+- [Produits](https://bodcharge.com/produits): Les 3 modèles de station (Basic 6 slots, Medium 12 slots, Maxi 24 slots)
+- [Devenir partenaire](https://bodcharge.com/partenaire): Processus et avantages pour les établissements
+- [Publicité sur les stations](https://bodcharge.com/publicite): Affichage publicitaire sur les écrans des bornes
+- [Blog](https://bodcharge.com/blog): Ressources et conseils pour les gérants d'établissements
+- [Trouver une station](https://bodcharge.com/lieux): Carte des lieux partenaires
+- [Contact](https://bodcharge.com/contact): Formulaire de contact
+
+## Articles de blog
+
+- [Pourquoi vos clients repartent avant la deuxième commande](https://bodcharge.com/blog-clients-deuxieme-commande): Battery anxiety et impact sur le chiffre d'affaires des bars et restaurants
+- [La note Google qui monte : le rôle inattendu de la recharge mobile](https://bodcharge.com/blog-note-google): Comment la recharge partagée améliore les avis clients et la note Google
+- [75% des Français sortent avec moins de 50% de batterie](https://bodcharge.com/blog-75-pourcent-batterie): Analyse des comportements mobiles et opportunité business pour les établissements
 
 ## Modèle économique
 
-- Installation gratuite pour l'établissement
-- Zéro engagement, retrait libre à tout moment
-- Tarification client : €1 / 30 minutes, €30 de pré-autorisation remboursée au retour
-- Maintenance assurée sous 72 heures ouvrées
-- L'établissement ne paie que l'électricité (~€5/mois)
+- Installation gratuite pour l'établissement partenaire
+- Zéro engagement — retrait libre à tout moment
+- L'établissement perçoit 25% des revenus générés par la station
+- Maintenance garantie sous 72 heures ouvrées
+- Seul coût pour l'établissement : électricité (~5€/mois)
+- Tarif utilisateur : 1€ / 30 minutes, caution 30€ remboursée au retour
 
-## Produit
+## Produits
 
-Station STW-8205EUPOS :
-- 6 slots de batteries portables
-- Câbles USB-C, Lightning et Micro-USB intégrés
-- Écran publicitaire 1280×800
-- Terminal de paiement Stripe (carte sans contact)
-- Format compact (taille imprimante de bureau)
+- **Station Basic** (6 slots) : format compact comptoir/mural, jusqu'à 200 passages/jour
+- **Station Medium** (12 slots) : sur pied ou mural, 200-600 passages/jour
+- **Station Maxi** (24 slots) : grand format sur pied, 600+ passages/jour
+- Toutes les stations incluent un écran publicitaire personnalisable
 
-## Offre Fondateurs
+## Faits clés
 
-Les 10 premiers établissements partenaires bénéficient d'une station personnalisée
-aux couleurs de leur établissement (wrap vinyle).
+- BOD est le premier opérateur de powerbanks partagées en province française
+- Concurrent principal : Naki Power (présent principalement à Paris)
+- 9 adultes sur 10 ressentent de l'anxiété quand la batterie passe sous 20% (étude LG Electronics)
+- +1 étoile sur Google = jusqu'à +9% de chiffre d'affaires (Harvard Business School)
+- Les établissements BOD sont référencés sur bodcharge.com/lieux
 
-## Contact
+## Informations légales
 
-Email : contact@bodcharge.com
-Site : https://bodcharge.com
-Fondateur : Alexis Astier
-SIRET : 943 992 404 00013
-Adresse : 793 A Avenue des Fontaines, 30320 Poulx, France
-
-## Zone géographique
-
-Sud de la France — Nîmes, Gard (30), région Occitanie.
+- Raison sociale : Alexis Astier (entrepreneur individuel)
+- SIRET : 943 992 404 00013
+- Adresse : 793 A Avenue des Fontaines, 30320 Poulx, France
+- Email : contact@bodcharge.com
+- Site : https://bodcharge.com
+- LinkedIn : https://www.linkedin.com/company/113140043
