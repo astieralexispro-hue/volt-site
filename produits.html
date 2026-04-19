@@ -239,26 +239,170 @@
           <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface max-w-xl" data-i18n="produits.wrap.h2">La station s'adapte<br/>à votre univers.</h2>
           <p class="text-on-surface-variant text-lg leading-relaxed max-w-md" data-i18n="produits.wrap.p">Wrap vinyl full-cover aux couleurs de votre établissement — logo, ambiance, code couleur. Pose incluse.</p>
         </div>
-        <!-- Prix wrap -->
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <div style="background:#fff;border-radius:1.25rem;padding:24px 32px;display:flex;flex-direction:column;gap:6px;min-width:140px;">
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.4);">Basic</span>
-            <span style="font-size:30px;font-weight:900;color:#1b1c1c;line-height:1;">30 €</span>
-          </div>
-          <div style="background:#1b1c1c;border-radius:1.25rem;padding:24px 32px;display:flex;flex-direction:column;gap:6px;min-width:140px;">
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(208,255,0,0.5);">Medium</span>
-            <span style="font-size:30px;font-weight:900;color:#D0FF00;line-height:1;">60 €</span>
-          </div>
-          <div style="background:#D0FF00;border-radius:1.25rem;padding:24px 32px;display:flex;flex-direction:column;gap:6px;min-width:140px;">
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.5);">Maxi</span>
-            <span style="font-size:30px;font-weight:900;color:#1b1c1c;line-height:1;">120 €</span>
-          </div>
-          <div style="border:1.5px solid rgba(27,28,28,0.1);border-radius:1.25rem;padding:24px 32px;display:flex;align-items:center;gap:10px;">
+        <!-- Sélecteur wrap -->
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
+          <button onclick="selectWrap('basic')" id="wrap-btn-basic" style="background:#1b1c1c;border:none;border-radius:1.25rem;padding:20px 28px;display:flex;flex-direction:column;gap:4px;min-width:130px;cursor:pointer;transition:all 0.2s;outline:none;">
+            <span style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(208,255,0,0.6);">Basic</span>
+            <span style="font-size:28px;font-weight:900;color:#D0FF00;line-height:1;">30 €</span>
+          </button>
+          <button onclick="selectWrap('medium')" id="wrap-btn-medium" style="background:#fff;border:2px solid rgba(27,28,28,0.08);border-radius:1.25rem;padding:20px 28px;display:flex;flex-direction:column;gap:4px;min-width:130px;cursor:pointer;transition:all 0.2s;outline:none;">
+            <span style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.4);">Medium</span>
+            <span style="font-size:28px;font-weight:900;color:#1b1c1c;line-height:1;">60 €</span>
+          </button>
+          <button onclick="selectWrap('maxi')" id="wrap-btn-maxi" style="background:#fff;border:2px solid rgba(27,28,28,0.08);border-radius:1.25rem;padding:20px 28px;display:flex;flex-direction:column;gap:4px;min-width:130px;cursor:pointer;transition:all 0.2s;outline:none;">
+            <span style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.4);">Maxi</span>
+            <span style="font-size:28px;font-weight:900;color:#1b1c1c;line-height:1;">120 €</span>
+          </button>
+          <div style="border:1.5px solid rgba(27,28,28,0.1);border-radius:1.25rem;padding:20px 28px;display:flex;align-items:center;gap:10px;">
             <span class="material-symbols-outlined text-on-surface-variant" style="font-size:20px;line-height:1;font-variation-settings:'FILL' 1;">check_circle</span>
             <span style="font-size:13px;font-weight:700;color:#526600;" data-i18n="produits.wrap.pose">Pose incluse</span>
           </div>
         </div>
+
+        <!-- Panneau station sélectionnée -->
+        <div id="wrap-panel" style="border-radius:2rem;overflow:hidden;transition:all 0.35s ease;">
+          <!-- Basic -->
+          <div id="wrap-basic" class="wrap-content" style="background:#1b1c1c;display:flex;flex-direction:column;gap:0;">
+            <div style="display:flex;flex-col md:flex-row;align-items:stretch;flex-wrap:wrap;">
+              <div style="flex:1;min-width:260px;padding:40px 44px;display:flex;flex-direction:column;justify-content:center;">
+                <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(208,255,0,0.5);margin-bottom:12px;">Basic Station — Wrap 30 €</div>
+                <h3 style="font-size:32px;font-weight:900;color:#D0FF00;letter-spacing:-0.03em;line-height:1;margin:0 0 8px;">L'essentiel,<br/>personnalisé.</h3>
+                <p style="font-size:14px;color:rgba(255,255,255,0.55);margin:0 0 24px;line-height:1.6;">Wrap vinyl full-cover sur la Basic Station (6 slots). Vos couleurs, votre logo, pose incluse.</p>
+                <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <span class="material-symbols-outlined" style="font-size:16px;color:#D0FF00;font-variation-settings:'FILL' 1;">check_circle</span>
+                    <span style="font-size:13px;color:rgba(255,255,255,0.6);">Format compact — comptoir ou mural</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <span class="material-symbols-outlined" style="font-size:16px;color:#D0FF00;font-variation-settings:'FILL' 1;">check_circle</span>
+                    <span style="font-size:13px;color:rgba(255,255,255,0.6);">Idéal jusqu'à 200 personnes/jour</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <span class="material-symbols-outlined" style="font-size:16px;color:#D0FF00;font-variation-settings:'FILL' 1;">check_circle</span>
+                    <span style="font-size:13px;color:rgba(255,255,255,0.6);">Impression haute définition, résistante</span>
+                  </div>
+                </div>
+                <a href="partenaire.html" style="display:inline-flex;align-items:center;gap:8px;background:#D0FF00;color:#1b1c1c;padding:14px 28px;border-radius:100px;font-weight:900;font-size:14px;text-decoration:none;align-self:flex-start;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                  Demander un wrap
+                  <span class="material-symbols-outlined" style="font-size:18px;line-height:1;">arrow_forward</span>
+                </a>
+              </div>
+              <div style="flex:1;min-width:220px;min-height:280px;background:#252525;display:flex;align-items:center;justify-content:center;padding:32px;gap:16px;">
+                <img src="images/basic-station.png" alt="Station BOD Basic avec wrap personnalisé" style="max-height:260px;width:auto;object-fit:contain;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Medium -->
+          <div id="wrap-medium" class="wrap-content" style="display:none;background:#f5f9e0;">
+            <div style="display:flex;align-items:stretch;flex-wrap:wrap;">
+              <div style="flex:1;min-width:220px;min-height:280px;background:#b5de00;display:flex;align-items:center;justify-content:center;padding:32px;gap:16px;">
+                <img src="images/medium-station.png" alt="Station BOD Medium avec wrap personnalisé" style="max-height:260px;width:auto;object-fit:contain;">
+              </div>
+              <div style="flex:1;min-width:260px;padding:40px 44px;display:flex;flex-direction:column;justify-content:center;">
+                <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(27,28,28,0.4);margin-bottom:12px;">Medium Station — Wrap 60 €</div>
+                <h3 style="font-size:32px;font-weight:900;color:#1b1c1c;letter-spacing:-0.03em;line-height:1;margin:0 0 8px;">Le bon équilibre,<br/>à vos couleurs.</h3>
+                <p style="font-size:14px;color:rgba(27,28,28,0.55);margin:0 0 24px;line-height:1.6;">Wrap vinyl full-cover sur la Medium Station (12 slots). Surface plus large, impact visuel décuplé.</p>
+                <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <span class="material-symbols-outlined" style="font-size:16px;color:#526600;font-variation-settings:'FILL' 1;">check_circle</span>
+                    <span style="font-size:13px;color:rgba(27,28,28,0.6);">Sur pied ou mural — s'intègre partout</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <span class="material-symbols-outlined" style="font-size:16px;color:#526600;font-variation-settings:'FILL' 1;">check_circle</span>
+                    <span style="font-size:13px;color:rgba(27,28,28,0.6);">200 à 600 personnes/jour</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <span class="material-symbols-outlined" style="font-size:16px;color:#526600;font-variation-settings:'FILL' 1;">check_circle</span>
+                    <span style="font-size:13px;color:rgba(27,28,28,0.6);">Grande surface d'impression visible</span>
+                  </div>
+                </div>
+                <a href="partenaire.html" style="display:inline-flex;align-items:center;gap:8px;background:#1b1c1c;color:#D0FF00;padding:14px 28px;border-radius:100px;font-weight:900;font-size:14px;text-decoration:none;align-self:flex-start;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                  Demander un wrap
+                  <span class="material-symbols-outlined" style="font-size:18px;line-height:1;">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Maxi -->
+          <div id="wrap-maxi" class="wrap-content" style="display:none;background:#1b1c1c;">
+            <div style="display:flex;align-items:stretch;flex-wrap:wrap;">
+              <div style="flex:1;min-width:260px;padding:40px 44px;display:flex;flex-direction:column;justify-content:center;">
+                <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(208,255,0,0.5);margin-bottom:12px;">Maxi Station — Wrap 120 €</div>
+                <h3 style="font-size:32px;font-weight:900;color:#D0FF00;letter-spacing:-0.03em;line-height:1;margin:0 0 8px;">Présence forte,<br/>à votre image.</h3>
+                <p style="font-size:14px;color:rgba(255,255,255,0.55);margin:0 0 24px;line-height:1.6;">Wrap vinyl full-cover sur la Maxi Station (24 slots). La plus grande surface de branding, pour les lieux à fort passage.</p>
+                <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <span class="material-symbols-outlined" style="font-size:16px;color:#D0FF00;font-variation-settings:'FILL' 1;">check_circle</span>
+                    <span style="font-size:13px;color:rgba(255,255,255,0.6);">Grand format sur pied — présence forte</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <span class="material-symbols-outlined" style="font-size:16px;color:#D0FF00;font-variation-settings:'FILL' 1;">check_circle</span>
+                    <span style="font-size:13px;color:rgba(255,255,255,0.6);">600+ personnes/jour</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;">
+                    <span class="material-symbols-outlined" style="font-size:16px;color:#D0FF00;font-variation-settings:'FILL' 1;">check_circle</span>
+                    <span style="font-size:13px;color:rgba(255,255,255,0.6);">Impact visuel maximal, surface XXL</span>
+                  </div>
+                </div>
+                <a href="partenaire.html" style="display:inline-flex;align-items:center;gap:8px;background:#D0FF00;color:#1b1c1c;padding:14px 28px;border-radius:100px;font-weight:900;font-size:14px;text-decoration:none;align-self:flex-start;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                  Demander un wrap
+                  <span class="material-symbols-outlined" style="font-size:18px;line-height:1;">arrow_forward</span>
+                </a>
+              </div>
+              <div style="flex:1;min-width:220px;min-height:280px;background:#252525;display:flex;align-items:center;justify-content:center;padding:32px;gap:16px;">
+                <img src="images/maxi-station.png" alt="Station BOD Maxi avec wrap personnalisé" style="max-height:260px;width:auto;object-fit:contain;">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <script>
+        function selectWrap(type) {
+          // Reset tous les boutons
+          document.getElementById('wrap-btn-basic').style.background = '#fff';
+          document.getElementById('wrap-btn-basic').style.border = '2px solid rgba(27,28,28,0.08)';
+          document.getElementById('wrap-btn-basic').querySelector('span:first-child').style.color = 'rgba(27,28,28,0.4)';
+          document.getElementById('wrap-btn-basic').querySelector('span:last-child').style.color = '#1b1c1c';
+          document.getElementById('wrap-btn-medium').style.background = '#fff';
+          document.getElementById('wrap-btn-medium').style.border = '2px solid rgba(27,28,28,0.08)';
+          document.getElementById('wrap-btn-medium').querySelector('span:first-child').style.color = 'rgba(27,28,28,0.4)';
+          document.getElementById('wrap-btn-medium').querySelector('span:last-child').style.color = '#1b1c1c';
+          document.getElementById('wrap-btn-maxi').style.background = '#fff';
+          document.getElementById('wrap-btn-maxi').style.border = '2px solid rgba(27,28,28,0.08)';
+          document.getElementById('wrap-btn-maxi').querySelector('span:first-child').style.color = 'rgba(27,28,28,0.4)';
+          document.getElementById('wrap-btn-maxi').querySelector('span:last-child').style.color = '#1b1c1c';
+          // Cache tous les panels
+          document.querySelectorAll('.wrap-content').forEach(el => el.style.display = 'none');
+          // Active le bon bouton + panel
+          if (type === 'basic') {
+            var btn = document.getElementById('wrap-btn-basic');
+            btn.style.background = '#1b1c1c';
+            btn.style.border = '2px solid #1b1c1c';
+            btn.querySelector('span:first-child').style.color = 'rgba(208,255,0,0.6)';
+            btn.querySelector('span:last-child').style.color = '#D0FF00';
+            document.getElementById('wrap-basic').style.display = 'block';
+          } else if (type === 'medium') {
+            var btn = document.getElementById('wrap-btn-medium');
+            btn.style.background = '#D0FF00';
+            btn.style.border = '2px solid #D0FF00';
+            btn.querySelector('span:first-child').style.color = 'rgba(27,28,28,0.5)';
+            btn.querySelector('span:last-child').style.color = '#1b1c1c';
+            document.getElementById('wrap-medium').style.display = 'block';
+          } else if (type === 'maxi') {
+            var btn = document.getElementById('wrap-btn-maxi');
+            btn.style.background = '#1b1c1c';
+            btn.style.border = '2px solid #1b1c1c';
+            btn.querySelector('span:first-child').style.color = 'rgba(208,255,0,0.6)';
+            btn.querySelector('span:last-child').style.color = '#D0FF00';
+            document.getElementById('wrap-maxi').style.display = 'block';
+          }
+        }
+        // Sélectionne Basic par défaut
+        selectWrap('basic');
+      </script>
 
       <!-- Avant / Après slider -->
       <div class="reveal" style="margin-bottom:80px;">
