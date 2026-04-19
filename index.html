@@ -496,10 +496,141 @@
     </div>
   </section>
 
-  <!-- NO APP — bandeau dark -->
-  <section class="bg-on-surface px-6 py-16 md:py-24">
-    <div class="max-w-7xl mx-auto reveal text-center">
-      <h2 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-primary-container leading-[0.95]" data-i18n="noapp.h2">Aucune app.<br/>Aucun compte.<br/>Juste recharger.</h2>
+  <!-- NO APP — section dark avec mockups -->
+  <section class="bg-on-surface px-6 py-16 md:py-32">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <!-- Texte gauche -->
+        <div class="reveal">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(208,255,0,0.5);margin-bottom:20px;">Zéro friction</div>
+          <h2 class="text-4xl md:text-6xl font-black tracking-tighter text-primary-container leading-[0.95] mb-8" data-i18n="noapp.h2">Aucune app.<br/>Aucun compte.<br/>Juste recharger.</h2>
+          <p style="font-size:1.125rem;line-height:1.75;color:rgba(255,255,255,0.6);margin-bottom:36px;" data-i18n="noapp.p">Vos clients scannent, prennent la batterie, et rechargent. Pas d'inscription, pas de téléchargement, pas de friction — juste un service qui fonctionne en quelques secondes.</p>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:38px;height:38px;border-radius:12px;background:rgba(208,255,0,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <span class="material-symbols-outlined" style="font-size:20px;color:#D0FF00;font-variation-settings:'FILL' 1;">qr_code_scanner</span>
+              </div>
+              <span style="font-size:15px;color:rgba(255,255,255,0.65);font-weight:500;">Scan du QR code sur la station — aucun téléchargement</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:38px;height:38px;border-radius:12px;background:rgba(208,255,0,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <span class="material-symbols-outlined" style="font-size:20px;color:#D0FF00;font-variation-settings:'FILL' 1;">credit_card</span>
+              </div>
+              <span style="font-size:15px;color:rgba(255,255,255,0.65);font-weight:500;">Paiement par carte en moins de 30 secondes</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:38px;height:38px;border-radius:12px;background:rgba(208,255,0,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <span class="material-symbols-outlined" style="font-size:20px;color:#D0FF00;font-variation-settings:'FILL' 1;">battery_charging_full</span>
+              </div>
+              <span style="font-size:15px;color:rgba(255,255,255,0.65);font-weight:500;">Batterie déverrouillée immédiatement</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mockups iPhone -->
+        <div class="reveal reveal-delay-1" style="display:flex;justify-content:center;align-items:flex-end;gap:16px;padding:40px 0 20px;">
+
+          <!-- Phone 1 : Scan QR -->
+          <div style="flex-shrink:0;transform:translateY(28px);">
+            <div style="width:148px;background:#0f0f0f;border-radius:34px;padding:9px;box-shadow:0 0 0 1.5px rgba(255,255,255,0.1),0 40px 80px rgba(0,0,0,0.7);">
+              <div style="position:relative;background:#f8f8f8;border-radius:26px;overflow:hidden;aspect-ratio:9/19;display:flex;flex-direction:column;">
+                <!-- Dynamic Island -->
+                <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:60px;height:20px;background:#0f0f0f;border-radius:20px;z-index:3;"></div>
+                <!-- Status bar -->
+                <div style="padding:38px 14px 0;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;">
+                  <!-- BOD logo mini -->
+                  <div style="font-size:11px;font-weight:900;letter-spacing:0.1em;color:#1b1c1c;margin-bottom:20px;">BOD</div>
+                  <!-- QR Code SVG -->
+                  <div style="background:#1b1c1c;border-radius:12px;padding:10px;margin-bottom:14px;">
+                    <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                      <rect x="4" y="4" width="28" height="28" rx="3" fill="#D0FF00"/>
+                      <rect x="8" y="8" width="20" height="20" rx="1" fill="#1b1c1c"/>
+                      <rect x="11" y="11" width="14" height="14" rx="1" fill="#D0FF00"/>
+                      <rect x="40" y="4" width="28" height="28" rx="3" fill="#D0FF00"/>
+                      <rect x="44" y="8" width="20" height="20" rx="1" fill="#1b1c1c"/>
+                      <rect x="47" y="11" width="14" height="14" rx="1" fill="#D0FF00"/>
+                      <rect x="4" y="40" width="28" height="28" rx="3" fill="#D0FF00"/>
+                      <rect x="8" y="44" width="20" height="20" rx="1" fill="#1b1c1c"/>
+                      <rect x="11" y="47" width="14" height="14" rx="1" fill="#D0FF00"/>
+                      <rect x="40" y="40" width="8" height="8" fill="#D0FF00"/>
+                      <rect x="52" y="40" width="8" height="8" fill="#D0FF00"/>
+                      <rect x="40" y="52" width="8" height="8" fill="#D0FF00"/>
+                      <rect x="52" y="52" width="8" height="8" fill="#D0FF00"/>
+                      <rect x="46" y="46" width="8" height="8" fill="#D0FF00"/>
+                    </svg>
+                  </div>
+                  <div style="font-size:9px;font-weight:700;color:#1b1c1c;text-align:center;line-height:1.4;">Scannez pour<br/>louer une batterie</div>
+                </div>
+                <!-- Step label -->
+                <div style="background:#D0FF00;padding:8px 12px;text-align:center;">
+                  <span style="font-size:9px;font-weight:900;color:#1b1c1c;letter-spacing:0.06em;text-transform:uppercase;">① Scan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone 2 : Paiement (featured, au centre) -->
+          <div style="flex-shrink:0;">
+            <div style="width:162px;background:#0f0f0f;border-radius:38px;padding:10px;box-shadow:0 0 0 1.5px rgba(208,255,0,0.3),0 48px 96px rgba(0,0,0,0.8);">
+              <div style="position:relative;background:#fff;border-radius:30px;overflow:hidden;aspect-ratio:9/19;display:flex;flex-direction:column;">
+                <!-- Dynamic Island -->
+                <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:66px;height:22px;background:#0f0f0f;border-radius:20px;z-index:3;"></div>
+                <div style="padding:48px 14px 0;flex:1;display:flex;flex-direction:column;justify-content:space-between;background:#fff;">
+                  <div>
+                    <div style="font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(27,28,28,0.4);margin-bottom:6px;">Durée de location</div>
+                    <div style="font-size:26px;font-weight:900;color:#1b1c1c;letter-spacing:-.03em;line-height:1;margin-bottom:4px;">€1.00</div>
+                    <div style="font-size:10px;color:rgba(27,28,28,0.5);font-weight:500;">par tranche de 30 min</div>
+                    <div style="margin:14px 0;height:1px;background:rgba(0,0,0,0.08);"></div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                      <span style="font-size:10px;color:rgba(27,28,28,0.5);">Caution (remboursée)</span>
+                      <span style="font-size:10px;font-weight:700;color:#1b1c1c;">€30.00</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:6px;background:#f0ffe0;border-radius:8px;padding:8px 10px;margin-top:10px;">
+                      <span class="material-symbols-outlined" style="font-size:14px;color:#526600;font-variation-settings:'FILL' 1;">lock</span>
+                      <span style="font-size:9px;color:#526600;font-weight:700;">Paiement sécurisé Stripe</span>
+                    </div>
+                  </div>
+                  <div style="padding-bottom:14px;">
+                    <div style="background:#1b1c1c;border-radius:12px;padding:12px;text-align:center;">
+                      <span style="font-size:11px;font-weight:900;color:#D0FF00;letter-spacing:0.04em;">Payer par carte</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="background:#1b1c1c;padding:8px 12px;text-align:center;">
+                  <span style="font-size:9px;font-weight:900;color:#D0FF00;letter-spacing:0.06em;text-transform:uppercase;">② Paiement</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone 3 : Batterie prête -->
+          <div style="flex-shrink:0;transform:translateY(28px);">
+            <div style="width:148px;background:#0f0f0f;border-radius:34px;padding:9px;box-shadow:0 0 0 1.5px rgba(255,255,255,0.1),0 40px 80px rgba(0,0,0,0.7);">
+              <div style="position:relative;background:#1b1c1c;border-radius:26px;overflow:hidden;aspect-ratio:9/19;display:flex;flex-direction:column;">
+                <!-- Dynamic Island -->
+                <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:60px;height:20px;background:#0f0f0f;border-radius:20px;z-index:3;"></div>
+                <div style="padding:44px 14px 0;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                  <div style="width:52px;height:52px;border-radius:16px;background:#D0FF00;display:flex;align-items:center;justify-content:center;">
+                    <span class="material-symbols-outlined" style="font-size:28px;color:#1b1c1c;font-variation-settings:'FILL' 1;">battery_charging_full</span>
+                  </div>
+                  <div style="text-align:center;">
+                    <div style="font-size:12px;font-weight:900;color:#D0FF00;margin-bottom:4px;">Batterie prête !</div>
+                    <div style="font-size:9px;color:rgba(255,255,255,0.45);line-height:1.5;">Slot 3 déverrouillé<br/>Rendez-la avant 48h</div>
+                  </div>
+                  <div style="background:rgba(208,255,0,0.1);border-radius:10px;padding:8px 12px;text-align:center;width:100%;box-sizing:border-box;">
+                    <div style="font-size:9px;color:rgba(208,255,0,0.7);font-weight:700;">5 000 mAh · 3 câbles</div>
+                  </div>
+                </div>
+                <div style="background:#D0FF00;padding:8px 12px;text-align:center;">
+                  <span style="font-size:9px;font-weight:900;color:#1b1c1c;letter-spacing:0.06em;text-transform:uppercase;">③ C'est parti</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
 
